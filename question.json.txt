@@ -1,0 +1,6262 @@
+[
+  {
+    "title": "Kadane's Algorithm / Maximum Subarray",
+    "slug": "kadane-s-algorithm-maximum-subarray",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Kadane's Algorithm",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "StreamVerse, a video-streaming startup, logs its net subscriber change every day: positive numbers mean more people joined than left, negative numbers mean more left than joined. The growth team wants to find the single best run of consecutive days (at least one day) in which the combined net change is the highest, so they can study what marketing was live during that window.\n\nGiven the integer array nums of daily net changes, return the largest total net change achievable over any contiguous run of days.",
+    "functionName": "maxSubArray",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 100000",
+      "-10000 <= nums[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            -2,
+            1,
+            -3,
+            4,
+            -1,
+            2,
+            1,
+            -5,
+            4
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            -3,
+            -1,
+            -2
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            4,
+            -1,
+            7,
+            8
+          ]
+        },
+        "expectedOutput": 23,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -2,
+            -1
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            -1,
+            0,
+            -2,
+            0
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Majority Element",
+    "slug": "majority-element",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Majority Element",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A town holds a referendum in which every one of n voters writes a candidate ID on a slip. The election officer knows that one candidate received strictly more than half of all the slips, but the slips are in a big unsorted pile and memory on the counting machine is very tight.\n\nGiven the array nums of candidate IDs (one entry per slip), return the ID of the candidate who appeared more than floor(n / 2) times. A majority candidate is guaranteed to exist.",
+    "functionName": "majorityElement",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 50000",
+      "-1000000000 <= nums[i] <= 1000000000",
+      "A majority element always exists"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            3,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2,
+            1,
+            1,
+            1,
+            2,
+            2
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            7
+          ]
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            -1,
+            5,
+            -1,
+            5,
+            -1,
+            5
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            4,
+            4,
+            4,
+            4
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Best Time to Buy and Sell Stock",
+    "slug": "best-time-to-buy-and-sell-stock",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Stock Trading",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "Riya is a time-traveller with one rule: she may make exactly one purchase of a single share of a company and exactly one sale of it, and the sale must happen on a later day than the purchase. She has the list of closing prices, where prices[i] is the price on day i.\n\nReturn the maximum profit Riya can make. If no profitable trade exists, she stays out of the market and the answer is 0.",
+    "functionName": "maxProfit",
+    "parameters": [
+      {
+        "name": "prices",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= prices.length <= 100000",
+      "0 <= prices[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "prices": [
+            7,
+            1,
+            5,
+            3,
+            6,
+            4
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "prices": [
+            7,
+            6,
+            4,
+            3,
+            1
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "prices": [
+            5
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "prices": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "prices": [
+            2,
+            4,
+            1
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "prices": [
+            3,
+            3,
+            3
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Coin Change",
+    "slug": "coin-change",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Unbounded Knapsack",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * amount)",
+      "space": "O(amount)"
+    },
+    "description": "A vending machine in a remote village can only return change using a fixed set of coin denominations, and it has an unlimited supply of each. To save the machine's motor, the engineers want it to return change using as few coins as possible.\n\nGiven the array coins (the denominations) and an integer amount (the change to return), return the fewest coins needed to make exactly that amount. If it is impossible with the given coins, return -1.",
+    "functionName": "coinChange",
+    "parameters": [
+      {
+        "name": "coins",
+        "type": "int[]"
+      },
+      {
+        "name": "amount",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= coins.length <= 12",
+      "1 <= coins[i] <= 2147483647",
+      "0 <= amount <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "coins": [
+            1,
+            2,
+            5
+          ],
+          "amount": 11
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "coins": [
+            2
+          ],
+          "amount": 3
+        },
+        "expectedOutput": -1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "coins": [
+            1
+          ],
+          "amount": 0
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            186,
+            419,
+            83,
+            408
+          ],
+          "amount": 6249
+        },
+        "expectedOutput": 20,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            3,
+            7
+          ],
+          "amount": 11
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            1,
+            3,
+            4
+          ],
+          "amount": 6
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Edit Distance",
+    "slug": "edit-distance",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "A word-processor's auto-correct has to turn whatever the user mistyped (word1) into the intended word (word2). In one keystroke it can insert a character, delete a character, or replace one character with another, and each keystroke costs one unit of effort.\n\nReturn the minimum number of keystrokes needed to convert word1 into word2.",
+    "functionName": "minDistance",
+    "parameters": [
+      {
+        "name": "word1",
+        "type": "string"
+      },
+      {
+        "name": "word2",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "0 <= word1.length, word2.length <= 500",
+      "Both strings contain only lowercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "word1": "horse",
+          "word2": "ros"
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "word1": "intention",
+          "word2": "execution"
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "word1": "",
+          "word2": "abc"
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "word1": "abc",
+          "word2": ""
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "word1": "same",
+          "word2": "same"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "word1": "kitten",
+          "word2": "sitting"
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Search in Rotated Sorted Array",
+    "slug": "search-in-rotated-sorted-array",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "A library's returns robot shelved a row of books sorted by catalogue number, but then the shelf was rotated: a few books from the front were moved to the back, so the row looks like [4,5,6,7,0,1,2] instead of [0,1,2,4,5,6,7]. All catalogue numbers are distinct. A reader asks for the book with number target.\n\nReturn the position (0-indexed) of that book in the rotated row, or -1 if it isn't on the shelf. The library has millions of books, so a linear scan is too slow: aim for O(log N).",
+    "functionName": "search",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-10000 <= nums[i], target <= 10000",
+      "All values of nums are unique",
+      "nums is a sorted array rotated at an unknown pivot"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ],
+          "target": 0
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ],
+          "target": 3
+        },
+        "expectedOutput": -1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 0
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 1
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            1
+          ],
+          "target": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            1,
+            3
+          ],
+          "target": 5
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Maximum Product Subarray",
+    "slug": "maximum-product-subarray",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Kadane's Variant",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A hedge fund models a portfolio's growth using daily multipliers: a value of 2 doubles the money, 0 wipes it out, and a negative value flips a gain into a loss (short position). Given the integer array nums of daily multipliers, the fund wants the consecutive stretch of at least one day whose combined (multiplied) effect is largest.\n\nReturn that maximum product. The answer is guaranteed to fit in a 32-bit signed integer.",
+    "functionName": "maxProduct",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 20000",
+      "-10 <= nums[i] <= 10",
+      "The product of any prefix or suffix of nums fits in a 32-bit integer"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            2,
+            3,
+            -2,
+            4
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            -2,
+            0,
+            -1
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            -2
+          ]
+        },
+        "expectedOutput": -2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -2,
+            3,
+            -4
+          ]
+        },
+        "expectedOutput": 24,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            2
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            -5,
+            -2,
+            -4,
+            3
+          ]
+        },
+        "expectedOutput": 24,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Trapping Rain Water",
+    "slug": "trapping-rain-water",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "After a monsoon night, a city planner looks at a row of buildings on a street. Each building has width 1, and height[i] is the height of the i-th building. Rainwater collects in the gaps between taller buildings and is trapped by the buildings on both sides; water on the outer edges simply runs off.\n\nReturn the total units of water trapped across the street after the rain.",
+    "functionName": "trap",
+    "parameters": [
+      {
+        "name": "height",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= height.length <= 20000",
+      "0 <= height[i] <= 100000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "height": [
+            0,
+            1,
+            0,
+            2,
+            1,
+            0,
+            1,
+            3,
+            2,
+            1,
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "height": [
+            4,
+            2,
+            0,
+            3,
+            2,
+            5
+          ]
+        },
+        "expectedOutput": 9,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "height": [
+            1
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            3,
+            0,
+            3
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            2,
+            0,
+            2,
+            0,
+            2
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Word Break",
+    "slug": "word-break",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N)"
+    },
+    "description": "A voice assistant receives a transcript s with all the spaces removed, for example \"leetcode\". It has a dictionary wordDict of known words, and each word can be used any number of times. The assistant must decide whether the transcript can be split into a sequence of one or more dictionary words.\n\nReturn true if s can be fully segmented into dictionary words, otherwise false.",
+    "functionName": "wordBreak",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "wordDict",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= s.length <= 300",
+      "1 <= wordDict.length <= 1000",
+      "1 <= wordDict[i].length <= 20",
+      "All strings consist of lowercase English letters; words in wordDict are unique"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "leetcode",
+          "wordDict": [
+            "leet",
+            "code"
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "catsandog",
+          "wordDict": [
+            "cats",
+            "dog",
+            "sand",
+            "and",
+            "cat"
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "applepenapple",
+          "wordDict": [
+            "apple",
+            "pen"
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "a",
+          "wordDict": [
+            "b"
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "aaaaaaa",
+          "wordDict": [
+            "aaaa",
+            "aaa"
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "cars",
+          "wordDict": [
+            "car",
+            "ca",
+            "rs"
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Longest Common Subsequence",
+    "slug": "longest-common-subsequence",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "Two doctors independently wrote down the order of symptoms a patient described, as strings text1 and text2 (each character is a symptom code). The notes may have missed some symptoms, but the order of the ones they did record is reliable. To build a trustworthy timeline, the hospital wants the longest sequence of symptoms that appears, in the same relative order (not necessarily adjacent), in both notes.\n\nReturn the length of that longest common subsequence. If there is none, return 0.",
+    "functionName": "longestCommonSubsequence",
+    "parameters": [
+      {
+        "name": "text1",
+        "type": "string"
+      },
+      {
+        "name": "text2",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= text1.length, text2.length <= 1000",
+      "Both strings contain only lowercase or uppercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "text1": "abcde",
+          "text2": "ace"
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "text1": "abc",
+          "text2": "def"
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "text1": "abc",
+          "text2": "abc"
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "text1": "bl",
+          "text2": "yby"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "text1": "AGGTAB",
+          "text2": "GXTXAYB"
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "text1": "a",
+          "text2": "a"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Number of Islands",
+    "slug": "number-of-islands",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "DFS / BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "A satellite sends back a map of an ocean region as a grid of characters: '1' is land and '0' is water. Two land cells belong to the same island if they touch horizontally or vertically (not diagonally). The whole map is surrounded by water.\n\nReturn how many separate islands appear on the map.",
+    "functionName": "numIslands",
+    "parameters": [
+      {
+        "name": "grid",
+        "type": "char[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= grid.length, grid[0].length <= 300",
+      "grid[i][j] is '0' or '1'"
+    ],
+    "ioNote": "grid is an array of rows; each row is an array of single-character strings '0' or '1'.",
+    "testCases": [
+      {
+        "input": {
+          "grid": [
+            [
+              "1",
+              "1",
+              "1",
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "1",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "1",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              "1",
+              "1",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "1",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "0",
+              "0",
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              "1",
+              "0",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "1",
+              "0",
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Median of Two Sorted Arrays",
+    "slug": "median-of-two-sorted-arrays",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(log(min(M, N)))",
+      "space": "O(1)"
+    },
+    "description": "Two branches of a company each keep a sorted list of employee salaries: nums1 and nums2. HR wants the median salary of the combined workforce, but the lists are huge, so merging them and sorting again would be too slow. The median is the middle value of the merged sorted list (or the average of the two middle values if the count is even).\n\nReturn the median as a double. Target complexity is O(log(m + n)).",
+    "functionName": "findMedianSortedArrays",
+    "parameters": [
+      {
+        "name": "nums1",
+        "type": "int[]"
+      },
+      {
+        "name": "nums2",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "double",
+    "constraints": [
+      "0 <= nums1.length, nums2.length <= 1000",
+      "1 <= nums1.length + nums2.length <= 2000",
+      "-1000000 <= nums1[i], nums2[i] <= 1000000",
+      "Both arrays are sorted in non-decreasing order"
+    ],
+    "ioNote": "Answers are compared with an absolute tolerance of 1e-5.",
+    "checker": "tolerance",
+    "testCases": [
+      {
+        "input": {
+          "nums1": [
+            1,
+            3
+          ],
+          "nums2": [
+            2
+          ]
+        },
+        "expectedOutput": 2.0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums1": [
+            1,
+            2
+          ],
+          "nums2": [
+            3,
+            4
+          ]
+        },
+        "expectedOutput": 2.5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums1": [],
+          "nums2": [
+            1
+          ]
+        },
+        "expectedOutput": 1.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums1": [
+            0,
+            0
+          ],
+          "nums2": [
+            0,
+            0
+          ]
+        },
+        "expectedOutput": 0.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums1": [
+            2
+          ],
+          "nums2": []
+        },
+        "expectedOutput": 2.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums1": [
+            1,
+            3,
+            8,
+            9,
+            15
+          ],
+          "nums2": [
+            7,
+            11,
+            18,
+            19,
+            21,
+            25
+          ]
+        },
+        "expectedOutput": 11.0,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Longest Common Prefix",
+    "slug": "longest-common-prefix",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Strings",
+    "subtopic": "String Matching",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(S)",
+      "space": "O(1)"
+    },
+    "description": "A file-server admin has a list of file paths (strs) and wants to find the deepest shared folder prefix so they can store all of them under one root. Here the paths are plain strings, and the shared prefix is the longest starting substring that every string has in common.\n\nReturn that longest common prefix. If there is no common prefix, return an empty string \"\".",
+    "functionName": "longestCommonPrefix",
+    "parameters": [
+      {
+        "name": "strs",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "string",
+    "constraints": [
+      "1 <= strs.length <= 200",
+      "0 <= strs[i].length <= 200",
+      "strs[i] consists of lowercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "strs": [
+            "flower",
+            "flow",
+            "flight"
+          ]
+        },
+        "expectedOutput": "fl",
+        "isHidden": false
+      },
+      {
+        "input": {
+          "strs": [
+            "dog",
+            "racecar",
+            "car"
+          ]
+        },
+        "expectedOutput": "",
+        "isHidden": false
+      },
+      {
+        "input": {
+          "strs": [
+            "alone"
+          ]
+        },
+        "expectedOutput": "alone",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "strs": [
+            "interview",
+            "internet",
+            "interval",
+            "internal"
+          ]
+        },
+        "expectedOutput": "inter",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "strs": [
+            "",
+            "b"
+          ]
+        },
+        "expectedOutput": "",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "strs": [
+            "same",
+            "same",
+            "same"
+          ]
+        },
+        "expectedOutput": "same",
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Longest Palindromic Substring",
+    "slug": "longest-palindromic-substring",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Strings",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(1)"
+    },
+    "description": "A DNA-analysis lab is hunting for 'mirror' regions inside a gene string s: a region that reads exactly the same forwards and backwards. The lab only cares about the longest such contiguous region.\n\nReturn the longest palindromic substring of s. If several have the same maximum length, return the one that starts earliest in s.",
+    "functionName": "longestPalindrome",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists of digits and English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "babad"
+        },
+        "expectedOutput": "bab",
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "cbbd"
+        },
+        "expectedOutput": "bb",
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "a"
+        },
+        "expectedOutput": "a",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "forgeeksskeegfor"
+        },
+        "expectedOutput": "geeksskeeg",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abcd"
+        },
+        "expectedOutput": "a",
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "racecar"
+        },
+        "expectedOutput": "racecar",
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Container With Most Water",
+    "slug": "container-with-most-water",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Sliding Window & Two Pointers",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "An engineer is choosing two vertical walls from a row of n walls to build a water tank between them. height[i] is the height of the i-th wall, and the walls are placed 1 unit apart. The tank's water level is limited by the shorter of the two chosen walls, and its width is the distance between them.\n\nReturn the maximum amount of water a tank built from any two walls can hold.",
+    "functionName": "maxArea",
+    "parameters": [
+      {
+        "name": "height",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "2 <= height.length <= 100000",
+      "0 <= height[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "height": [
+            1,
+            8,
+            6,
+            2,
+            5,
+            4,
+            8,
+            3,
+            7
+          ]
+        },
+        "expectedOutput": 49,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "height": [
+            1,
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "height": [
+            4,
+            3,
+            2,
+            1,
+            4
+          ]
+        },
+        "expectedOutput": 16,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            1,
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            2,
+            3,
+            4,
+            5,
+            18,
+            17,
+            6
+          ]
+        },
+        "expectedOutput": 17,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "height": [
+            0,
+            0,
+            0,
+            5
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Two Sum",
+    "slug": "two-sum",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays & Hashing",
+    "subtopic": "Hash Map",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "At a charity auction, each bidder places a bid, and the organizers have exactly two bidders in mind whose combined bids should hit the fundraising target. Given the array nums of bids and an integer target, find the two different bidders (by position) whose bids add up to target.\n\nReturn their indices in ascending order. Exactly one valid pair exists, and the same bidder cannot be used twice.",
+    "functionName": "twoSum",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "2 <= nums.length <= 10000",
+      "-1000000000 <= nums[i], target <= 1000000000",
+      "Exactly one valid answer exists"
+    ],
+    "ioNote": "Return the two indices sorted in ascending order.",
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            2,
+            7,
+            11,
+            15
+          ],
+          "target": 9
+        },
+        "expectedOutput": [
+          0,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            2,
+            4
+          ],
+          "target": 6
+        },
+        "expectedOutput": [
+          1,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            3
+          ],
+          "target": 6
+        },
+        "expectedOutput": [
+          0,
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            -2,
+            -3,
+            -4,
+            -5
+          ],
+          "target": -8
+        },
+        "expectedOutput": [
+          2,
+          4
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            4,
+            3,
+            0
+          ],
+          "target": 0
+        },
+        "expectedOutput": [
+          0,
+          3
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            5,
+            9,
+            14
+          ],
+          "target": 23
+        },
+        "expectedOutput": [
+          2,
+          3
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "LRU Cache",
+    "slug": "lru-cache",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Linked List",
+    "subtopic": "Design",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(1)",
+      "space": "O(Capacity)"
+    },
+    "description": "A busy news website keeps its most recently read articles in a small in-memory cache that can hold only capacity articles. When a new article is added and the cache is full, the article that was used least recently (neither read nor written for the longest time) is thrown out to make room.\n\nDesign a class LRUCache with:\n- LRUCache(capacity): creates the cache.\n- get(key): returns the stored value for the key, or -1 if it's absent. A successful get counts as a use.\n- put(key, value): inserts or updates the key. If the cache exceeds capacity, evict the least recently used key. Updating counts as a use.\n\nBoth get and put must run in O(1) average time.",
+    "functionName": "LRUCache",
+    "parameters": [
+      {
+        "name": "capacity",
+        "type": "int"
+      }
+    ],
+    "returnType": "void",
+    "constraints": [
+      "1 <= capacity <= 3000",
+      "0 <= key <= 10000",
+      "0 <= value <= 1000000000",
+      "At most 200000 calls to get and put"
+    ],
+    "ioNote": "Test input: 'operations' is the list of method names called after construction and 'arguments' holds each call's arguments. expectedOutput lists each call's return value (null for put).",
+    "testCases": [
+      {
+        "input": {
+          "capacity": 2,
+          "operations": [
+            "put",
+            "put",
+            "get",
+            "put",
+            "get",
+            "put",
+            "get",
+            "get",
+            "get"
+          ],
+          "arguments": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              1
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              2
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              1
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          1,
+          null,
+          -1,
+          null,
+          -1,
+          3,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "capacity": 1,
+          "operations": [
+            "put",
+            "get",
+            "put",
+            "get",
+            "get"
+          ],
+          "arguments": [
+            [
+              2,
+              1
+            ],
+            [
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ]
+          ]
+        },
+        "expectedOutput": [
+          null,
+          1,
+          null,
+          -1,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "capacity": 2,
+          "operations": [
+            "put",
+            "put",
+            "put",
+            "get",
+            "get"
+          ],
+          "arguments": [
+            [
+              1,
+              10
+            ],
+            [
+              1,
+              20
+            ],
+            [
+              2,
+              30
+            ],
+            [
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          null,
+          20,
+          30
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "capacity": 3,
+          "operations": [
+            "put",
+            "put",
+            "put",
+            "get",
+            "put",
+            "get",
+            "get",
+            "get"
+          ],
+          "arguments": [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              1
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              2
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          null,
+          1,
+          null,
+          -1,
+          3,
+          4
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "capacity": 2,
+          "operations": [
+            "get",
+            "put",
+            "get",
+            "put",
+            "put",
+            "get",
+            "get"
+          ],
+          "arguments": [
+            [
+              5
+            ],
+            [
+              5,
+              50
+            ],
+            [
+              5
+            ],
+            [
+              6,
+              60
+            ],
+            [
+              7,
+              70
+            ],
+            [
+              5
+            ],
+            [
+              6
+            ]
+          ]
+        },
+        "expectedOutput": [
+          -1,
+          null,
+          50,
+          null,
+          null,
+          -1,
+          60
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Valid Parentheses",
+    "slug": "valid-parentheses",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Stacks & Queues",
+    "subtopic": "Stack",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "A compiler team is writing the bracket-checking stage of a new language. The source line s contains only the characters ( ) { } [ ]. The line is valid only if every opening bracket is closed by the same type of bracket, and brackets are closed in the correct order (the most recently opened one must be closed first).\n\nReturn true if s is valid, otherwise false.",
+    "functionName": "isValid",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= s.length <= 10000",
+      "s consists only of '()[]{}'"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "()"
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "()[]{}"
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "(]"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "([)]"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "{[]}"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "]"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "(("
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Find Median From Data Stream",
+    "slug": "find-median-from-data-stream",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Heaps & Priority Queues",
+    "subtopic": "Two Heaps",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(N)"
+    },
+    "description": "A hospital monitor receives a patient's heart-rate readings one at a time, and at any moment the doctor may ask for the median of all readings received so far (the middle value, or the average of the two middle values if the count is even).\n\nDesign a class MedianFinder with:\n- MedianFinder(): initializes the tracker.\n- addNum(num): adds a new reading.\n- findMedian(): returns the median of all readings so far as a double.\n\nFinding the median should be fast even after hundreds of thousands of readings.",
+    "functionName": "MedianFinder",
+    "parameters": [],
+    "returnType": "void",
+    "constraints": [
+      "-100000 <= num <= 100000",
+      "findMedian is only called after at least one addNum",
+      "At most 50000 calls in total"
+    ],
+    "ioNote": "Test input: 'operations' lists the method names and 'arguments' their arguments. expectedOutput has null for addNum and the median (double) for findMedian. Doubles compared with tolerance 1e-5.",
+    "checker": "tolerance",
+    "testCases": [
+      {
+        "input": {
+          "operations": [
+            "addNum",
+            "addNum",
+            "findMedian",
+            "addNum",
+            "findMedian"
+          ],
+          "arguments": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [],
+            [
+              3
+            ],
+            []
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          1.5,
+          null,
+          2.0
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "operations": [
+            "addNum",
+            "findMedian"
+          ],
+          "arguments": [
+            [
+              -5
+            ],
+            []
+          ]
+        },
+        "expectedOutput": [
+          null,
+          -5.0
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "operations": [
+            "addNum",
+            "addNum",
+            "addNum",
+            "addNum",
+            "findMedian",
+            "addNum",
+            "findMedian"
+          ],
+          "arguments": [
+            [
+              5
+            ],
+            [
+              15
+            ],
+            [
+              1
+            ],
+            [
+              3
+            ],
+            [],
+            [
+              8
+            ],
+            []
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          null,
+          null,
+          4.0,
+          null,
+          5.0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "operations": [
+            "addNum",
+            "addNum",
+            "findMedian",
+            "addNum",
+            "addNum",
+            "findMedian"
+          ],
+          "arguments": [
+            [
+              0
+            ],
+            [
+              0
+            ],
+            [],
+            [
+              100000
+            ],
+            [
+              -100000
+            ],
+            []
+          ]
+        },
+        "expectedOutput": [
+          null,
+          null,
+          0.0,
+          null,
+          null,
+          0.0
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Kth Largest Element in an Array",
+    "slug": "kth-largest-element-in-an-array",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Heaps & Priority Queues",
+    "subtopic": "Quick Select",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A game leaderboard stores every player's score in the unsorted array nums. The organizers want to know who is sitting in the k-th spot: the k-th largest score when scores are ordered from highest to lowest (duplicates each count as separate players).\n\nReturn the k-th largest score. Try to do better than fully sorting the array.",
+    "functionName": "findKthLargest",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= k <= nums.length <= 100000",
+      "-10000 <= nums[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            3,
+            2,
+            1,
+            5,
+            6,
+            4
+          ],
+          "k": 2
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            2,
+            3,
+            1,
+            2,
+            4,
+            5,
+            5,
+            6
+          ],
+          "k": 4
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "k": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            7,
+            7,
+            7
+          ],
+          "k": 3
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            -5,
+            -3
+          ],
+          "k": 2
+        },
+        "expectedOutput": -3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            9,
+            8,
+            7,
+            6,
+            5
+          ],
+          "k": 5
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Fractional Knapsack Problem",
+    "slug": "fractional-knapsack-problem",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Greedy Algorithms",
+    "subtopic": "Greedy",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(1)"
+    },
+    "description": "A jeweller with a bag that can carry weight W visits a market with a set of goods, each with a value and a weight. Unlike gold bars, these goods (spices, powders, gems ground to dust) can be split, so the jeweller can take any fraction of an item and get the same fraction of its value.\n\nGiven the capacity W and the array arr of items (each with value and weight), return the maximum total value that can be carried.",
+    "functionName": "fractionalKnapsack",
+    "parameters": [
+      {
+        "name": "W",
+        "type": "int"
+      },
+      {
+        "name": "arr",
+        "type": "Item[]"
+      }
+    ],
+    "returnType": "double",
+    "constraints": [
+      "1 <= arr.length <= 100000",
+      "0 <= W <= 100000",
+      "1 <= value, weight <= 100000"
+    ],
+    "ioNote": "Each Item is an object {\"value\": int, \"weight\": int}. expectedOutput is rounded to 6 decimals; compare with tolerance 1e-6.",
+    "checker": "tolerance",
+    "testCases": [
+      {
+        "input": {
+          "W": 50,
+          "arr": [
+            {
+              "value": 60,
+              "weight": 10
+            },
+            {
+              "value": 100,
+              "weight": 20
+            },
+            {
+              "value": 120,
+              "weight": 30
+            }
+          ]
+        },
+        "expectedOutput": 240.0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "W": 10,
+          "arr": [
+            {
+              "value": 500,
+              "weight": 30
+            }
+          ]
+        },
+        "expectedOutput": 166.666667,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "W": 0,
+          "arr": [
+            {
+              "value": 10,
+              "weight": 5
+            }
+          ]
+        },
+        "expectedOutput": 0.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 100,
+          "arr": [
+            {
+              "value": 10,
+              "weight": 5
+            },
+            {
+              "value": 20,
+              "weight": 10
+            }
+          ]
+        },
+        "expectedOutput": 30.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 7,
+          "arr": [
+            {
+              "value": 10,
+              "weight": 2
+            },
+            {
+              "value": 5,
+              "weight": 3
+            },
+            {
+              "value": 15,
+              "weight": 5
+            },
+            {
+              "value": 7,
+              "weight": 7
+            },
+            {
+              "value": 6,
+              "weight": 1
+            },
+            {
+              "value": 18,
+              "weight": 4
+            },
+            {
+              "value": 3,
+              "weight": 1
+            }
+          ]
+        },
+        "expectedOutput": 34.0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 15,
+          "arr": [
+            {
+              "value": 4,
+              "weight": 12
+            },
+            {
+              "value": 2,
+              "weight": 2
+            },
+            {
+              "value": 1,
+              "weight": 1
+            },
+            {
+              "value": 2,
+              "weight": 1
+            },
+            {
+              "value": 10,
+              "weight": 4
+            }
+          ]
+        },
+        "expectedOutput": 17.333333,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Coin Change (Minimum Coins)",
+    "slug": "coin-change-minimum-coins",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Greedy Algorithms",
+    "subtopic": "Greedy",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A cashier at a small shop has an unlimited supply of coins in the denominations listed in coins. A customer is owed V rupees in change, and the shop owner wants to hand it over using the fewest possible coins (a greedy 'biggest coin first' approach doesn't always work).\n\nReturn the minimum number of coins needed to make exactly V, or -1 if it can't be done.",
+    "functionName": "minCoins",
+    "parameters": [
+      {
+        "name": "coins",
+        "type": "int[]"
+      },
+      {
+        "name": "V",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= coins.length <= 100",
+      "1 <= coins[i] <= 10000",
+      "0 <= V <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "coins": [
+            25,
+            10,
+            5
+          ],
+          "V": 30
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "coins": [
+            9,
+            6,
+            5,
+            1
+          ],
+          "V": 11
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "coins": [
+            5,
+            10
+          ],
+          "V": 3
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            1,
+            5,
+            6,
+            9
+          ],
+          "V": 11
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            2
+          ],
+          "V": 0
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "coins": [
+            7,
+            2,
+            3,
+            6
+          ],
+          "V": 13
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Remove Invalid Parentheses",
+    "slug": "remove-invalid-parentheses",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Backtracking",
+    "subtopic": "DFS / Backtracking",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(2^N)",
+      "space": "O(N)"
+    },
+    "description": "A code editor's auto-fix feature must repair a string s containing lowercase letters and the brackets '(' and ')'. It may only delete characters, and it must delete the minimum number needed so the brackets become balanced. There can be several different ways to do this.\n\nReturn every distinct string that is valid after the minimum number of removals. The result can be in any order.",
+    "functionName": "removeInvalidParentheses",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "string[]",
+    "constraints": [
+      "1 <= s.length <= 25",
+      "s consists of lowercase letters and '(' and ')'",
+      "At most 20 parentheses in s"
+    ],
+    "ioNote": "Compare as unordered sets of strings. expectedOutput is sorted alphabetically for convenience. If the input is already valid, return [s]; if only letters remain, the answer may be [\"\"].",
+    "checker": "unordered",
+    "testCases": [
+      {
+        "input": {
+          "s": "()())()"
+        },
+        "expectedOutput": [
+          "(())()",
+          "()()()"
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "(a)())()"
+        },
+        "expectedOutput": [
+          "(a())()",
+          "(a)()()"
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": ")("
+        },
+        "expectedOutput": [
+          ""
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abc"
+        },
+        "expectedOutput": [
+          "abc"
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "((("
+        },
+        "expectedOutput": [
+          ""
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "(a(b)c"
+        },
+        "expectedOutput": [
+          "(ab)c",
+          "a(b)c"
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Longest Increasing Subsequence",
+    "slug": "longest-increasing-subsequence",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "DP / Binary Search",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(N)"
+    },
+    "description": "A fitness app records a runner's speed after each kilometre in the array nums. The coach wants to highlight the longest sequence of kilometre marks (not necessarily consecutive, but in order) where the speed is strictly increasing each time.\n\nReturn the length of that longest strictly increasing subsequence.",
+    "functionName": "lengthOfLIS",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 2500",
+      "-10000 <= nums[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            10,
+            9,
+            2,
+            5,
+            3,
+            7,
+            101,
+            18
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            1,
+            0,
+            3,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            7,
+            7,
+            7,
+            7
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            6,
+            7,
+            9,
+            4,
+            10,
+            5,
+            6
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Cheapest Flights Within K Stops",
+    "slug": "cheapest-flights-within-k-stops",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Shortest Path",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(E * K)",
+      "space": "O(V)"
+    },
+    "description": "A traveller wants to fly from city src to city dst. There are n cities (labelled 0 to n-1) and flights[i] = [from, to, price] describes a one-way flight. Because the traveller hates long layovers, the trip may have at most k stops in between (so at most k + 1 flights).\n\nReturn the cheapest total price to get from src to dst within those limits, or -1 if it can't be done.",
+    "functionName": "findCheapestPrice",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "flights",
+        "type": "int[][]"
+      },
+      {
+        "name": "src",
+        "type": "int"
+      },
+      {
+        "name": "dst",
+        "type": "int"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= n <= 100",
+      "0 <= flights.length <= n * (n - 1) / 2",
+      "flights[i].length == 3",
+      "0 <= from, to < n, from != to",
+      "1 <= price <= 10000",
+      "0 <= src, dst, k < n, src != dst",
+      "No duplicate flights between the same ordered pair of cities"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 4,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              2,
+              0,
+              100
+            ],
+            [
+              1,
+              3,
+              600
+            ],
+            [
+              2,
+              3,
+              200
+            ]
+          ],
+          "src": 0,
+          "dst": 3,
+          "k": 1
+        },
+        "expectedOutput": 700,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 3,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              0,
+              2,
+              500
+            ]
+          ],
+          "src": 0,
+          "dst": 2,
+          "k": 1
+        },
+        "expectedOutput": 200,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 3,
+          "flights": [
+            [
+              0,
+              1,
+              100
+            ],
+            [
+              1,
+              2,
+              100
+            ],
+            [
+              0,
+              2,
+              500
+            ]
+          ],
+          "src": 0,
+          "dst": 2,
+          "k": 0
+        },
+        "expectedOutput": 500,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 3,
+          "flights": [
+            [
+              0,
+              1,
+              10
+            ]
+          ],
+          "src": 0,
+          "dst": 2,
+          "k": 2
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 5,
+          "flights": [
+            [
+              0,
+              1,
+              5
+            ],
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              0,
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              2
+            ],
+            [
+              1,
+              4,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ],
+          "src": 0,
+          "dst": 2,
+          "k": 2
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 2,
+          "flights": [
+            [
+              0,
+              1,
+              7
+            ]
+          ],
+          "src": 0,
+          "dst": 1,
+          "k": 0
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Dijkstra's Shortest Path Algorithm",
+    "slug": "dijkstras-shortest-path-algorithm",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Shortest Path",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(E log V)",
+      "space": "O(V)"
+    },
+    "description": "A delivery company operates in a city of V junctions (numbered 0 to V-1). The road map is an adjacency list adj where adj[u] holds pairs [v, w], meaning there is a road between u and v of length w (roads are two-way). A courier starts at junction S.\n\nReturn an array of size V where the i-th element is the length of the shortest route from S to junction i.",
+    "functionName": "dijkstra",
+    "parameters": [
+      {
+        "name": "V",
+        "type": "int"
+      },
+      {
+        "name": "adj",
+        "type": "List<List<int[]>>"
+      },
+      {
+        "name": "S",
+        "type": "int"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "1 <= V <= 1000",
+      "0 <= S < V",
+      "1 <= w <= 1000",
+      "The graph is connected"
+    ],
+    "ioNote": "adj is a list of lists; adj[u] is a list of [v, w] pairs. For every edge (u,v,w) both directions are present in the adjacency list.",
+    "testCases": [
+      {
+        "input": {
+          "V": 3,
+          "adj": [
+            [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                6
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                3
+              ]
+            ],
+            [
+              [
+                1,
+                3
+              ],
+              [
+                0,
+                6
+              ]
+            ]
+          ],
+          "S": 2
+        },
+        "expectedOutput": [
+          4,
+          3,
+          0
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "V": 5,
+          "adj": [
+            [
+              [
+                1,
+                4
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                4
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3,
+                5
+              ]
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                5
+              ],
+              [
+                4,
+                3
+              ]
+            ],
+            [
+              [
+                3,
+                3
+              ]
+            ]
+          ],
+          "S": 0
+        },
+        "expectedOutput": [
+          0,
+          3,
+          1,
+          4,
+          7
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "V": 1,
+          "adj": [
+            []
+          ],
+          "S": 0
+        },
+        "expectedOutput": [
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "V": 6,
+          "adj": [
+            [
+              [
+                1,
+                7
+              ],
+              [
+                2,
+                9
+              ],
+              [
+                5,
+                14
+              ]
+            ],
+            [
+              [
+                0,
+                7
+              ],
+              [
+                2,
+                10
+              ],
+              [
+                3,
+                15
+              ]
+            ],
+            [
+              [
+                0,
+                9
+              ],
+              [
+                1,
+                10
+              ],
+              [
+                3,
+                11
+              ],
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              [
+                1,
+                15
+              ],
+              [
+                2,
+                11
+              ],
+              [
+                4,
+                6
+              ]
+            ],
+            [
+              [
+                3,
+                6
+              ],
+              [
+                5,
+                9
+              ]
+            ],
+            [
+              [
+                0,
+                14
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                4,
+                9
+              ]
+            ]
+          ],
+          "S": 0
+        },
+        "expectedOutput": [
+          0,
+          7,
+          9,
+          20,
+          20,
+          11
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "V": 4,
+          "adj": [
+            [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                10
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                1,
+                1
+              ],
+              [
+                3,
+                1
+              ]
+            ],
+            [
+              [
+                2,
+                1
+              ],
+              [
+                0,
+                10
+              ]
+            ]
+          ],
+          "S": 3
+        },
+        "expectedOutput": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Swim In Rising Water",
+    "slug": "swim-in-rising-water",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Binary Search / DFS",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N^2 log N)",
+      "space": "O(N^2)"
+    },
+    "description": "After a storm, an n x n field is flooded. grid[i][j] is the elevation of the cell at row i, column j. At time t the water level everywhere is t. You can swim from a cell to a 4-directionally adjacent cell only if both cells have elevation <= t (swimming itself takes no time). You start at the top-left cell (0, 0) at time 0 and want to reach the bottom-right cell (n-1, n-1).\n\nReturn the least time until you can reach the bottom-right cell.",
+    "functionName": "swimInWater",
+    "parameters": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "n == grid.length == grid[i].length",
+      "1 <= n <= 50",
+      "0 <= grid[i][j] < n * n",
+      "All values in grid are unique"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              24,
+              23,
+              22,
+              21,
+              5
+            ],
+            [
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            [
+              11,
+              17,
+              18,
+              19,
+              20
+            ],
+            [
+              10,
+              9,
+              8,
+              7,
+              6
+            ]
+          ]
+        },
+        "expectedOutput": 16,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              3,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              5,
+              4,
+              3
+            ],
+            [
+              6,
+              7,
+              8
+            ]
+          ]
+        },
+        "expectedOutput": 8,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              7,
+              1,
+              9
+            ],
+            [
+              3,
+              8,
+              4
+            ],
+            [
+              2,
+              5,
+              6
+            ]
+          ]
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Topological Sort",
+    "slug": "topological-sort",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Kahn's Algorithm / DFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V)"
+    },
+    "description": "A university has V courses numbered 0 to V-1. adj[u] lists the courses that can only be taken after course u is completed (an edge u -> v means u is a prerequisite of v). The prerequisite structure has no cycles. The registrar needs a course order in which every course appears after all its prerequisites.\n\nReturn any valid ordering of the V courses.",
+    "functionName": "topologicalSort",
+    "parameters": [
+      {
+        "name": "V",
+        "type": "int"
+      },
+      {
+        "name": "adj",
+        "type": "List<List<Integer>>"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "1 <= V <= 10000",
+      "The graph is a directed acyclic graph"
+    ],
+    "ioNote": "Multiple valid answers exist. Grade with a checker that verifies the returned array is a permutation of 0..V-1 and that for every edge u -> v, u appears before v. expectedOutput is one valid answer (Kahn's BFS order).",
+    "checker": "topological",
+    "testCases": [
+      {
+        "input": {
+          "V": 4,
+          "adj": [
+            [
+              1
+            ],
+            [
+              2
+            ],
+            [],
+            [
+              1,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": [
+          0,
+          3,
+          1,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "V": 6,
+          "adj": [
+            [],
+            [],
+            [
+              3
+            ],
+            [
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [
+          4,
+          5,
+          2,
+          0,
+          3,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "V": 1,
+          "adj": [
+            []
+          ]
+        },
+        "expectedOutput": [
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "V": 3,
+          "adj": [
+            [],
+            [],
+            []
+          ]
+        },
+        "expectedOutput": [
+          0,
+          1,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "V": 5,
+          "adj": [
+            [
+              1,
+              2
+            ],
+            [
+              3
+            ],
+            [
+              3
+            ],
+            [
+              4
+            ],
+            []
+          ]
+        },
+        "expectedOutput": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Word Ladder",
+    "slug": "word-ladder",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "BFS",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(M^2 * N)",
+      "space": "O(M^2 * N)"
+    },
+    "description": "In a word-transformation game, a player starts with beginWord and wants to reach endWord by changing exactly one letter at a time. Every intermediate word must appear in the list wordList (beginWord itself does not need to be in it).\n\nReturn the number of words in the shortest transformation sequence from beginWord to endWord (counting both ends), or 0 if no such sequence exists.",
+    "functionName": "ladderLength",
+    "parameters": [
+      {
+        "name": "beginWord",
+        "type": "string"
+      },
+      {
+        "name": "endWord",
+        "type": "string"
+      },
+      {
+        "name": "wordList",
+        "type": "string[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= beginWord.length <= 10",
+      "endWord.length == beginWord.length",
+      "1 <= wordList.length <= 5000",
+      "All words have the same length and contain only lowercase English letters",
+      "beginWord != endWord",
+      "All words in wordList are unique"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log",
+            "cog"
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "beginWord": "hit",
+          "endWord": "cog",
+          "wordList": [
+            "hot",
+            "dot",
+            "dog",
+            "lot",
+            "log"
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "beginWord": "a",
+          "endWord": "c",
+          "wordList": [
+            "a",
+            "b",
+            "c"
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "beginWord": "lost",
+          "endWord": "cost",
+          "wordList": [
+            "most",
+            "fist",
+            "lost",
+            "cost",
+            "fish"
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "beginWord": "cat",
+          "endWord": "dog",
+          "wordList": [
+            "cot",
+            "cog",
+            "dog",
+            "dot"
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "beginWord": "red",
+          "endWord": "tax",
+          "wordList": [
+            "ted",
+            "tex",
+            "red",
+            "tax",
+            "tad",
+            "den",
+            "rex",
+            "pee"
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Count Number of Bits to be Flipped",
+    "slug": "count-number-of-bits-to-be-flipped",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Bit Manipulation",
+    "subtopic": "XOR",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "Two sensors report their state as integers A and B, where each bit represents an on/off switch. An engineer wants to know how many individual switches would need to be toggled to turn A's pattern into B's pattern.\n\nReturn the number of bit positions in which A and B differ.",
+    "functionName": "countBitsFlip",
+    "parameters": [
+      {
+        "name": "A",
+        "type": "int"
+      },
+      {
+        "name": "B",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "0 <= A, B <= 2147483647"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "A": 10,
+          "B": 20
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "A": 20,
+          "B": 25
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "A": 0,
+          "B": 0
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "A": 7,
+          "B": 8
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "A": 1,
+          "B": 2147483647
+        },
+        "expectedOutput": 30,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "A": 255,
+          "B": 0
+        },
+        "expectedOutput": 8,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Aggressive Cows",
+    "slug": "aggressive-cows",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search on Answer",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(1)"
+    },
+    "description": "A farmer has n stalls along a straight barn, at positions given in stalls (unsorted). He needs to place k aggressive cows into different stalls. Cows fight when they are close, so he wants the smallest distance between any two of his cows to be as large as possible.\n\nReturn that largest possible minimum distance.",
+    "functionName": "solve",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      },
+      {
+        "name": "stalls",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "2 <= k <= n <= 100000",
+      "0 <= stalls[i] <= 1000000000",
+      "All stall positions are distinct (in tests)"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 5,
+          "k": 3,
+          "stalls": [
+            1,
+            2,
+            4,
+            8,
+            9
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 5,
+          "k": 2,
+          "stalls": [
+            1,
+            2,
+            8,
+            4,
+            9
+          ]
+        },
+        "expectedOutput": 8,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 2,
+          "k": 2,
+          "stalls": [
+            5,
+            1
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 6,
+          "k": 4,
+          "stalls": [
+            0,
+            3,
+            4,
+            7,
+            10,
+            9
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 4,
+          "k": 4,
+          "stalls": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 3,
+          "k": 2,
+          "stalls": [
+            1,
+            1000000000,
+            500
+          ]
+        },
+        "expectedOutput": 999999999,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Binary Search",
+    "slug": "binary-search",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "A phone contacts app stores contact IDs in a sorted array nums (ascending, all distinct). When a user types an ID, the app must find it quickly instead of scanning every entry.\n\nReturn the index of target in nums, or -1 if it isn't present. The search must run in O(log N).",
+    "functionName": "search",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 10000",
+      "-10000 <= nums[i], target <= 10000",
+      "All values in nums are unique and sorted ascending"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            -1,
+            0,
+            3,
+            5,
+            9,
+            12
+          ],
+          "target": 9
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            0,
+            3,
+            5,
+            9,
+            12
+          ],
+          "target": 2
+        },
+        "expectedOutput": -1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            5
+          ],
+          "target": 5
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5
+          ],
+          "target": -5
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "target": 1
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11,
+            13
+          ],
+          "target": 13
+        },
+        "expectedOutput": 6,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Painter's Partition Problem",
+    "slug": "painters-partition-problem",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search on Answer",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N log(sum))",
+      "space": "O(1)"
+    },
+    "description": "A hotel has n corridors to be painted. boards[i] is the time one painter needs to paint the i-th board on the wall, and boards are in a row. The manager hires k painters. Each painter is assigned a contiguous group of boards (no board is split), and all painters work simultaneously, so the job finishes when the slowest painter finishes.\n\nReturn the minimum time by which all boards can be painted.",
+    "functionName": "minTimeToPaint",
+    "parameters": [
+      {
+        "name": "boards",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= boards.length <= 100000",
+      "1 <= k <= boards.length",
+      "1 <= boards[i] <= 10000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "boards": [
+            10,
+            20,
+            30,
+            40
+          ],
+          "k": 2
+        },
+        "expectedOutput": 60,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "boards": [
+            5,
+            10,
+            30,
+            20,
+            15
+          ],
+          "k": 3
+        },
+        "expectedOutput": 35,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "boards": [
+            7
+          ],
+          "k": 1
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "boards": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 5
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "boards": [
+            10,
+            10,
+            10,
+            10
+          ],
+          "k": 1
+        },
+        "expectedOutput": 40,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "boards": [
+            100,
+            200,
+            300,
+            400
+          ],
+          "k": 2
+        },
+        "expectedOutput": 600,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Split Array Largest Sum",
+    "slug": "split-array-largest-sum",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Searching & Sorting",
+    "subtopic": "Binary Search on Answer",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N log(sum))",
+      "space": "O(1)"
+    },
+    "description": "A courier company must ship a line of parcels whose weights are in nums, in the given order. Parcels are grouped into exactly k consecutive batches, each sent by one truck. Management wants to keep the heaviest truck's load as small as possible.\n\nReturn the minimum possible value of the largest batch sum when nums is split into k non-empty contiguous batches.",
+    "functionName": "splitArray",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 1000",
+      "0 <= nums[i] <= 1000000",
+      "1 <= k <= min(50, nums.length)"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            7,
+            2,
+            5,
+            10,
+            8
+          ],
+          "k": 2
+        },
+        "expectedOutput": 18,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "k": 2
+        },
+        "expectedOutput": 9,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            4,
+            4
+          ],
+          "k": 3
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5
+          ],
+          "k": 1
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            3,
+            1,
+            2,
+            4,
+            3
+          ],
+          "k": 3
+        },
+        "expectedOutput": 6,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            10,
+            5,
+            13,
+            4,
+            8,
+            4,
+            5,
+            11,
+            14,
+            9,
+            16,
+            10,
+            20,
+            8
+          ],
+          "k": 8
+        },
+        "expectedOutput": 25,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Chocolate Distribution Problem",
+    "slug": "chocolate-distribution-problem",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Sorting",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(1)"
+    },
+    "description": "A teacher has n packets of chocolates; a[i] is the number of chocolates in packet i. She must give exactly one packet to each of m students. To keep things fair, she wants the difference between the largest and the smallest packet handed out to be as small as possible.\n\nReturn that minimum difference. If there are fewer packets than students (m > n), return -1.",
+    "functionName": "findMinDiff",
+    "parameters": [
+      {
+        "name": "a",
+        "type": "int[]"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "m",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= m <= n <= 100000 (m > n is handled by returning -1)",
+      "1 <= a[i] <= 1000000000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "a": [
+            7,
+            3,
+            2,
+            4,
+            9,
+            12,
+            56
+          ],
+          "n": 7,
+          "m": 3
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "a": [
+            3,
+            4,
+            1,
+            9,
+            56,
+            7,
+            9,
+            12
+          ],
+          "n": 8,
+          "m": 5
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "a": [
+            5
+          ],
+          "n": 1,
+          "m": 1
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "a": [
+            1,
+            2,
+            3
+          ],
+          "n": 3,
+          "m": 5
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "a": [
+            10,
+            10,
+            10,
+            10
+          ],
+          "n": 4,
+          "m": 2
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "a": [
+            12,
+            4,
+            7,
+            9,
+            2,
+            23,
+            25,
+            41,
+            30,
+            40,
+            28,
+            42,
+            30,
+            44,
+            48,
+            43,
+            50
+          ],
+          "n": 17,
+          "m": 7
+        },
+        "expectedOutput": 10,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Find Minimum in Rotated Sorted Array",
+    "slug": "find-minimum-in-rotated-sorted-array",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Binary Search",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "A bus runs a circular route and its stops are sorted by altitude. The timetable printout starts from an arbitrary stop, so the sorted list of altitudes appears rotated, like [3,4,5,1,2]. All altitudes are distinct. The mechanic needs the lowest altitude on the route.\n\nReturn the minimum element of the rotated array in O(log N).",
+    "functionName": "findMin",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 5000",
+      "-5000 <= nums[i] <= 5000",
+      "All values are unique",
+      "nums is sorted ascending, then rotated between 1 and n times"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            3,
+            4,
+            5,
+            1,
+            2
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            4,
+            5,
+            6,
+            7,
+            0,
+            1,
+            2
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            11,
+            13,
+            15,
+            17
+          ]
+        },
+        "expectedOutput": 11,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Contains Duplicate",
+    "slug": "contains-duplicate",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays & Hashing",
+    "subtopic": "Contains Duplicate",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "An event organizer scans ticket IDs at the gate. If the same ticket ID is scanned twice, that means somebody made a copy. Given the array nums of scanned IDs, the organizer wants a quick check for fraud.\n\nReturn true if any ID appears at least twice, and false if all IDs are distinct.",
+    "functionName": "hasDuplicate",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= nums.length <= 100000",
+      "-1000000000 <= nums[i] <= 1000000000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            1
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            1,
+            3,
+            3,
+            4,
+            3,
+            2,
+            4,
+            2
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -1,
+            0,
+            1,
+            -1
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1000000000,
+            -1000000000
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Reverse Linked List",
+    "slug": "reverse-linked-list",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Linked List",
+    "subtopic": "Linked List Manipulation",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A music player stores a playlist as a singly linked list, where each song points only to the next one. The user taps 'play in reverse', so the player must flip every link so the last song becomes the first, without creating a new list.\n\nGiven the head of the playlist, reverse it and return the new head.",
+    "functionName": "reverseList",
+    "parameters": [
+      {
+        "name": "head",
+        "type": "ListNode"
+      }
+    ],
+    "returnType": "ListNode",
+    "constraints": [
+      "0 <= number of nodes <= 5000",
+      "-5000 <= Node.val <= 5000"
+    ],
+    "ioNote": "Linked lists are given as arrays of node values in order (empty array = empty list). The output is likewise an array.",
+    "testCases": [
+      {
+        "input": {
+          "head": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": [
+          5,
+          4,
+          3,
+          2,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": [
+          2,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": []
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            7
+          ]
+        },
+        "expectedOutput": [
+          7
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            9,
+            8,
+            7,
+            6
+          ]
+        },
+        "expectedOutput": [
+          6,
+          7,
+          8,
+          9
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            -1,
+            0,
+            -1
+          ]
+        },
+        "expectedOutput": [
+          -1,
+          0,
+          -1
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Merge Two Sorted Lists",
+    "slug": "merge-two-sorted-lists",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Linked List",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N + M)",
+      "space": "O(1)"
+    },
+    "description": "Two cashiers each hold a queue of customers ordered by arrival token, stored as singly linked lists list1 and list2, both sorted ascending. When one cashier goes on break, the queues are combined into a single sorted queue by splicing the existing nodes together.\n\nReturn the head of the merged sorted list.",
+    "functionName": "mergeTwoLists",
+    "parameters": [
+      {
+        "name": "list1",
+        "type": "ListNode"
+      },
+      {
+        "name": "list2",
+        "type": "ListNode"
+      }
+    ],
+    "returnType": "ListNode",
+    "constraints": [
+      "0 <= length of each list <= 50",
+      "-100 <= Node.val <= 100",
+      "Both lists are sorted in non-decreasing order"
+    ],
+    "ioNote": "Linked lists are given as arrays of node values in order (empty array = empty list). The output is likewise an array.",
+    "testCases": [
+      {
+        "input": {
+          "list1": [
+            1,
+            2,
+            4
+          ],
+          "list2": [
+            1,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": [
+          1,
+          1,
+          2,
+          3,
+          4,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "list1": [],
+          "list2": []
+        },
+        "expectedOutput": [],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "list1": [],
+          "list2": [
+            0
+          ]
+        },
+        "expectedOutput": [
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "list1": [
+            5
+          ],
+          "list2": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "list1": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "list2": [
+            2,
+            4,
+            6,
+            8
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "list1": [
+            -3,
+            -1
+          ],
+          "list2": [
+            -2,
+            0,
+            2
+          ]
+        },
+        "expectedOutput": [
+          -3,
+          -2,
+          -1,
+          0,
+          2
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Linked List Cycle",
+    "slug": "linked-list-cycle",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Linked List",
+    "subtopic": "Fast & Slow Pointers",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A treasure-hunt game connects checkpoints as a singly linked list, where each checkpoint points to the next. A faulty checkpoint may point back to an earlier one, trapping players in an endless loop. The organizers need to know whether the trail ever loops back.\n\nGiven the head of the list, return true if there is a cycle, otherwise false. Try to use O(1) extra space.",
+    "functionName": "hasCycle",
+    "parameters": [
+      {
+        "name": "head",
+        "type": "ListNode"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= number of nodes <= 10000",
+      "-100000 <= Node.val <= 100000"
+    ],
+    "ioNote": "Test input: 'head' is the array of node values and 'pos' is the index of the node that the last node's next pointer connects to (-1 means no cycle). pos is only used to build the list and is not passed to your function.",
+    "testCases": [
+      {
+        "input": {
+          "head": [
+            3,
+            2,
+            0,
+            -4
+          ],
+          "pos": 1
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2
+          ],
+          "pos": 0
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": [
+            1
+          ],
+          "pos": -1
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "pos": -1
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "pos": 4
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [],
+          "pos": -1
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Middle of the Linked List",
+    "slug": "middle-of-the-linked-list",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Linked List",
+    "subtopic": "Fast & Slow Pointers",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A DJ has a playlist stored as a singly linked list and wants to jump to the middle song without first counting how many songs there are in a separate pass.\n\nGiven the head of the list, return the middle node. If the list has two middle nodes, return the second one. The returned list is judged by the nodes from the middle to the end.",
+    "functionName": "middleNode",
+    "parameters": [
+      {
+        "name": "head",
+        "type": "ListNode"
+      }
+    ],
+    "returnType": "ListNode",
+    "constraints": [
+      "1 <= number of nodes <= 100",
+      "1 <= Node.val <= 100"
+    ],
+    "ioNote": "Linked lists are given as arrays of node values in order (empty array = empty list). The output is likewise an array. The expected output is the sublist starting at the middle node.",
+    "testCases": [
+      {
+        "input": {
+          "head": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": [
+          3,
+          4,
+          5
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        },
+        "expectedOutput": [
+          4,
+          5,
+          6
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "head": [
+            1
+          ]
+        },
+        "expectedOutput": [
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": [
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            10,
+            20,
+            30
+          ]
+        },
+        "expectedOutput": [
+          20,
+          30
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "head": [
+            4,
+            8,
+            15,
+            16,
+            23,
+            42,
+            99,
+            100
+          ]
+        },
+        "expectedOutput": [
+          23,
+          42,
+          99,
+          100
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Remove Duplicates from Sorted Array",
+    "slug": "remove-duplicates-from-sorted-array",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A registry keeps citizen IDs in a sorted array nums, but data entry has left some IDs repeated. To clean it up in place (without allocating another array), keep only the first occurrence of every ID and shift them to the front of the array.\n\nReturn k, the number of unique IDs. The first k elements of nums must contain the unique values in their original order; whatever is beyond k does not matter.",
+    "functionName": "removeDuplicates",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 30000",
+      "-100 <= nums[i] <= 100",
+      "nums is sorted in non-decreasing order"
+    ],
+    "ioNote": "expectedOutput is k. expectedModifiedArray is what nums[0..k-1] must contain after the call.",
+    "checker": "prefix",
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            2
+          ]
+        },
+        "expectedOutput": 2,
+        "expectedModifiedArray": [
+          1,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            2,
+            2,
+            3,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": 5,
+        "expectedModifiedArray": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "expectedModifiedArray": [
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 3,
+        "expectedModifiedArray": [
+          1,
+          2,
+          3
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            5,
+            5,
+            5
+          ]
+        },
+        "expectedOutput": 1,
+        "expectedModifiedArray": [
+          5
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            -3,
+            -3,
+            0,
+            0,
+            2
+          ]
+        },
+        "expectedOutput": 3,
+        "expectedModifiedArray": [
+          -3,
+          0,
+          2
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Remove Element",
+    "slug": "remove-element",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Two Pointers",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A warehouse keeps stock counts in an array nums. A batch labelled val has been recalled and must be removed from the array in place, without extra memory, and the remaining items should be packed at the front.\n\nReturn k, the number of elements that are not equal to val. The first k elements of nums must be those elements (in any order); what lies beyond k doesn't matter.",
+    "functionName": "removeElement",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "val",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "0 <= nums.length <= 100",
+      "0 <= nums[i] <= 50",
+      "0 <= val <= 100"
+    ],
+    "ioNote": "expectedOutput is k. expectedModifiedArray lists the kept values; compare nums[0..k-1] against it as an unordered multiset.",
+    "checker": "prefix_unordered",
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            3,
+            2,
+            2,
+            3
+          ],
+          "val": 3
+        },
+        "expectedOutput": 2,
+        "expectedModifiedArray": [
+          2,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            1,
+            2,
+            2,
+            3,
+            0,
+            4,
+            2
+          ],
+          "val": 2
+        },
+        "expectedOutput": 5,
+        "expectedModifiedArray": [
+          0,
+          1,
+          3,
+          0,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [],
+          "val": 1
+        },
+        "expectedOutput": 0,
+        "expectedModifiedArray": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "val": 1
+        },
+        "expectedOutput": 0,
+        "expectedModifiedArray": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            4,
+            5
+          ],
+          "val": 6
+        },
+        "expectedOutput": 2,
+        "expectedModifiedArray": [
+          4,
+          5
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2,
+            2
+          ],
+          "val": 2
+        },
+        "expectedOutput": 0,
+        "expectedModifiedArray": [],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Search Insert Position",
+    "slug": "search-insert-position",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Binary Search",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "A bookshelf keeps book IDs in ascending order in the array nums (all distinct). A librarian gets a new book with ID target and wants to know where it belongs: if the ID already exists, its current position; otherwise the position where it must be inserted so the order is preserved.\n\nReturn that index, using an O(log N) algorithm.",
+    "functionName": "searchInsert",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 10000",
+      "-10000 <= nums[i], target <= 10000",
+      "nums contains distinct values sorted ascending"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "target": 5
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "target": 2
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "target": 7
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            3,
+            5,
+            6
+          ],
+          "target": 0
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 1
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          "target": 9
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Plus One",
+    "slug": "plus-one",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Arrays",
+    "subtopic": "Array Manipulation",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "An old odometer stores its reading as an array of digits, most significant digit first (for example 1,2,3 means 123). After the next kilometre it must show one more than the current reading, and it should handle carries correctly (like 999 becoming 1000).\n\nGiven the array digits, return the array of digits representing the reading plus one.",
+    "functionName": "plusOne",
+    "parameters": [
+      {
+        "name": "digits",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "1 <= digits.length <= 100",
+      "0 <= digits[i] <= 9",
+      "No leading zeros except the number 0 itself"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "digits": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "digits": [
+            4,
+            3,
+            2,
+            1
+          ]
+        },
+        "expectedOutput": [
+          4,
+          3,
+          2,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "digits": [
+            9
+          ]
+        },
+        "expectedOutput": [
+          1,
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "digits": [
+            9,
+            9,
+            9
+          ]
+        },
+        "expectedOutput": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "digits": [
+            0
+          ]
+        },
+        "expectedOutput": [
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "digits": [
+            1,
+            9,
+            9
+          ]
+        },
+        "expectedOutput": [
+          2,
+          0,
+          0
+        ],
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Sqrt(x)",
+    "slug": "sqrt-x",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Binary Search",
+    "subtopic": "Binary Search on Answer",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(log N)",
+      "space": "O(1)"
+    },
+    "description": "A calculator app has lost its square-root button and can't use any built-in power or root function. For an input x, it should show the integer part of the square root: the largest integer r such that r * r <= x.\n\nGiven a non-negative integer x, return that value.",
+    "functionName": "mySqrt",
+    "parameters": [
+      {
+        "name": "x",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "0 <= x <= 2147483647"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "x": 4
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "x": 8
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "x": 0
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "x": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "x": 2147483647
+        },
+        "expectedOutput": 46340,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "x": 99999999
+        },
+        "expectedOutput": 9999,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Climbing Stairs",
+    "slug": "climbing-stairs",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A little robot wants to climb a staircase with n steps. Each move it can hop either 1 step or 2 steps. The designers want to know how many different sequences of hops take it exactly to the top.\n\nGiven n, return the number of distinct ways to climb the staircase.",
+    "functionName": "climbStairs",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= n <= 45"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 2
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 3
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 5
+        },
+        "expectedOutput": 8,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 10
+        },
+        "expectedOutput": 89,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 45
+        },
+        "expectedOutput": 1836311903,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Valid Anagram",
+    "slug": "valid-anagram",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Strings",
+    "subtopic": "Hash Map",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "A word-game app must check if a player's answer t is a valid rearrangement of the letters of the puzzle string s, using every letter exactly as many times as it appears.\n\nReturn true if t is an anagram of s, otherwise false.",
+    "functionName": "isAnagram",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= s.length, t.length <= 50000",
+      "s and t consist of lowercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "anagram",
+          "t": "nagaram"
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "rat",
+          "t": "car"
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "a",
+          "t": "a"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "ab",
+          "t": "a"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "listen",
+          "t": "silent"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "aacc",
+          "t": "ccac"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Symmetric Tree",
+    "slug": "symmetric-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "Binary Tree Traversal",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "A jeweller designs a pendant whose structure is described as a binary tree of gems (each node is a gem with a value). The pendant looks elegant only if the left half is a perfect mirror image of the right half, meaning the same shape and the same values at mirrored positions.\n\nGiven the root of the tree, return true if the tree is symmetric around its centre, otherwise false.",
+    "functionName": "isSymmetric",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= number of nodes <= 1000",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            3,
+            4,
+            4,
+            3
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            null,
+            3,
+            null,
+            3
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            null,
+            3,
+            3
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            2,
+            null,
+            2
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ]
+  },
+  {
+    "title": "Maximum Depth of Binary Tree",
+    "slug": "maximum-depth-of-binary-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "Binary Tree Traversal",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "A company's org chart is a binary tree where each manager has at most two direct reports. The CEO wants to know the maximum number of levels of management from the top boss down to the furthest employee (counting both the CEO and that employee).\n\nGiven the root of the tree, return its maximum depth. An empty tree has depth 0.",
+    "functionName": "maxDepth",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "0 <= number of nodes <= 10000",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            null,
+            null,
+            5,
+            6
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            null,
+            3,
+            null,
+            4,
+            null,
+            5
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      }
+    ]
+  }
+]

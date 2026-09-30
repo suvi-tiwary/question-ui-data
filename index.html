@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickRuit - Technical Assessment</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: #f5f7fb;
+            color: #17191c;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            background: white;
+            border-bottom: 1px solid #e9ebef;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #635bff;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-link {
+            font-size: 14px;
+            color: #62666d;
+        }
+
+        .nav-button {
+            border: none;
+            background: #17191c;
+            color: white;
+            padding: 10px 17px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* MAIN */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .hero {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 30px;
+            background: #eeecff;
+            color: #554bd8;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.05;
+            letter-spacing: -2.5px;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            color: #6b7078;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* ASSESSMENT CARD */
+
+        .assessment-card {
+            max-width: 850px;
+            margin: 55px auto 0;
+            background: white;
+            border: 1px solid #e6e8ec;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 15px 45px rgba(20, 25, 35, 0.06);
+        }
+
+        .card-title {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        .card-subtitle {
+            font-size: 14px;
+            color: #777c84;
+            margin-bottom: 28px;
+        }
+
+        .selectors {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        select {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid #dfe2e7;
+            border-radius: 10px;
+            background: white;
+            font-size: 15px;
+            color: #25282d;
+            outline: none;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: #635bff;
+            box-shadow: 0 0 0 3px rgba(99, 91, 255, 0.1);
+        }
+
+        .start-button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #635bff;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .start-button:hover {
+            background: #5148e5;
+        }
+
+        /* QUESTION SECTION */
+
+        #questionSection {
+            display: none;
+            max-width: 850px;
+            margin: 40px auto;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .question-count {
+            font-size: 14px;
+            color: #70757d;
+        }
+
+        .difficulty {
+            padding: 6px 10px;
+            background: #f0f1f4;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .question-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 30px;
+        }
+
+        .question-category {
+            color: #635bff;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .question-title {
+            font-size: 22px;
+            line-height: 1.4;
+            margin-bottom: 25px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 180px;
+            resize: vertical;
+            border: 1px solid #dfe2e7;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 14px;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: #635bff;
+        }
+
+        .question-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 18px;
+        }
+
+        .next-button {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 9px;
+            background: #17191c;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            .nav-link {
+                display: none;
+            }
+
+            main {
+                padding: 45px 18px;
+            }
+
+            h1 {
+                letter-spacing: -1.5px;
+            }
+
+            .assessment-card {
+                padding: 23px;
+                margin-top: 35px;
+            }
+
+            .selectors {
+                grid-template-columns: 1fr;
+            }
+
+            .question-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+            Quick<span>Ruit</span>
+        </div>
+
+        <div class="nav-right">
+
+            <div class="nav-link">
+                How it works
+            </div>
+
+            <div class="nav-link">
+                Assessments
+            </div>
+
+            <button class="nav-button">
+                Sign in
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="badge">
+                AI-Powered Technical Assessment
+            </div>
+
+            <h1>
+                Find out what you<br>
+                actually know.
+            </h1>
+
+            <p>
+                Select a job position and experience level.
+                Get questions based on the technical
+                requirements of that role.
+            </p>
+
+        </section>
+
+
+        <!-- ASSESSMENT SELECTOR -->
+
+        <section class="assessment-card">
+
+            <div class="card-title">
+                Create your assessment
+            </div>
+
+            <div class="card-subtitle">
+                Choose the position you're applying for.
+            </div>
+
+
+            <div class="selectors">
+
+                <!-- JOB POSITION -->
+
+                <div class="field">
+
+                    <label for="job">
+                        Job Position
+                    </label>
+
+                    <select id="job">
+
+                        <option value="">
+                            Select a position
+                        </option>
+
+                        <option value="software_engineer">
+                            Software Engineer
+                        </option>
+
+                        <option value="ml_engineer">
+                            ML Engineer
+                        </option>
+
+                        <option value="frontend">
+                            Frontend Engineer
+                        </option>
+
+                        <option value="backend">
+                            Backend Engineer
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- EXPERIENCE LEVEL -->
+
+                <div class="field">
+
+                    <label for="level">
+                        Experience Level
+                    </label>
+
+                    <select id="level">
+
+                        <option value="">
+                            Select level
+                        </option>
+
+                        <option value="junior">
+                            Junior
+                        </option>
+
+                        <option value="senior">
+                            Senior
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="start-button"
+                onclick="startAssessment()"
+            >
+                Start Assessment →
+            </button>
+
+        </section>
+
+
+        <!-- QUESTIONS -->
+
+        <section id="questionSection">
+
+            <div class="question-header">
+
+                <div
+                    class="question-count"
+                    id="questionCount"
+                >
+                    Question 1 of 5
+                </div>
+
+                <div
+                    class="difficulty"
+                    id="difficulty"
+                >
+                    Medium
+                </div>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <div
+                    class="question-category"
+                >
+                    DSA · Arrays
+                </div>
+
+
+                <div
+                    class="question-title"
+                    id="questionText"
+                >
+                    Loading question...
+                </div>
+
+
+                <textarea
+                    id="answer"
+                    placeholder="Write your solution here..."
+                ></textarea>
+
+
+                <div class="question-actions">
+
+                    <button
+                        class="next-button"
+                        onclick="nextQuestion()"
+                    >
+                        Next Question →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        /*
+        ============================================
+        TEMPORARY QUESTION BANK
+        ============================================
+
+        Later this data should come from your
+        FastAPI backend + database.
+        */
+
+
+        const questionBank = {
+
+            /* =====================================
+               SOFTWARE ENGINEER
+               ===================================== */
+
+            software_engineer: {
+
+                /* ---------- JUNIOR ---------- */
+
+                junior: [
+
+                    {
+                        category: "DSA · Arrays",
+                        difficulty: "Easy",
+
+                        question:
+                        "Given an array of integers, find the largest element in the array."
+                    },
+
+                    {
+                        category: "DSA · Arrays",
+                        difficulty: "Medium",
+
+                        question:
+                        "Given an array and a target value, find two numbers whose sum equals the target."
+                    },
+
+                    {
+                        category: "DSA · Strings",
+                        difficulty: "Medium",
+
+                        question:
+                        "Determine whether a given string is a palindrome without using a reverse function."
+                    },
+
+                    {
+                        category: "DSA · Linked List",
+                        difficulty: "Medium",
+
+                        question:
+                        "Reverse a singly linked list and return the new head."
+                    },
+
+                    {
+                        category: "DSA · Trees",
+                        difficulty: "Medium",
+
+                        question:
+                        "Return the level-order traversal of a binary tree."
+                    }
+
+                ],
+
+
+                /* ---------- SENIOR ---------- */
+
+                senior: [
+
+                    {
+                        category: "DSA · Graphs",
+                        difficulty: "Hard",
+
+                        question:
+                        "Given a weighted graph, find the shortest path between two vertices and explain the complexity of your solution."
+                    },
+
+                    {
+                        category: "DSA · Dynamic Programming",
+                        difficulty: "Hard",
+
+                        question:
+                        "Design a dynamic programming solution for the longest increasing subsequence problem and explain how you would optimize it."
+                    },
+
+                    {
+                        category: "DSA · Trees",
+                        difficulty: "Hard",
+
+                        question:
+                        "Design an algorithm to find the lowest common ancestor of two nodes in a binary tree. Discuss its complexity."
+                    },
+
+                    {
+                        category: "DSA · Graphs",
+                        difficulty: "Hard",
+
+                        question:
+                        "Detect whether a directed graph contains a cycle. Provide an efficient approach and explain the trade-offs."
+                    },
+
+                    {
+                        category: "DSA · Arrays",
+                        difficulty: "Hard",
+
+                        question:
+                        "Design an algorithm to find the largest rectangle in a histogram and analyze its time and space complexity."
+                    }
+
+                ]
+
+            },
+
+
+            /* =====================================
+               ML ENGINEER
+               ===================================== */
+
+            ml_engineer: {
+
+                /* ---------- JUNIOR ---------- */
+
+                junior: [
+
+                    {
+                        category: "ML · Fundamentals",
+                        difficulty: "Easy",
+
+                        question:
+                        "What is the difference between supervised and unsupervised learning? Give one example of each."
+                    },
+
+                    {
+                        category: "ML · Regression",
+                        difficulty: "Medium",
+
+                        question:
+                        "Explain why linear regression can perform poorly when features are highly correlated."
+                    },
+
+                    {
+                        category: "ML · Evaluation",
+                        difficulty: "Medium",
+
+                        question:
+                        "Explain the difference between precision and recall and describe when recall is more important."
+                    }
+
+                ],
+
+
+                /* ---------- SENIOR ---------- */
+
+                senior: [
+
+                    {
+                        category: "ML · System Design",
+                        difficulty: "Hard",
+
+                        question:
+                        "Design an ML recommendation system capable of serving millions of users. Explain the major components."
+                    },
+
+                    {
+                        category: "ML · Production",
+                        difficulty: "Hard",
+
+                        question:
+                        "A production model's accuracy suddenly drops. Describe how you would investigate the problem."
+                    },
+
+                    {
+                        category: "ML · Architecture",
+                        difficulty: "Hard",
+
+                        question:
+                        "Design a scalable feature engineering pipeline for a machine-learning system serving real-time predictions."
+                    }
+
+                ]
+
+            }
+
+        };
+
+
+        /*
+        ============================================
+        ASSESSMENT STATE
+        ============================================
+        */
+
+        let questions = [];
+
+        let currentQuestion = 0;
+
+
+        /*
+        ============================================
+        START ASSESSMENT
+        ============================================
+        */
+
+        function startAssessment() {
+
+            const job =
+                document.getElementById("job").value;
+
+            const level =
+                document.getElementById("level").value;
+
+
+            /* Check selection */
+
+            if (!job || !level) {
+
+                alert(
+                    "Please select both the job position and experience level."
+                );
+
+                return;
+            }
+
+
+            /* Get questions */
+
+            questions =
+                questionBank[job]?.[level] || [];
+
+
+            if (questions.length === 0) {
+
+                alert(
+                    "Questions are not available for this combination yet."
+                );
+
+                return;
+            }
+
+
+            /* Reset */
+
+            currentQuestion = 0;
+
+
+            /* Hide selector */
+
+            document.querySelector(
+                ".assessment-card"
+            ).style.display = "none";
+
+
+            /* Show questions */
+
+            document.getElementById(
+                "questionSection"
+            ).style.display = "block";
+
+
+            /* Display first question */
+
+            showQuestion();
+
+        }
+
+
+        /*
+        ============================================
+        SHOW QUESTION
+        ============================================
+        */
+
+        function showQuestion() {
+
+            const question =
+                questions[currentQuestion];
+
+
+            document.getElementById(
+                "questionCount"
+            ).textContent =
+                `Question ${currentQuestion + 1} of ${questions.length}`;
+
+
+            document.getElementById(
+                "difficulty"
+            ).textContent =
+                question.difficulty;
+
+
+            document.getElementById(
+                "questionText"
+            ).textContent =
+                question.question;
+
+
+            document.querySelector(
+                ".question-category"
+            ).textContent =
+                question.category;
+
+
+            document.getElementById(
+                "answer"
+            ).value = "";
+
+        }
+
+
+        /*
+        ============================================
+        NEXT QUESTION
+        ============================================
+        */
+
+        function nextQuestion() {
+
+            if (
+                currentQuestion <
+                questions.length - 1
+            ) {
+
+                currentQuestion++;
+
+                showQuestion();
+
+            } else {
+
+                alert(
+                    "Assessment completed!"
+                );
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
