@@ -176,6 +176,7 @@ function render() {
   const q = list[i];
   const publicTc = (q.testCases || []).filter(t => !t.isHidden);
   const hiddenTc = (q.testCases || []).filter(t => t.isHidden);
+  const paramsList = (q.parameters || []).map(p => `${p.name}: ${p.type}`).join(', ');
 
   $('scene').innerHTML = `
   <div class="scene">
@@ -235,7 +236,7 @@ function render() {
 
     <!-- Technical Inspection Tabs -->
     <div class="tab-nav">
-      <button class="tab-btn active" data-tab="tab-rules">Rules & Constraints</button>
+      <button class="tab-btn active" data-tab="tab-rules">Rules & Signature</button>
       <button class="tab-btn" data-tab="tab-public">Public Samples (${publicTc.length})</button>
       <button class="tab-btn" data-tab="tab-hidden">Hidden Test Cases (${hiddenTc.length})</button>
       <button class="tab-btn" data-tab="tab-starter">Starter Code (JS / PY)</button>
@@ -254,12 +255,16 @@ function render() {
         </div>
         <div class="card">
           <h3>FUNCTION SIGNATURE</h3>
-          <p style="color: var(--dim); margin-bottom: 0.6rem;">Target Function: <code style="color: var(--gold); font-size: 1.05rem;">${esc(q.functionName)}</code></p>
-          <p style="color: var(--dim); margin-bottom: 0.6rem;">Return Type: <code style="color: var(--green);">${esc(q.returnType)}</code></p>
-          <p style="color: var(--dim); margin-bottom: 0.6rem;">Parameters:</p>
-          <ul>
-            ${(q.parameters || []).map(p => `<li><code>${esc(p.name)}</code>: <b style="color: var(--blue);">${esc(p.type)}</b></li>`).join('')}
-          </ul>
+          <div style="background: #000; border: 1px solid var(--line); border-radius: 6px; padding: 0.8rem 1rem; margin-bottom: 1rem; font-family: ui-monospace, Menlo, monospace;">
+            <span style="color: var(--green); font-weight: bold;">${esc(q.returnType || 'void')}</span>
+            <span style="color: var(--gold); font-weight: bold; font-size: 1.1rem;"> ${esc(q.functionName)}</span>(<span style="color: var(--blue);">${esc(paramsList || 'void')}</span>)
+          </div>
+          <p style="color: var(--dim); margin-bottom: 0.5rem; font-size: 0.85rem;"><b>Parameter Breakdown:</b></p>
+          ${(q.parameters && q.parameters.length) ? `
+            <ul style="margin-left: 1.2rem;">
+              ${q.parameters.map(p => `<li><code>${esc(p.name)}</code> &rarr; <b style="color: var(--blue);">${esc(p.type)}</b></li>`).join('')}
+            </ul>
+          ` : '<p style="color: var(--dim); font-style: italic;">No parameters (Constructor/Class structure)</p>'}
         </div>
       </div>
     </div>
