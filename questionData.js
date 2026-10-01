@@ -1,4 +1,4 @@
-[
+window.BUNDLED_QUESTIONS = [
   {
     "title": "Kadane's Algorithm / Maximum Subarray",
     "slug": "kadane-s-algorithm-maximum-subarray",
@@ -7159,4 +7159,4 @@
       }
     ]
   }
-]
+];
