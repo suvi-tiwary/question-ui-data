@@ -54,7 +54,6 @@ function render(){
   $('scene').innerHTML=`<div class="scene">
    <div class="reel"><span>Scene ${i+1} of ${list.length} &middot; ${esc(pick.role)}</span><button class="btn ghost" id="back">&#8592; RE-CAST</button></div>
    <span class="badge ${q.difficulty}">${q.difficulty.toUpperCase()}</span>
-   <h1>${esc(q.title)}</h1>
    <div class="credits"><span>RUNTIME <b>${q.estimatedTimeMins} MIN</b></span><span>GENRE <b>${esc(q.topic)}</b></span><span>SUBPLOT <b>${esc(q.subtopic)}</b></span><span>TIME <b>${esc(q.expectedComplexity.time)}</b></span><span>SPACE <b>${esc(q.expectedComplexity.space)}</b></span></div>
    <p class="story">${esc(q.description)}</p>
    <div class="cols">
