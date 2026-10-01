@@ -33,8 +33,10 @@ main{position:relative;z-index:1;min-height:100%;padding:12vh 6vw}
 .reel{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
 .reel span{color:var(--dim);font-size:.8rem;letter-spacing:.3em;text-transform:uppercase}
 .badge{display:inline-block;border:2px solid;padding:.1rem .7rem;font-size:1.3rem;margin-right:.6rem}
+.question-heading .badge{display:block;width:max-content;margin:0 0 .55rem;padding:.15rem .75rem}
 .Easy{color:#5fbf7a}.Medium{color:var(--gold)}.Hard{color:var(--red)}
 .scene h1{font-size:clamp(2.4rem,7vw,5.4rem);line-height:.95;margin:.6rem 0 1rem}
+.question-heading h1{text-align:left;margin:.6rem 0 1.2rem}
 .credits{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;color:var(--dim);font-size:.9rem;margin-bottom:1.6rem;border-block:1px solid var(--line);padding:.7rem 0}
 .credits b{color:var(--paper);font-weight:600}
 .story{font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.75;white-space:pre-line;padding-left:1.4rem;border-left:3px solid var(--gold);max-width:74ch}
