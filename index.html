@@ -27,6 +27,7 @@
 <script>
 const $=id=>document.getElementById(id);
 let DATA=[],pick={role:null,level:null},list=[],i=0;
+const lastQuestionBySelection=new Map();
 const LEVELS=['Easy','Medium','Hard'];
 const ROLE_QUESTIONS=[
   {role:'Backend',level:'Easy',description:'An API gateway records the HTTP status code for each request. Given the status codes, return how many requests succeeded. A request succeeds when its status is from 200 through 299.',testCases:[{input:{statuses:[200,201,404,503,204]},expectedOutput:3}]},
@@ -52,7 +53,7 @@ function shuffle(items){
 
 function init(data){
   DATA=data;
-  const roles=[...new Set([...DATA.flatMap(q=>q.roleApplicability||[]),'Software Developer'])];
+  const roles=['Software Developer','Backend'];
   const p=new URLSearchParams(location.search);       // ?role=Backend&level=Medium
   pick.role=roles.includes(p.get('role'))?p.get('role'):roles[0];
   pick.level=LEVELS.includes(p.get('level'))?p.get('level'):'Medium';
@@ -65,7 +66,19 @@ function chips(id,arr,key){
 }
 const match=()=>DATA.filter(q=>(pick.role==='Software Developer'||(q.roleApplicability||[]).includes(pick.role))&&q.difficulty===pick.level);
 function count(){const n=match().length+ROLE_QUESTIONS.filter(q=>q.role===pick.role&&q.level===pick.level).length;$('count').textContent=n?`${n} scene${n>1?'s':''} in this cut`:'No scenes for this role & level yet';$('play').disabled=!n;$('play').style.opacity=n?1:.4}
-$('play').onclick=()=>{list=[...ROLE_QUESTIONS.filter(q=>q.role===pick.role&&q.level===pick.level),...shuffle(match())];if(!list.length)return;i=0;show('scene');render()};
+function questionId(question){return question.slug||question.description}
+$('play').onclick=()=>{
+  const selectionKey=`${pick.role}:${pick.level}`;
+  list=shuffle([...ROLE_QUESTIONS.filter(q=>q.role===pick.role&&q.level===pick.level),...match()]);
+  if(!list.length)return;
+  const previousQuestion=lastQuestionBySelection.get(selectionKey);
+  if(list.length>1&&questionId(list[0])===previousQuestion){
+    const alternateIndex=list.findIndex((question,index)=>index>0&&questionId(question)!==previousQuestion);
+    [list[0],list[alternateIndex]]=[list[alternateIndex],list[0]];
+  }
+  lastQuestionBySelection.set(selectionKey,questionId(list[0]));
+  i=0;show('scene');render();
+};
 function show(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on',s.id===id));scrollTo(0,0)}
 
 function render(){
