@@ -3,15 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Interview Trailers</title>
+<title>QuickRuitAI — Coding Question Bank Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<!-- Bundled data for direct file:// execution without CORS issues -->
+<script src="questionData.js"></script>
 </head>
 <body>
-<div class="spot"></div><div class="bar top"></div><div class="bar bot"></div>
+<div class="spot"></div>
+<div class="bar top"></div>
+<div class="bar bot"></div>
+
 <main>
+  <!-- SCREEN 1: Setup & Browser -->
   <section id="cast" class="screen on">
+<<<<<<< HEAD
     <div class="marquee">A CODING PRODUCTION</div>
     <h1 class="title">YOUR NEXT<br><em>INTERVIEW</em></h1>
     <p class="tag">Pick your role. Pick your level. Roll the trailer.</p>
@@ -19,12 +26,53 @@
       <div><label>Role</label><div class="chips" id="roles"></div></div>
       <div><label>Level</label><div class="chips" id="levels"></div></div>
       <div><button class="btn" id="play">NEXT QUESTION &#8594;</button><p class="count" id="count"></p></div>
+=======
+    <div class="marquee">QUICKRUIT AI &middot; QUESTION STUDIO</div>
+    <h1 class="title">CODING QUESTION<br><em>INSPECTOR</em></h1>
+    <p class="tag">Review 50 production DSA questions, inspect schemas, and preview dynamic placeholders.</p>
+
+    <div class="cast-panel">
+      <!-- Direct Jump Selector -->
+      <div class="cast-row">
+        <label>Direct Jump to Question (1 to 50)</label>
+        <select id="directSelect" class="quick-select">
+          <option value="">-- Choose a Question from the Bank --</option>
+        </select>
+      </div>
+
+      <!-- Search Input -->
+      <div class="cast-row">
+        <label>Filter by Title or Keyword</label>
+        <input type="text" id="searchInput" class="search-box" placeholder="e.g. Kadane, LRU, Islands, Water, Stock...">
+      </div>
+
+      <!-- Role Filter -->
+      <div class="cast-row">
+        <label>Filter by Role Applicability</label>
+        <div class="chips" id="roles"></div>
+      </div>
+
+      <!-- Level Filter -->
+      <div class="cast-row">
+        <label>Filter by Difficulty</label>
+        <div class="chips" id="levels"></div>
+      </div>
+
+      <div style="text-align: center; margin-top: 1.5rem;">
+        <button class="btn" id="play">&#9654; START REVIEW</button>
+        <p class="count" id="count" style="margin-top: 0.8rem; color: var(--dim);"></p>
+      </div>
+>>>>>>> c8f8ca4afd0260357a77f7d5c819bd219ad39cae
     </div>
-    <p class="load" id="load"></p>
+    <p class="load" id="load" style="text-align: center; color: var(--dim); margin-top: 1.5rem;"></p>
   </section>
+
+  <!-- SCREEN 2: Question Scene Viewer -->
   <section id="scene" class="screen"></section>
 </main>
+
 <script>
+<<<<<<< HEAD
 const $=id=>document.getElementById(id);
 let DATA=[],pick={role:null,level:null},list=[],i=0;
 const lastQuestionBySelection=new Map();
@@ -95,15 +143,320 @@ function render(){
 }
 addEventListener('keydown',e=>{if(!$('scene').classList.contains('on'))return;
   if(e.key==='ArrowRight')$('next').click();if(e.key==='ArrowLeft')$('prev').click()});
+=======
+const $ = id => document.getElementById(id);
+let DATA = [], pick = { role: 'All', level: 'All', search: '' }, list = [], i = 0;
+let currentSim = 'schema'; // 'schema', 'fareye', 'zomato', 'razorpay', 'swiggy'
 
-// Load the bundled question bank; fetch requires a local web server.
-fetch('question.json.txt').then(r=>{
-  if(!r.ok)throw new Error(`Question bank returned ${r.status}`);
-  return r.json();
-}).then(init).catch(()=>{
-  $('load').textContent='Could not load questions. Open this page through a local web server.';
-  $('play').disabled=true;
+const SIM_PROFILES = {
+  schema: null,
+  fareye: { company: 'FarEye Technologies', dept: 'Platform & Systems', role: 'Senior Backend Engineer', domain: 'Logistics & Supply Chain', loc: 'Bangalore Hub' },
+  zomato: { company: 'Zomato', dept: 'Core Infrastructure', role: 'Backend Engineer', domain: 'Food Delivery & Hyperlocal', loc: 'Gurugram HQ' },
+  razorpay: { company: 'Razorpay', dept: 'Payment Gateway Systems', role: 'Systems Engineer', domain: 'Fintech & Payments', loc: 'Bangalore' },
+  swiggy: { company: 'Swiggy', dept: 'Delivery & Logistics Engine', role: 'Full Stack Engineer', domain: 'Quick Commerce & Grocery', loc: 'Hyderabad Hub' }
+};
+
+const esc = s => String(s || '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+const fmt = v => esc(JSON.stringify(v, null, 2));
+>>>>>>> c8f8ca4afd0260357a77f7d5c819bd219ad39cae
+
+function init(data) {
+  DATA = data;
+  
+  // Populate Direct Jump Select
+  const directSelect = $('directSelect');
+  directSelect.innerHTML = '<option value="">-- Choose a Question from the Bank (' + DATA.length + ' Total) --</option>' +
+    DATA.map((q, idx) => `<option value="${idx}">#${idx + 1} ${esc(q.title)} [${q.difficulty}] - ${esc(q.topic)}</option>`).join('');
+
+  directSelect.onchange = (e) => {
+    if (e.target.value !== '') {
+      list = DATA;
+      i = parseInt(e.target.value, 10);
+      show('scene');
+      render();
+    }
+  };
+
+  // Roles filter
+  const allRoles = ['All', ...new Set(DATA.flatMap(q => q.roleApplicability || []))];
+  const allLevels = ['All', 'Easy', 'Medium', 'Hard'];
+
+  chips('roles', allRoles, 'role');
+  chips('levels', allLevels, 'level');
+
+  $('searchInput').oninput = (e) => {
+    pick.search = e.target.value.toLowerCase().trim();
+    count();
+  };
+
+  $('load').textContent = '';
+  count();
+}
+
+function chips(id, arr, key) {
+  $(id).innerHTML = arr.map(v => `<button class="chip ${pick[key] === v ? 'sel' : ''}" data-v="${v}">${v.toUpperCase()}</button>`).join('');
+  $(id).onclick = e => {
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    pick[key] = b.dataset.v;
+    chips(id, arr, key);
+    count();
+  };
+}
+
+function match() {
+  return DATA.filter(q => {
+    const matchRole = pick.role === 'All' || (q.roleApplicability || []).includes(pick.role);
+    const matchLevel = pick.level === 'All' || q.difficulty === pick.level;
+    const matchSearch = !pick.search || q.title.toLowerCase().includes(pick.search) || 
+                        q.slug.toLowerCase().includes(pick.search) || 
+                        (q.topic && q.topic.toLowerCase().includes(pick.search));
+    return matchRole && matchLevel && matchSearch;
+  });
+}
+
+function count() {
+  const m = match();
+  $('count').textContent = m.length ? `${m.length} questions match your filter` : 'No questions match this filter';
+  $('play').disabled = !m.length;
+  $('play').style.opacity = m.length ? 1 : 0.4;
+}
+
+$('play').onclick = () => {
+  list = match();
+  if (!list.length) return;
+  i = 0;
+  show('scene');
+  render();
+};
+
+function show(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.toggle('on', s.id === id));
+  window.scrollTo(0, 0);
+}
+
+function formatStory(rawDesc, simKey) {
+  let text = esc(rawDesc || '');
+  if (simKey === 'schema') {
+    return text
+      .replace(/\{\{companyName\}\}/g, '<span class="ph ph-company">&lt;companyName&gt;</span>')
+      .replace(/\{\{department\}\}/g, '<span class="ph ph-dept">&lt;department&gt;</span>')
+      .replace(/\{\{roleTitle\}\}/g, '<span class="ph ph-role">&lt;roleTitle&gt;</span>')
+      .replace(/\{\{domain\}\}/g, '<span class="ph ph-domain">&lt;domain&gt;</span>')
+      .replace(/\{\{location\}\}/g, '<span class="ph ph-loc">&lt;location&gt;</span>');
+  } else {
+    const p = SIM_PROFILES[simKey];
+    return text
+      .replace(/\{\{companyName\}\}/g, `<span class="ph ph-company">${esc(p.company)}</span>`)
+      .replace(/\{\{department\}\}/g, `<span class="ph ph-dept">${esc(p.dept)}</span>`)
+      .replace(/\{\{roleTitle\}\}/g, `<span class="ph ph-role">${esc(p.role)}</span>`)
+      .replace(/\{\{domain\}\}/g, `<span class="ph ph-domain">${esc(p.domain)}</span>`)
+      .replace(/\{\{location\}\}/g, `<span class="ph ph-loc">${esc(p.loc)}</span>`);
+  }
+}
+
+function render() {
+  const q = list[i];
+  const publicTc = (q.testCases || []).filter(t => !t.isHidden);
+  const hiddenTc = (q.testCases || []).filter(t => t.isHidden);
+  const paramsList = (q.parameters || []).map(p => `${p.name}: ${p.type}`).join(', ');
+
+  $('scene').innerHTML = `
+  <div class="scene">
+    <!-- Top Nav Reel -->
+    <div class="reel-nav">
+      <div class="reel-meta">
+        <button class="btn ghost" id="backBtn">&#8592; CAST SELECTOR</button>
+        <span class="reel-title">QUESTION ${i + 1} OF ${list.length}</span>
+      </div>
+      <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <select id="jumpInScene" class="quick-select" style="margin: 0; padding: 0.4rem 0.8rem; width: auto;">
+          ${list.map((item, idx) => `<option value="${idx}" ${idx === i ? 'selected' : ''}>#${idx + 1} ${esc(item.title)}</option>`).join('')}
+        </select>
+      </div>
+    </div>
+
+    <!-- Title & Metadata -->
+    <div class="scene-header">
+      <div>
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.4rem;">
+          <span class="badge ${q.difficulty}">${q.difficulty.toUpperCase()}</span>
+          <span class="slug-pill">${esc(q.slug)}</span>
+        </div>
+        <h1>${esc(q.title)}</h1>
+      </div>
+    </div>
+
+    <!-- Credits Bar -->
+    <div class="credits">
+      <span>TOPIC <b>${esc(q.topic || 'General')}</b></span>
+      <span>SUBTOPIC <b>${esc(q.subtopic || 'DSA')}</b></span>
+      <span>EST. TIME <b>${q.estimatedTimeMins || 30} MINS</b></span>
+      <span>TIME COMPLEXITY <b>${esc(q.expectedComplexity?.time || 'O(N)')}</b></span>
+      <span>SPACE COMPLEXITY <b>${esc(q.expectedComplexity?.space || 'O(1)')}</b></span>
+      <span>ROLES <b>${(q.roleApplicability || []).join(', ')}</b></span>
+    </div>
+
+    <!-- Story Description Box with Placeholder Highlighter -->
+    <div class="story-box">
+      <div class="story-toolbar">
+        <span class="story-label">PROBLEM NARRATIVE & CONTEXT</span>
+        <div style="display: flex; align-items: center; gap: 0.6rem;">
+          <label style="font-size: 0.75rem; color: var(--dim); text-transform: uppercase;">Preview Mode:</label>
+          <select id="simSelect" class="sim-selector">
+            <option value="schema" ${currentSim === 'schema' ? 'selected' : ''}>🔍 Schema Mode (&lt;companyName&gt;)</option>
+            <option value="fareye" ${currentSim === 'fareye' ? 'selected' : ''}>🚚 Live Simulation: FarEye</option>
+            <option value="zomato" ${currentSim === 'zomato' ? 'selected' : ''}>🍔 Live Simulation: Zomato</option>
+            <option value="razorpay" ${currentSim === 'razorpay' ? 'selected' : ''}>💳 Live Simulation: Razorpay</option>
+            <option value="swiggy" ${currentSim === 'swiggy' ? 'selected' : ''}>🛒 Live Simulation: Swiggy</option>
+          </select>
+        </div>
+      </div>
+      <div class="story-text" id="storyContent">
+        ${formatStory(q.description, currentSim)}
+      </div>
+    </div>
+
+    <!-- Technical Inspection Tabs -->
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="tab-rules">Rules & Signature</button>
+      <button class="tab-btn" data-tab="tab-public">Public Samples (${publicTc.length})</button>
+      <button class="tab-btn" data-tab="tab-hidden">Hidden Test Cases (${hiddenTc.length})</button>
+      <button class="tab-btn" data-tab="tab-starter">Starter Code (JS / PY)</button>
+      <button class="tab-btn" data-tab="tab-raw">Raw Schema JSON</button>
+    </div>
+
+    <!-- Tab 1: Rules & Constraints -->
+    <div id="tab-rules" class="tab-pane active">
+      <div class="grid-2">
+        <div class="card">
+          <h3>CONSTRAINTS</h3>
+          <ul>
+            ${(q.constraints || []).map(c => `<li>${esc(c)}</li>`).join('')}
+          </ul>
+          ${q.ioNote ? `<p style="margin-top: 1rem; color: var(--dim); font-size: 0.85rem;"><b>I/O Note:</b> ${esc(q.ioNote)}</p>` : ''}
+        </div>
+        <div class="card">
+          <h3>FUNCTION SIGNATURE</h3>
+          <div style="background: #000; border: 1px solid var(--line); border-radius: 6px; padding: 0.8rem 1rem; margin-bottom: 1rem; font-family: ui-monospace, Menlo, monospace;">
+            <span style="color: var(--green); font-weight: bold;">${esc(q.returnType || 'void')}</span>
+            <span style="color: var(--gold); font-weight: bold; font-size: 1.1rem;"> ${esc(q.functionName)}</span>(<span style="color: var(--blue);">${esc(paramsList || 'void')}</span>)
+          </div>
+          <p style="color: var(--dim); margin-bottom: 0.5rem; font-size: 0.85rem;"><b>Parameter Breakdown:</b></p>
+          ${(q.parameters && q.parameters.length) ? `
+            <ul style="margin-left: 1.2rem;">
+              ${q.parameters.map(p => `<li><code>${esc(p.name)}</code> &rarr; <b style="color: var(--blue);">${esc(p.type)}</b></li>`).join('')}
+            </ul>
+          ` : '<p style="color: var(--dim); font-style: italic;">No parameters (Constructor/Class structure)</p>'}
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Public Samples -->
+    <div id="tab-public" class="tab-pane">
+      <div class="card">
+        <h3>PUBLIC EXAMPLES (CANDIDATE VIEW)</h3>
+        ${publicTc.map((tc, n) => `
+          <pre><b>Sample ${n + 1}:</b>
+${Object.entries(tc.input || {}).map(([k, v]) => `${k} = ${fmt(v)}`).join('\n')}
+<b>&rarr; Expected Output:</b> ${fmt(tc.expectedOutput)}
+${tc.explanation ? `<span style="color: var(--dim); font-style: italic;">// Explanation: ${esc(tc.explanation)}</span>` : ''}</pre>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Tab 3: Hidden Test Cases -->
+    <div id="tab-hidden" class="tab-pane">
+      <div class="card">
+        <h3>HIDDEN EVALUATION TEST CASES</h3>
+        <p style="color: var(--dim); font-size: 0.85rem; margin-bottom: 1rem;">These cases are stripped at runtime and evaluated securely by BullMQ/CompilerService.</p>
+        ${hiddenTc.map((tc, n) => `
+          <pre><b>Hidden Test Case ${n + 1}:</b>
+${Object.entries(tc.input || {}).map(([k, v]) => `${k} = ${fmt(v)}`).join('\n')}
+<b>&rarr; Expected Output:</b> ${fmt(tc.expectedOutput)}</pre>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Tab 4: Starter Code -->
+    <div id="tab-starter" class="tab-pane">
+      <div class="grid-2">
+        <div class="card">
+          <h3>JAVASCRIPT BOILERPLATE</h3>
+          <pre>${esc(q.starterCode?.javascript || '// No starter code')}</pre>
+        </div>
+        <div class="card">
+          <h3>PYTHON BOILERPLATE</h3>
+          <pre>${esc(q.starterCode?.python || '# No starter code')}</pre>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 5: Raw JSON -->
+    <div id="tab-raw" class="tab-pane">
+      <div class="card">
+        <h3>FULL SCHEMA JSON OBJECT</h3>
+        <pre style="max-height: 500px; overflow-y: auto;">${fmt(q)}</pre>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+      <button class="btn ghost" id="prevBtn" ${i === 0 ? 'disabled style="opacity: 0.3;"' : ''}>&#8592; PREVIOUS QUESTION</button>
+      <span style="color: var(--dim); font-size: 0.9rem;">Use &larr; &rarr; Arrow Keys to Navigate</span>
+      <button class="btn ghost" id="nextBtn">${i < list.length - 1 ? 'NEXT QUESTION &#8594;' : 'FINISHED (BACK TO LIST)'}</button>
+    </div>
+  </div>`;
+
+  // Attach Event Handlers
+  $('backBtn').onclick = () => show('cast');
+  $('prevBtn').onclick = () => { if (i > 0) { i--; render(); window.scrollTo(0, 0); } };
+  $('nextBtn').onclick = () => { if (i < list.length - 1) { i++; render(); window.scrollTo(0, 0); } else { show('cast'); } };
+
+  $('jumpInScene').onchange = (e) => {
+    i = parseInt(e.target.value, 10);
+    render();
+    window.scrollTo(0, 0);
+  };
+
+  $('simSelect').onchange = (e) => {
+    currentSim = e.target.value;
+    $('storyContent').innerHTML = formatStory(q.description, currentSim);
+  };
+
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.onclick = () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      $(btn.dataset.tab).classList.add('active');
+    };
+  });
+}
+
+// Arrow Key Navigation
+window.addEventListener('keydown', e => {
+  if (!$('scene').classList.contains('on')) return;
+  if (e.key === 'ArrowRight' && $('nextBtn')) $('nextBtn').click();
+  if (e.key === 'ArrowLeft' && $('prevBtn')) $('prevBtn').click();
 });
+
+// Initialization: First try bundled questions, then fallback to fetch
+if (window.BUNDLED_QUESTIONS && window.BUNDLED_QUESTIONS.length) {
+  console.log('Loaded from bundled questionData.js');
+  init(window.BUNDLED_QUESTIONS);
+} else {
+  fetch('question.json.txt')
+    .then(r => {
+      if (!r.ok) throw new Error('Status: ' + r.status);
+      return r.json();
+    })
+    .then(init)
+    .catch(() => {
+      $('load').textContent = 'Could not load questions via fetch. Using questionData.js fallback.';
+    });
+}
 </script>
 </body>
 </html>
