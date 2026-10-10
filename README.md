@@ -1,26 +1,20 @@
-# QuickRuitAI — Coding Question Bank Review Studio
+# QuickRuit Interview Questions
 
-This repository is the offline review and inspection workbench for QuickRuitAI's Coding Question Bank.
+A lightweight practice page that selects a random question based on a candidate's role and experience level.
 
-## 🚀 Features
-1. **Interactive Schema Visualizer**:
-   - Displays dynamic enterprise placeholders: `<companyName>`, `<department>`, `<roleTitle>`, `<domain>`, `<location>`.
-   - **Simulation Mode**: Switch between Schema Mode and live company simulations (FarEye, Zomato, Razorpay, Swiggy) to preview exactly what the candidate sees.
-2. **Direct Jump Navigator**:
-   - Instant dropdown jump to any of the 50 questions.
-   - Filter by Role Applicability (Backend, Full Stack, Data Engineer) and Difficulty (Easy, Medium, Hard).
-3. **5 Technical Inspection Tabs**:
-   - **Rules & Constraints**: Complexity & input constraints.
-   - **Public Samples**: Input parameters & expected output for candidate cards.
-   - **Hidden Test Cases**: Secure evaluation test cases used by BullMQ & CompilerService.
-   - **Starter Code**: Ready-to-use boilerplate for JavaScript and Python.
-   - **Raw Schema JSON**: Full JSON inspection.
-4. **Zero-CORS Local Loading**:
-   - Simply double-click `index.html` in your file explorer to open it in any browser!
-   - Supports both `questionData.js` (offline direct opening) and `question.json.txt` (web server mode).
+## Using the page
 
-## 📂 File Structure
-- `index.html`: Modern Question Inspector Studio interface.
-- `style.css`: Cinematic review design system.
-- `question.json.txt`: Verified 50 questions JSON.
-- `questionData.js`: Bundled offline data.
+1. Open the deployed GitHub Pages site, or serve the project files from a local web server.
+2. Choose **Software Developer**, **Backend Engineer**, or **Data Analyst (SQL)**.
+3. Choose **Junior** or **Senior** and select **Get a random question**.
+4. Select **Another random question** to continue. Questions are shuffled and are not repeated until the selected question pool has been used.
+
+Junior sessions include Easy and Medium questions. Senior sessions include Medium and Hard questions. The question view displays the question description without its title, topic, or difficulty label.
+
+## Question banks
+
+- `questionData.js` bundles the DSA questions used for Software Developer and Backend Engineer sessions.
+- `sql_questions.json` supplies SQL questions for Backend Engineer and Data Analyst sessions.
+- `question.json.txt` is the JSON source used to maintain the bundled DSA question bank.
+
+The SQL bank is loaded with `fetch`, so the page must be opened through GitHub Pages or a local HTTP server; opening `index.html` directly as a `file://` URL will not load SQL questions.
