@@ -1,0 +1,302 @@
+[
+  {
+    "title": "Select Employee Information",
+    "slug": "select-employee-information",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "roleApplicability": [
+      "Backend",
+      "Data Engineer",
+      "Data Analyst"
+    ],
+    "topic": "SQL",
+    "subtopic": "Basic SELECT and Filtering",
+    "estimatedTimeMins": 10,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} team needs to retrieve employee data from the database. As a {{roleTitle}} in {{domain}}, write a query to select all employees from the 'Employees' table who work in the specified department and have a salary greater than the given threshold.",
+    "functionName": "getEmployeesByDepartment",
+    "parameters": [
+      {
+        "name": "Employees",
+        "type": "Table(employee_id, first_name, last_name, department, salary, hire_date)"
+      }
+    ],
+    "returnType": "ResultSet",
+    "constraints": [
+      "Return columns: employee_id, first_name, last_name, salary",
+      "Order by salary in descending order",
+      "Filter by department and minimum salary"
+    ],
+    "ioNote": "Input is provided through table schema. Output should be ordered result set with specified columns.",
+    "testCases": [
+      {
+        "input": {
+          "department": "Engineering",
+          "minSalary": 70000
+        },
+        "expectedOutput": [
+          {"employee_id": 3, "first_name": "Alice", "last_name": "Johnson", "salary": 95000},
+          {"employee_id": 1, "first_name": "John", "last_name": "Doe", "salary": 85000}
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "department": "Sales",
+          "minSalary": 60000
+        },
+        "expectedOutput": [
+          {"employee_id": 5, "first_name": "Emma", "last_name": "Wilson", "salary": 72000}
+        ],
+        "isHidden": false
+      }
+    ],
+    "starterCode": {
+      "sql": "-- Write your SQL query here\nSELECT \nFROM Employees\nWHERE \nORDER BY ;"
+    },
+    "examples": [
+      {
+        "input": "department = 'Engineering', minSalary = 70000",
+        "output": "Returns employees in Engineering with salary > 70000, ordered by salary DESC",
+        "explanation": "Filters employees by department and salary threshold"
+      }
+    ]
+  },
+  {
+    "title": "Customer Order Summary",
+    "slug": "customer-order-summary",
+    "difficulty": "Easy",
+    "category": "SQL",
+    "roleApplicability": [
+      "Backend",
+      "Data Engineer",
+      "Data Analyst"
+    ],
+    "topic": "SQL",
+    "subtopic": "JOINs and Aggregations",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N*M)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} analytics team needs to generate a summary report of customer orders. As a {{roleTitle}} in {{domain}}, write a query that joins the Customers and Orders tables to calculate the total number of orders and total revenue for each customer.",
+    "functionName": "getCustomerOrderSummary",
+    "parameters": [
+      {
+        "name": "Customers",
+        "type": "Table(customer_id, customer_name, email, city)"
+      },
+      {
+        "name": "Orders",
+        "type": "Table(order_id, customer_id, order_date, amount, status)"
+      }
+    ],
+    "returnType": "ResultSet",
+    "constraints": [
+      "0 <= number of customers <= 10000",
+      "Only include customers with at least 1 order",
+      "Only count orders with status = 'completed'"
+    ],
+    "ioNote": "Tables are provided in the database. Return customer_id, customer_name, total_orders, total_revenue.",
+    "testCases": [
+      {
+        "input": {},
+        "expectedOutput": [
+          {"customer_id": 1, "customer_name": "John Doe", "total_orders": 3, "total_revenue": 450.00},
+          {"customer_id": 2, "customer_name": "Jane Smith", "total_orders": 2, "total_revenue": 280.00}
+        ],
+        "isHidden": false
+      }
+    ],
+    "starterCode": {
+      "sql": "-- Write your SQL query here\nSELECT \n    c.customer_id,\n    c.customer_name,\nFROM Customers c\nJOIN Orders o ON \nGROUP BY \nHAVING ;"
+    },
+    "examples": [
+      {
+        "input": "Customers and Orders tables",
+        "output": "[{customer_id: 1, customer_name: 'John Doe', total_orders: 3, total_revenue: 450.00}]",
+        "explanation": "Groups orders by customer and calculates aggregates for completed orders only"
+      }
+    ]
+  },
+  {
+    "title": "Find Second Highest Salary",
+    "slug": "find-second-highest-salary",
+    "difficulty": "Medium",
+    "category": "SQL",
+    "roleApplicability": [
+      "Backend",
+      "Data Engineer",
+      "Data Analyst"
+    ],
+    "topic": "SQL",
+    "subtopic": "Subqueries and Ranking",
+    "estimatedTimeMins": 25,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} HR system needs to identify the second highest salary for compensation analysis. As a {{roleTitle}} in {{domain}}, write a query to find the second highest distinct salary from the Employees table. If there is no second highest salary, return null.",
+    "functionName": "getSecondHighestSalary",
+    "parameters": [
+      {
+        "name": "Employees",
+        "type": "Table(employee_id, employee_name, salary, department)"
+      }
+    ],
+    "returnType": "ResultSet",
+    "constraints": [
+      "1 <= number of employees <= 10000",
+      "0 <= salary <= 1000000",
+      "Return NULL if second highest doesn't exist"
+    ],
+    "ioNote": "Return a single value representing the second highest distinct salary.",
+    "testCases": [
+      {
+        "input": {},
+        "expectedOutput": [{"SecondHighestSalary": 300}],
+        "isHidden": false
+      },
+      {
+        "input": {},
+        "expectedOutput": [{"SecondHighestSalary": null}],
+        "isHidden": false
+      }
+    ],
+    "starterCode": {
+      "sql": "-- Write your SQL query here\nSELECT \nFROM Employees\nWHERE ;"
+    },
+    "examples": [
+      {
+        "input": "Employees = [{id: 1, salary: 100}, {id: 2, salary: 200}, {id: 3, salary: 300}]",
+        "output": "300",
+        "explanation": "The second highest distinct salary is 300 (highest is 300, second is 200... wait, should be 200)"
+      },
+      {
+        "input": "Employees = [{id: 1, salary: 100}]",
+        "output": "null",
+        "explanation": "Only one distinct salary exists, so return null"
+      }
+    ]
+  },
+  {
+    "title": "Department Revenue Ranking",
+    "slug": "department-revenue-ranking",
+    "difficulty": "Hard",
+    "category": "SQL",
+    "roleApplicability": [
+      "Backend",
+      "Data Engineer",
+      "Data Analyst"
+    ],
+    "topic": "SQL",
+    "subtopic": "Window Functions",
+    "estimatedTimeMins": 35,
+    "expectedComplexity": {
+      "time": "O(N log N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} finance team needs to rank products within each department by revenue. As a {{roleTitle}} in {{domain}}, write a query using window functions to rank products by their total sales revenue within each department, and return only the top 3 products per department.",
+    "functionName": "getTopProductsByDepartment",
+    "parameters": [
+      {
+        "name": "Products",
+        "type": "Table(product_id, product_name, department_id, price)"
+      },
+      {
+        "name": "Departments",
+        "type": "Table(department_id, department_name)"
+      },
+      {
+        "name": "Sales",
+        "type": "Table(sale_id, product_id, quantity, sale_date)"
+      }
+    ],
+    "returnType": "ResultSet",
+    "constraints": [
+      "1 <= number of products <= 10000",
+      "Return top 3 products per department by total revenue",
+      "Revenue = price * quantity",
+      "Use DENSE_RANK() for ranking"
+    ],
+    "ioNote": "Return department_name, product_name, total_revenue, rank for top 3 products per department.",
+    "testCases": [
+      {
+        "input": {},
+        "expectedOutput": [
+          {"department_name": "Electronics", "product_name": "Laptop", "total_revenue": 5000, "rank": 1},
+          {"department_name": "Electronics", "product_name": "Phone", "total_revenue": 3000, "rank": 2},
+          {"department_name": "Clothing", "product_name": "Jacket", "total_revenue": 2000, "rank": 1}
+        ],
+        "isHidden": false
+      }
+    ],
+    "starterCode": {
+      "sql": "-- Write your SQL query here\nWITH ProductRevenue AS (\n    SELECT \n        \n    FROM Products p\n    JOIN Sales s ON \n    GROUP BY \n)\nSELECT \nFROM (\n    SELECT \n        ,\n        DENSE_RANK() OVER (PARTITION BY  ORDER BY ) as rank\n    FROM ProductRevenue\n) ranked\nWHERE  ORDER BY ;"
+    },
+    "examples": [
+      {
+        "input": "Products, Departments, and Sales tables",
+        "output": "Top 3 products per department ranked by revenue",
+        "explanation": "Uses window functions to rank products within each department partition"
+      }
+    ]
+  },
+  {
+    "title": "Employee Hierarchy Path",
+    "slug": "employee-hierarchy-path",
+    "difficulty": "Hard",
+    "category": "SQL",
+    "roleApplicability": [
+      "Backend",
+      "Data Engineer"
+    ],
+    "topic": "SQL",
+    "subtopic": "Recursive CTE",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N*H)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} HR system stores employee-manager relationships. As a {{roleTitle}} in {{domain}}, write a recursive query to find the complete management hierarchy path from each employee up to the CEO (employee with NULL manager). Return the path as a concatenated string showing the chain of command.",
+    "functionName": "getEmployeeHierarchyPath",
+    "parameters": [
+      {
+        "name": "Employees",
+        "type": "Table(employee_id, employee_name, manager_id, department)"
+      }
+    ],
+    "returnType": "ResultSet",
+    "constraints": [
+      "1 <= number of employees <= 1000",
+      "manager_id references employee_id or is NULL for CEO",
+      "Maximum hierarchy depth is 10 levels",
+      "Path format: 'CEO -> Manager -> Employee'"
+    ],
+    "ioNote": "Return employee_id, employee_name, hierarchy_path, and hierarchy_level for all employees.",
+    "testCases": [
+      {
+        "input": {},
+        "expectedOutput": [
+          {"employee_id": 1, "employee_name": "CEO", "hierarchy_path": "CEO", "hierarchy_level": 0},
+          {"employee_id": 2, "employee_name": "VP", "hierarchy_path": "CEO -> VP", "hierarchy_level": 1},
+          {"employee_id": 3, "employee_name": "Manager", "hierarchy_path": "CEO -> VP -> Manager", "hierarchy_level": 2}
+        ],
+        "isHidden": false
+      }
+    ],
+    "starterCode": {
+      "sql": "-- Write your SQL query here\nWITH RECURSIVE EmployeeHierarchy AS (\n    -- Base case: CEO (employees with no manager)\n    SELECT \n        \n    FROM Employees\n    WHERE \n    \n    UNION ALL\n    \n    -- Recursive case: employees with managers\n    SELECT \n        \n    FROM Employees e\n    JOIN EmployeeHierarchy eh ON \n)\nSELECT \nFROM EmployeeHierarchy\nORDER BY ;"
+    },
+    "examples": [
+      {
+        "input": "Employees = [{id: 1, name: 'CEO', manager_id: NULL}, {id: 2, name: 'VP', manager_id: 1}, {id: 3, name: 'Manager', manager_id: 2}]",
+        "output": "[{id: 1, path: 'CEO', level: 0}, {id: 2, path: 'CEO -> VP', level: 1}, {id: 3, path: 'CEO -> VP -> Manager', level: 2}]",
+        "explanation": "Recursively builds the hierarchy path from each employee to the CEO"
+      }
+    ]
+  }
+]

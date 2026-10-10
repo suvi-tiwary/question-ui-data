@@ -1,0 +1,7797 @@
+[
+  {
+    "title": "Invert Binary Tree",
+    "slug": "invert-binary-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} traffic routing service stores its primary and replica zone hierarchy as a binary tree with root node root. To switch to the mirrored failover layout across {{location}}, as a {{roleTitle}} in {{domain}}, invert the tree by swapping the left and right child of every node, and return its root.",
+    "functionName": "invertTree",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "TreeNode",
+    "constraints": [
+      "0 <= number of nodes <= 100",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree. A returned tree is serialized the same way (trailing nulls removed).",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            4,
+            2,
+            7,
+            1,
+            3,
+            6,
+            9
+          ]
+        },
+        "expectedOutput": [
+          4,
+          7,
+          2,
+          9,
+          6,
+          3,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            1,
+            3
+          ]
+        },
+        "expectedOutput": [
+          2,
+          3,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": [
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": [
+          1,
+          null,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          null,
+          null,
+          3
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {TreeNode}\n */\nfunction invertTree(root) {\n    // Write your solution here\n}",
+      "python": "def invertTree(root: Optional[TreeNode]) -> Optional[TreeNode]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [4,2,7,1,3,6,9]",
+        "output": "[4,7,2,9,6,3,1]",
+        "expectedOutput": "[4,7,2,9,6,3,1]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [2,1,3]",
+        "output": "[2,3,1]",
+        "expectedOutput": "[2,3,1]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Same Tree",
+    "slug": "same-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} configuration management service compares two deployment dependency trees p and q before approving a rollout. As a {{roleTitle}} in {{domain}}, determine whether the two binary trees are identical, meaning they have the same structure and the same node values.",
+    "functionName": "isSameTree",
+    "parameters": [
+      {
+        "name": "p",
+        "type": "TreeNode"
+      },
+      {
+        "name": "q",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= number of nodes in each tree <= 100",
+      "-10000 <= Node.val <= 10000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "p": [
+            1,
+            2,
+            3
+          ],
+          "q": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "p": [
+            1,
+            2
+          ],
+          "q": [
+            1,
+            null,
+            2
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "p": [
+            1,
+            2,
+            1
+          ],
+          "q": [
+            1,
+            1,
+            2
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "p": [],
+          "q": []
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "p": [
+            1
+          ],
+          "q": []
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "p": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "q": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} p\n * @param {TreeNode} q\n * @return {boolean}\n */\nfunction isSameTree(p, q) {\n    // Write your solution here\n}",
+      "python": "def isSameTree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "p = [1,2,3], q = [1,2,3]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "p = [1,2], q = [1,null,2]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Binary Tree Inorder Traversal",
+    "slug": "binary-tree-inorder-traversal",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "Binary Tree Traversal",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} indexing engine stores catalog keys in a binary search tree with root node root. As a {{roleTitle}} in {{domain}}, return the inorder traversal (left, node, right) of its node values so keys can be emitted for a batch export.",
+    "functionName": "inorderTraversal",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "0 <= number of nodes <= 100",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3,
+          2
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": [],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": [
+          1
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            3,
+            1,
+            4,
+            null,
+            2
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            8,
+            2,
+            4,
+            7,
+            9
+          ]
+        },
+        "expectedOutput": [
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": [
+          4,
+          2,
+          5,
+          1,
+          3
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number[]}\n */\nfunction inorderTraversal(root) {\n    // Write your solution here\n}",
+      "python": "def inorderTraversal(root: Optional[TreeNode]) -> list[int]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [1,null,2,3]",
+        "output": "[1,3,2]",
+        "expectedOutput": "[1,3,2]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = []",
+        "output": "[]",
+        "expectedOutput": "[]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Binary Tree Level Order Traversal",
+    "slug": "binary-tree-level-order-traversal",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} organizational chart service models reporting lines as a binary tree rooted at root. To produce a tier-by-tier escalation report for {{location}}, as a {{roleTitle}} in {{domain}}, return the level order traversal of the node values, from left to right, level by level.",
+    "functionName": "levelOrder",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int[][]",
+    "constraints": [
+      "0 <= number of nodes <= 2000",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        },
+        "expectedOutput": [
+          [
+            3
+          ],
+          [
+            9,
+            20
+          ],
+          [
+            15,
+            7
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            null,
+            6
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2,
+            null,
+            3
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            4,
+            6,
+            3,
+            null,
+            null,
+            7
+          ]
+        },
+        "expectedOutput": [
+          [
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number[][]}\n */\nfunction levelOrder(root) {\n    // Write your solution here\n}",
+      "python": "def levelOrder(root: Optional[TreeNode]) -> list[list[int]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[3],[9,20],[15,7]]",
+        "expectedOutput": "[[3],[9,20],[15,7]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1]",
+        "output": "[[1]]",
+        "expectedOutput": "[[1]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Path Sum",
+    "slug": "path-sum",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} rules engine evaluates a decision tree with root node root, where each node carries a weighted score. As a {{roleTitle}} in {{domain}}, determine whether the tree has a root-to-leaf path whose node values add up to targetSum. A leaf is a node with no children.",
+    "functionName": "hasPathSum",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      },
+      {
+        "name": "targetSum",
+        "type": "int"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= number of nodes <= 5000",
+      "-1000 <= Node.val <= 1000",
+      "-1000 <= targetSum <= 1000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            5,
+            4,
+            8,
+            11,
+            null,
+            13,
+            4,
+            7,
+            2,
+            null,
+            null,
+            null,
+            1
+          ],
+          "targetSum": 22
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3
+          ],
+          "targetSum": 5
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [],
+          "targetSum": 0
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2
+          ],
+          "targetSum": 1
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            -2,
+            null,
+            -3
+          ],
+          "targetSum": -5
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ],
+          "targetSum": 1
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @param {number} targetSum\n * @return {boolean}\n */\nfunction hasPathSum(root, targetSum) {\n    // Write your solution here\n}",
+      "python": "def hasPathSum(root: Optional[TreeNode], targetSum: int) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1,2,3], targetSum = 5",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Diameter of Binary Tree",
+    "slug": "diameter-of-binary-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} network backbone is modeled as a binary tree with root node root. As a {{roleTitle}} in {{domain}}, compute the diameter of the tree: the length of the longest path between any two nodes, which may or may not pass through the root. The length of a path is the number of edges on it.",
+    "functionName": "diameterOfBinaryTree",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= number of nodes <= 10000",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            null,
+            null,
+            6
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2,
+            null,
+            3,
+            null,
+            4
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            null,
+            null,
+            5,
+            6,
+            null,
+            null,
+            7
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number}\n */\nfunction diameterOfBinaryTree(root) {\n    // Write your solution here\n}",
+      "python": "def diameterOfBinaryTree(root: Optional[TreeNode]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [1,2,3,4,5]",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1,2]",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Balanced Binary Tree",
+    "slug": "balanced-binary-tree",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} load-balancing layer arranges its worker pools as a binary tree with root node root. To keep lookups fast across {{location}}, as a {{roleTitle}} in {{domain}}, determine whether the tree is height-balanced, meaning the depths of the two subtrees of every node never differ by more than one.",
+    "functionName": "isBalanced",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= number of nodes <= 5000",
+      "-10000 <= Node.val <= 10000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            3,
+            3,
+            null,
+            null,
+            4,
+            4
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            null,
+            3
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            2,
+            3,
+            null,
+            null,
+            3,
+            4,
+            null,
+            null,
+            4
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {boolean}\n */\nfunction isBalanced(root) {\n    // Write your solution here\n}",
+      "python": "def isBalanced(root: Optional[TreeNode]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1,2,2,3,3,null,null,4,4]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Validate Binary Search Tree",
+    "slug": "validate-binary-search-tree",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BST",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} ordered key index is persisted as a binary tree with root node root. Before serving queries in {{location}}, as a {{roleTitle}} in {{domain}}, verify that the tree is a valid binary search tree: every left subtree holds strictly smaller keys, every right subtree holds strictly larger keys, and both subtrees are themselves valid.",
+    "functionName": "isValidBST",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= number of nodes <= 10000",
+      "-2147483648 <= Node.val <= 2147483647"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            2,
+            1,
+            3
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            1,
+            4,
+            null,
+            null,
+            3,
+            6
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            4,
+            6,
+            null,
+            null,
+            3,
+            7
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            2,
+            2
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            8,
+            3,
+            10,
+            1,
+            6,
+            null,
+            14,
+            null,
+            null,
+            4,
+            7,
+            13
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {boolean}\n */\nfunction isValidBST(root) {\n    // Write your solution here\n}",
+      "python": "def isValidBST(root: Optional[TreeNode]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [2,1,3]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [5,1,4,null,null,3,6]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Lowest Common Ancestor of a BST",
+    "slug": "lowest-common-ancestor-of-a-bst",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BST",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(H)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} access-control service stores its permission hierarchy as a binary search tree with root node root. As a {{roleTitle}} in {{domain}}, find the lowest common ancestor of the nodes holding values p and q. The lowest common ancestor is the deepest node that has both nodes as descendants, where a node may be a descendant of itself.",
+    "functionName": "lowestCommonAncestorBST",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      },
+      {
+        "name": "p",
+        "type": "int"
+      },
+      {
+        "name": "q",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "2 <= number of nodes <= 10000",
+      "All node values are unique",
+      "p != q and both p and q exist in the tree",
+      "-1000000 <= Node.val <= 1000000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree. p and q are node values; return the value of their lowest common ancestor.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            6,
+            2,
+            8,
+            0,
+            4,
+            7,
+            9,
+            null,
+            null,
+            3,
+            5
+          ],
+          "p": 2,
+          "q": 8
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            6,
+            2,
+            8,
+            0,
+            4,
+            7,
+            9,
+            null,
+            null,
+            3,
+            5
+          ],
+          "p": 2,
+          "q": 4
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            1
+          ],
+          "p": 2,
+          "q": 1
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            8,
+            1,
+            4,
+            7,
+            9
+          ],
+          "p": 1,
+          "q": 4
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            8,
+            1,
+            4,
+            7,
+            9
+          ],
+          "p": 7,
+          "q": 9
+        },
+        "expectedOutput": 8,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            8
+          ],
+          "p": 3,
+          "q": 8
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @param {number} p\n * @param {number} q\n * @return {number}\n */\nfunction lowestCommonAncestorBST(root, p, q) {\n    // Write your solution here\n}",
+      "python": "def lowestCommonAncestorBST(root: Optional[TreeNode], p: int, q: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8",
+        "output": "6",
+        "expectedOutput": "6",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Lowest Common Ancestor of a Binary Tree",
+    "slug": "lowest-common-ancestor-of-a-binary-tree",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} dependency graph for microservices in {{location}} is represented as a binary tree with root node root. As a {{roleTitle}} in {{domain}}, find the lowest common ancestor of the nodes holding values p and q, i.e. the deepest node that has both as descendants (a node may be a descendant of itself).",
+    "functionName": "lowestCommonAncestor",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      },
+      {
+        "name": "p",
+        "type": "int"
+      },
+      {
+        "name": "q",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "2 <= number of nodes <= 10000",
+      "All node values are unique",
+      "p != q and both p and q exist in the tree",
+      "-1000000 <= Node.val <= 1000000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree. p and q are node values; return the value of their lowest common ancestor.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            5,
+            1,
+            6,
+            2,
+            0,
+            8,
+            null,
+            null,
+            7,
+            4
+          ],
+          "p": 5,
+          "q": 1
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            3,
+            5,
+            1,
+            6,
+            2,
+            0,
+            8,
+            null,
+            null,
+            7,
+            4
+          ],
+          "p": 5,
+          "q": 4
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2
+          ],
+          "p": 1,
+          "q": 2
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            3,
+            5,
+            1,
+            6,
+            2,
+            0,
+            8,
+            null,
+            null,
+            7,
+            4
+          ],
+          "p": 6,
+          "q": 4
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            3,
+            5,
+            1,
+            6,
+            2,
+            0,
+            8,
+            null,
+            null,
+            7,
+            4
+          ],
+          "p": 7,
+          "q": 8
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "p": 4,
+          "q": 5
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @param {number} p\n * @param {number} q\n * @return {number}\n */\nfunction lowestCommonAncestor(root, p, q) {\n    // Write your solution here\n}",
+      "python": "def lowestCommonAncestor(root: Optional[TreeNode], p: int, q: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 1",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [3,5,1,6,2,0,8,null,null,7,4], p = 5, q = 4",
+        "output": "5",
+        "expectedOutput": "5",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Binary Tree Right Side View",
+    "slug": "binary-tree-right-side-view",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} monitoring dashboard renders a service hierarchy, a binary tree with root node root, as seen from the right side. As a {{roleTitle}} in {{domain}}, return the values of the nodes you can see ordered from top to bottom.",
+    "functionName": "rightSideView",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "0 <= number of nodes <= 100",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            null,
+            5,
+            null,
+            4
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            3
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3,
+          4
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3,
+          7,
+          8
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number[]}\n */\nfunction rightSideView(root) {\n    // Write your solution here\n}",
+      "python": "def rightSideView(root: Optional[TreeNode]) -> list[int]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [1,2,3,null,5,null,4]",
+        "output": "[1,3,4]",
+        "expectedOutput": "[1,3,4]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1,null,3]",
+        "output": "[1,3]",
+        "expectedOutput": "[1,3]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Kth Smallest Element in a BST",
+    "slug": "kth-smallest-element-in-a-bst",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BST",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(H + K)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} leaderboard service keeps latency scores in a binary search tree with root node root. As a {{roleTitle}} in {{domain}}, return the k-th smallest score (1-indexed) among all values in the tree.",
+    "functionName": "kthSmallest",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= k <= number of nodes <= 10000",
+      "0 <= Node.val <= 10000",
+      "The tree is a valid binary search tree"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            1,
+            4,
+            null,
+            2
+          ],
+          "k": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            6,
+            2,
+            4,
+            null,
+            null,
+            1
+          ],
+          "k": 3
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ],
+          "k": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            1,
+            3
+          ],
+          "k": 3
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            3,
+            7,
+            2,
+            4,
+            6,
+            8
+          ],
+          "k": 5
+        },
+        "expectedOutput": 6,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            10,
+            5,
+            15,
+            null,
+            null,
+            12,
+            20
+          ],
+          "k": 4
+        },
+        "expectedOutput": 15,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @param {number} k\n * @return {number}\n */\nfunction kthSmallest(root, k) {\n    // Write your solution here\n}",
+      "python": "def kthSmallest(root: Optional[TreeNode], k: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,1,4,null,2], k = 1",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [5,3,6,2,4,null,null,1], k = 3",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Binary Tree Maximum Path Sum",
+    "slug": "binary-tree-maximum-path-sum",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "Tree DP",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} profit-and-loss rollup models regional net results as a binary tree with root node root. As a {{roleTitle}} in {{domain}}, find the maximum path sum. A path is a sequence of nodes in which each adjacent pair is connected by an edge, each node appears at most once, and the path need not pass through the root.",
+    "functionName": "maxPathSum",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= number of nodes <= 30000",
+      "-1000 <= Node.val <= 1000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 6,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            -10,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        },
+        "expectedOutput": 42,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            -3
+          ]
+        },
+        "expectedOutput": -3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            -1
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            -2,
+            3
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            4,
+            8,
+            11,
+            null,
+            13,
+            4,
+            7,
+            2,
+            null,
+            null,
+            null,
+            1
+          ]
+        },
+        "expectedOutput": 48,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number}\n */\nfunction maxPathSum(root) {\n    // Write your solution here\n}",
+      "python": "def maxPathSum(root: Optional[TreeNode]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [1,2,3]",
+        "output": "6",
+        "expectedOutput": "6",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [-10,9,20,null,null,15,7]",
+        "output": "42",
+        "expectedOutput": "42",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Construct Binary Tree from Preorder and Inorder Traversal",
+    "slug": "construct-binary-tree-from-preorder-and-inorder-traversal",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "Divide & Conquer",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} disaster-recovery job in {{location}} must rebuild a lost hierarchy from two logged traversals, preorder and inorder, of the same binary tree. As a {{roleTitle}} in {{domain}}, construct and return the binary tree.",
+    "functionName": "buildTree",
+    "parameters": [
+      {
+        "name": "preorder",
+        "type": "int[]"
+      },
+      {
+        "name": "inorder",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "TreeNode",
+    "constraints": [
+      "1 <= preorder.length <= 3000",
+      "inorder.length == preorder.length",
+      "-3000 <= preorder[i], inorder[i] <= 3000",
+      "All values are unique and both arrays describe the same tree"
+    ],
+    "ioNote": "The returned tree is serialized in level-order as an array where null marks a missing child (trailing nulls removed).",
+    "testCases": [
+      {
+        "input": {
+          "preorder": [
+            3,
+            9,
+            20,
+            15,
+            7
+          ],
+          "inorder": [
+            9,
+            3,
+            15,
+            20,
+            7
+          ]
+        },
+        "expectedOutput": [
+          3,
+          9,
+          20,
+          null,
+          null,
+          15,
+          7
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "preorder": [
+            -1
+          ],
+          "inorder": [
+            -1
+          ]
+        },
+        "expectedOutput": [
+          -1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "preorder": [
+            1,
+            2
+          ],
+          "inorder": [
+            2,
+            1
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "preorder": [
+            1,
+            2
+          ],
+          "inorder": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": [
+          1,
+          null,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "preorder": [
+            1,
+            2,
+            4,
+            5,
+            3,
+            6,
+            7
+          ],
+          "inorder": [
+            4,
+            2,
+            5,
+            1,
+            6,
+            3,
+            7
+          ]
+        },
+        "expectedOutput": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "preorder": [
+            5,
+            3,
+            2,
+            4,
+            8
+          ],
+          "inorder": [
+            2,
+            3,
+            4,
+            5,
+            8
+          ]
+        },
+        "expectedOutput": [
+          5,
+          3,
+          8,
+          2,
+          4
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} preorder\n * @param {number[]} inorder\n * @return {TreeNode}\n */\nfunction buildTree(preorder, inorder) {\n    // Write your solution here\n}",
+      "python": "def buildTree(preorder: list[int], inorder: list[int]) -> Optional[TreeNode]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "preorder = [3,9,20,15,7], inorder = [9,3,15,20,7]",
+        "output": "[3,9,20,null,null,15,7]",
+        "expectedOutput": "[3,9,20,null,null,15,7]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "preorder = [-1], inorder = [-1]",
+        "output": "[-1]",
+        "expectedOutput": "[-1]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Binary Tree Zigzag Level Order Traversal",
+    "slug": "binary-tree-zigzag-level-order-traversal",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} audit service walks a binary tree with root node root in an alternating pattern to balance read pressure across {{location}}. As a {{roleTitle}} in {{domain}}, return the zigzag level order traversal: left to right on the first level, right to left on the next, and so on.",
+    "functionName": "zigzagLevelOrder",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int[][]",
+    "constraints": [
+      "0 <= number of nodes <= 2000",
+      "-100 <= Node.val <= 100"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            9,
+            20,
+            null,
+            null,
+            15,
+            7
+          ]
+        },
+        "expectedOutput": [
+          [
+            3
+          ],
+          [
+            20,
+            9
+          ],
+          [
+            15,
+            7
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": []
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            null,
+            null,
+            5
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            null,
+            2,
+            null,
+            3
+          ]
+        },
+        "expectedOutput": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number[][]}\n */\nfunction zigzagLevelOrder(root) {\n    // Write your solution here\n}",
+      "python": "def zigzagLevelOrder(root: Optional[TreeNode]) -> list[list[int]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,9,20,null,null,15,7]",
+        "output": "[[3],[20,9],[15,7]]",
+        "expectedOutput": "[[3],[20,9],[15,7]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [1]",
+        "output": "[[1]]",
+        "expectedOutput": "[[1]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Count Good Nodes in Binary Tree",
+    "slug": "count-good-nodes-in-binary-tree",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} capacity planner stores node capacities in a binary tree with root node root. A node X is considered good if no node on the path from the root to X has a value greater than X. As a {{roleTitle}} in {{domain}}, return the number of good nodes in the tree.",
+    "functionName": "goodNodes",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= number of nodes <= 100000",
+      "-10000 <= Node.val <= 10000"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            3,
+            1,
+            4,
+            3,
+            null,
+            1,
+            5
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            3,
+            3,
+            null,
+            4,
+            2
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            2,
+            null,
+            4,
+            10,
+            8,
+            null,
+            null,
+            4
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            9,
+            null,
+            3,
+            6
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            5,
+            5,
+            5,
+            5
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number}\n */\nfunction goodNodes(root) {\n    // Write your solution here\n}",
+      "python": "def goodNodes(root: Optional[TreeNode]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [3,1,4,3,null,1,5]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [3,3,null,4,2]",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Sum Root to Leaf Numbers",
+    "slug": "sum-root-to-leaf-numbers",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Trees",
+    "subtopic": "DFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(H)"
+    },
+    "description": "At {{companyName}}, the {{department}} routing-code generator stores digit nodes (0-9) in a binary tree with root node root. Each root-to-leaf path spells out a numeric routing code. As a {{roleTitle}} in {{domain}}, return the total sum of all root-to-leaf numbers.",
+    "functionName": "sumNumbers",
+    "parameters": [
+      {
+        "name": "root",
+        "type": "TreeNode"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= number of nodes <= 1000",
+      "0 <= Node.val <= 9",
+      "Tree depth is at most 10 (the answer fits in 32 bits)"
+    ],
+    "ioNote": "Trees are given in level-order as an array where null marks a missing child (the same format used by LeetCode). An empty array means an empty tree.",
+    "testCases": [
+      {
+        "input": {
+          "root": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 25,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            4,
+            9,
+            0,
+            5,
+            1
+          ]
+        },
+        "expectedOutput": 1026,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "root": [
+            0
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            1,
+            0
+          ]
+        },
+        "expectedOutput": 10,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            9,
+            8,
+            7,
+            6,
+            5,
+            4,
+            3
+          ]
+        },
+        "expectedOutput": 3918,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "root": [
+            5,
+            null,
+            6,
+            null,
+            7
+          ]
+        },
+        "expectedOutput": 567,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {TreeNode} root\n * @return {number}\n */\nfunction sumNumbers(root) {\n    // Write your solution here\n}",
+      "python": "def sumNumbers(root: Optional[TreeNode]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "root = [1,2,3]",
+        "output": "25",
+        "expectedOutput": "25",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "root = [4,9,0,5,1]",
+        "output": "1026",
+        "expectedOutput": "1026",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Course Schedule",
+    "slug": "course-schedule",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Topological Sort",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V + E)"
+    },
+    "description": "At {{companyName}}, the {{department}} learning platform assigns {{roleTitle}} onboarding modules numbered 0 to numCourses - 1 across {{location}}. Prerequisites are given as pairs [a, b] meaning module b must be completed before module a. As a {{roleTitle}} in {{domain}}, determine whether it is possible to finish all modules.",
+    "functionName": "canFinish",
+    "parameters": [
+      {
+        "name": "numCourses",
+        "type": "int"
+      },
+      {
+        "name": "prerequisites",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i] = [a, b] means course b must be taken before course a",
+      "All prerequisite pairs are unique"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "numCourses": 2,
+          "prerequisites": [
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "numCourses": 2,
+          "prerequisites": [
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "numCourses": 1,
+          "prerequisites": []
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 4,
+          "prerequisites": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 5,
+          "prerequisites": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 3,
+          "prerequisites": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} numCourses\n * @param {number[][]} prerequisites\n * @return {boolean}\n */\nfunction canFinish(numCourses, prerequisites) {\n    // Write your solution here\n}",
+      "python": "def canFinish(numCourses: int, prerequisites: list[list[int]]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0],[0,1]]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Course Schedule II",
+    "slug": "course-schedule-ii",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Topological Sort",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V + E)"
+    },
+    "description": "At {{companyName}}, the {{department}} learning platform must schedule modules numbered 0 to numCourses - 1 given prerequisites as pairs [a, b], meaning module b must be completed before module a. As a {{roleTitle}} in {{domain}}, return an ordering of modules that satisfies every prerequisite. If several orderings exist, return any of them. If it is impossible, return an empty array.",
+    "functionName": "findOrder",
+    "parameters": [
+      {
+        "name": "numCourses",
+        "type": "int"
+      },
+      {
+        "name": "prerequisites",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "1 <= numCourses <= 2000",
+      "0 <= prerequisites.length <= 5000",
+      "prerequisites[i] = [a, b] means course b must be taken before course a",
+      "All prerequisite pairs are unique"
+    ],
+    "ioNote": "Multiple valid answers exist. Grade with a checker that verifies the result is a permutation of 0..numCourses-1 satisfying every prerequisite, or is empty when no valid order exists. expectedOutput is one valid answer (Kahn's BFS order).",
+    "checker": "topological",
+    "testCases": [
+      {
+        "input": {
+          "numCourses": 2,
+          "prerequisites": [
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [
+          0,
+          1
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "numCourses": 4,
+          "prerequisites": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "numCourses": 1,
+          "prerequisites": []
+        },
+        "expectedOutput": [
+          0
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 2,
+          "prerequisites": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 3,
+          "prerequisites": []
+        },
+        "expectedOutput": [
+          0,
+          1,
+          2
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "numCourses": 3,
+          "prerequisites": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": [
+          0,
+          1,
+          2
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} numCourses\n * @param {number[][]} prerequisites\n * @return {number[]}\n */\nfunction findOrder(numCourses, prerequisites) {\n    // Write your solution here\n}",
+      "python": "def findOrder(numCourses: int, prerequisites: list[list[int]]) -> list[int]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "numCourses = 2, prerequisites = [[1,0]]",
+        "output": "[0,1]",
+        "expectedOutput": "[0,1]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]",
+        "output": "[0,1,2,3]",
+        "expectedOutput": "[0,1,2,3]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Rotting Oranges",
+    "slug": "rotting-oranges",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Multi-source BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}'s {{location}} cold-storage facility, the {{department}} monitoring system tracks an m x n grid where 0 is an empty shelf, 1 is a fresh crate and 2 is a spoiled crate. Every minute, each fresh crate that is 4-directionally adjacent to a spoiled crate becomes spoiled. As a {{roleTitle}} in {{domain}}, return the minimum number of minutes until no fresh crate remains, or -1 if that is impossible.",
+    "functionName": "orangesRotting",
+    "parameters": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= grid.length, grid[0].length <= 10",
+      "grid[i][j] is 0, 1 or 2"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "grid": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1
+            ]
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} grid\n * @return {number}\n */\nfunction orangesRotting(grid) {\n    // Write your solution here\n}",
+      "python": "def orangesRotting(grid: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "grid = [[2,1,1],[1,1,0],[0,1,1]]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "grid = [[2,1,1],[0,1,1],[1,0,1]]",
+        "output": "-1",
+        "expectedOutput": "-1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Pacific Atlantic Water Flow",
+    "slug": "pacific-atlantic-water-flow",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "DFS / BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}'s {{location}} campus, the {{department}} drainage model uses an m x n matrix heights where heights[r][c] is the elevation of cell (r, c). The Pacific drains from the top and left edges and the Atlantic from the bottom and right edges. Water flows 4-directionally to cells of equal or lower height. As a {{roleTitle}} in {{domain}}, return all cells from which water can reach both oceans.",
+    "functionName": "pacificAtlantic",
+    "parameters": [
+      {
+        "name": "heights",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "constraints": [
+      "1 <= heights.length, heights[0].length <= 200",
+      "0 <= heights[r][c] <= 100000"
+    ],
+    "ioNote": "Return cells as [row, col] pairs. Compare as unordered sets. expectedOutput is sorted for convenience.",
+    "checker": "unordered",
+    "testCases": [
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              2,
+              3,
+              5
+            ],
+            [
+              3,
+              2,
+              3,
+              4,
+              4
+            ],
+            [
+              2,
+              4,
+              5,
+              3,
+              1
+            ],
+            [
+              6,
+              7,
+              1,
+              4,
+              5
+            ],
+            [
+              5,
+              1,
+              1,
+              2,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            0
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            0
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              3,
+              3,
+              3
+            ],
+            [
+              3,
+              1,
+              3
+            ],
+            [
+              0,
+              2,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              10,
+              9,
+              8
+            ],
+            [
+              9,
+              1,
+              7
+            ],
+            [
+              8,
+              7,
+              6
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} heights\n * @return {number[][]}\n */\nfunction pacificAtlantic(heights) {\n    // Write your solution here\n}",
+      "python": "def pacificAtlantic(heights: list[list[int]]) -> list[list[int]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "heights = [[1,2,2,3,5],[3,2,3,4,4],[2,4,5,3,1],[6,7,1,4,5],[5,1,1,2,4]]",
+        "output": "[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]",
+        "expectedOutput": "[[0,4],[1,3],[1,4],[2,2],[3,0],[3,1],[4,0]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "heights = [[1]]",
+        "output": "[[0,0]]",
+        "expectedOutput": "[[0,0]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Surrounded Regions",
+    "slug": "surrounded-regions",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "DFS / BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}'s {{location}} facility, the {{department}} zoning engine represents floor plots as an m x n board of 'X' (blocked) and 'O' (open) cells. As a {{roleTitle}} in {{domain}}, capture every region of 'O' cells that is fully surrounded by 'X' in all four directions by flipping those 'O' cells to 'X'. Regions touching the border are never captured.",
+    "functionName": "solve",
+    "parameters": [
+      {
+        "name": "board",
+        "type": "char[][]"
+      }
+    ],
+    "returnType": "char[][]",
+    "constraints": [
+      "1 <= board.length, board[0].length <= 200",
+      "board[i][j] is 'X' or 'O'"
+    ],
+    "ioNote": "board is an array of rows of single-character strings. Return the resulting board (it may be modified in place and returned).",
+    "testCases": [
+      {
+        "input": {
+          "board": [
+            [
+              "X",
+              "X",
+              "X",
+              "X"
+            ],
+            [
+              "X",
+              "O",
+              "O",
+              "X"
+            ],
+            [
+              "X",
+              "X",
+              "O",
+              "X"
+            ],
+            [
+              "X",
+              "O",
+              "X",
+              "X"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "X",
+            "X",
+            "X",
+            "X"
+          ],
+          [
+            "X",
+            "X",
+            "X",
+            "X"
+          ],
+          [
+            "X",
+            "X",
+            "X",
+            "X"
+          ],
+          [
+            "X",
+            "O",
+            "X",
+            "X"
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "X"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "X"
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "O"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "O"
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "O",
+              "O"
+            ],
+            [
+              "O",
+              "O"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "O",
+            "O"
+          ],
+          [
+            "O",
+            "O"
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "X",
+              "O",
+              "X"
+            ],
+            [
+              "O",
+              "X",
+              "O"
+            ],
+            [
+              "X",
+              "O",
+              "X"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "X",
+            "O",
+            "X"
+          ],
+          [
+            "O",
+            "X",
+            "O"
+          ],
+          [
+            "X",
+            "O",
+            "X"
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "board": [
+            [
+              "X",
+              "X",
+              "X"
+            ],
+            [
+              "X",
+              "O",
+              "X"
+            ],
+            [
+              "X",
+              "X",
+              "X"
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            "X",
+            "X",
+            "X"
+          ],
+          [
+            "X",
+            "X",
+            "X"
+          ],
+          [
+            "X",
+            "X",
+            "X"
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {character[][]} board\n * @return {character[][]}\n */\nfunction solve(board) {\n    // Write your solution here\n}",
+      "python": "def solve(board: list[list[str]]) -> list[list[str]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "board = [[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"O\",\"O\",\"X\"],[\"X\",\"X\",\"O\",\"X\"],[\"X\",\"O\",\"X\",\"X\"]]",
+        "output": "[[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"O\",\"X\",\"X\"]]",
+        "expectedOutput": "[[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"X\",\"X\",\"X\"],[\"X\",\"O\",\"X\",\"X\"]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "board = [[\"X\"]]",
+        "output": "[[\"X\"]]",
+        "expectedOutput": "[[\"X\"]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Number of Provinces",
+    "slug": "number-of-provinces",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Union Find / DFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} partner network is described by an n x n matrix isConnected where isConnected[i][j] = 1 means partners i and j are directly linked, and connectivity is transitive. As a {{roleTitle}} in {{domain}}, return the total number of provinces, where a province is a maximal group of directly or indirectly connected partners.",
+    "functionName": "findCircleNum",
+    "parameters": [
+      {
+        "name": "isConnected",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= n <= 200",
+      "isConnected[i][j] is 0 or 1",
+      "isConnected[i][i] == 1 and the matrix is symmetric"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "isConnected": [
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "isConnected": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "isConnected": [
+            [
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "isConnected": [
+            [
+              1,
+              1
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "isConnected": [
+            [
+              1,
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "isConnected": [
+            [
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} isConnected\n * @return {number}\n */\nfunction findCircleNum(isConnected) {\n    // Write your solution here\n}",
+      "python": "def findCircleNum(isConnected: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "isConnected = [[1,1,0],[1,1,0],[0,0,1]]",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "isConnected = [[1,0,0],[0,1,0],[0,0,1]]",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Is Graph Bipartite?",
+    "slug": "is-graph-bipartite",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Graph Coloring",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V)"
+    },
+    "description": "At {{companyName}}, the {{department}} scheduling service must split conflicting jobs across two worker pools in {{location}}. The conflicts form an undirected graph given as an adjacency list graph, where graph[u] lists the nodes adjacent to u. As a {{roleTitle}} in {{domain}}, determine whether the nodes can be partitioned into two sets such that every edge connects a node from one set to a node from the other (the graph may be disconnected).",
+    "functionName": "isBipartite",
+    "parameters": [
+      {
+        "name": "graph",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= graph.length <= 100",
+      "0 <= graph[u].length < graph.length",
+      "No self-loops or parallel edges; if v is in graph[u] then u is in graph[v]"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "graph": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "graph": [
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              2
+            ]
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "graph": [
+            []
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "graph": [
+            [
+              1
+            ],
+            [
+              0
+            ]
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "graph": [
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "graph": [
+            [],
+            [
+              2
+            ],
+            [
+              1
+            ],
+            []
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} graph\n * @return {boolean}\n */\nfunction isBipartite(graph) {\n    // Write your solution here\n}",
+      "python": "def isBipartite(graph: list[list[int]]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "graph = [[1,2,3],[0,2],[0,1,3],[0,2]]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "graph = [[1,3],[0,2],[1,3],[0,2]]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Find if Path Exists in Graph",
+    "slug": "find-if-path-exists-in-graph",
+    "difficulty": "Easy",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "DFS / BFS",
+    "estimatedTimeMins": 20,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V + E)"
+    },
+    "description": "At {{companyName}}, the {{department}} connectivity checker verifies reachability between n data centers numbered 0 to n - 1, linked by bidirectional cables given in the array edges. As a {{roleTitle}} in {{domain}}, determine whether a valid path exists from the data center source to the data center destination.",
+    "functionName": "validPath",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "edges",
+        "type": "int[][]"
+      },
+      {
+        "name": "source",
+        "type": "int"
+      },
+      {
+        "name": "destination",
+        "type": "int"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= n <= 200000",
+      "0 <= edges.length <= 200000",
+      "0 <= source, destination < n",
+      "No self-loops and no duplicate edges"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 3,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ],
+          "source": 0,
+          "destination": 2
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 6,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "source": 0,
+          "destination": 5
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 1,
+          "edges": [],
+          "source": 0,
+          "destination": 0
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 4,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "source": 0,
+          "destination": 1
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "source": 0,
+          "destination": 4
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 4,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ]
+          ],
+          "source": 1,
+          "destination": 3
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} n\n * @param {number[][]} edges\n * @param {number} source\n * @param {number} destination\n * @return {boolean}\n */\nfunction validPath(n, edges, source, destination) {\n    // Write your solution here\n}",
+      "python": "def validPath(n: int, edges: list[list[int]], source: int, destination: int) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "n = 3, edges = [[0,1],[1,2],[2,0]], source = 0, destination = 2",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "n = 6, edges = [[0,1],[0,2],[3,5],[5,4],[4,3]], source = 0, destination = 5",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Network Delay Time",
+    "slug": "network-delay-time",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Shortest Path",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(E log V)",
+      "space": "O(V + E)"
+    },
+    "description": "At {{companyName}}, the {{department}} messaging backbone connects n nodes labeled 1 to n. The array times holds directed links [u, v, w], meaning a signal travels from u to v in w time units. As a {{roleTitle}} in {{domain}}, a signal is sent from node k. Return the minimum time for all n nodes to receive it, or -1 if some node can never receive it.",
+    "functionName": "networkDelayTime",
+    "parameters": [
+      {
+        "name": "times",
+        "type": "int[][]"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "k",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= k <= n <= 100",
+      "0 <= times.length <= 6000",
+      "1 <= u, v <= n, u != v",
+      "0 <= w <= 100",
+      "All (u, v) pairs are unique"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "times": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              3,
+              4,
+              1
+            ]
+          ],
+          "n": 4,
+          "k": 2
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "times": [
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "n": 2,
+          "k": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "times": [
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "n": 2,
+          "k": 2
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "times": [
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              3,
+              2
+            ],
+            [
+              1,
+              3,
+              4
+            ]
+          ],
+          "n": 3,
+          "k": 1
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "times": [
+            [
+              1,
+              2,
+              5
+            ],
+            [
+              1,
+              3,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              4,
+              1
+            ]
+          ],
+          "n": 4,
+          "k": 1
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "times": [],
+          "n": 1,
+          "k": 1
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} times\n * @param {number} n\n * @param {number} k\n * @return {number}\n */\nfunction networkDelayTime(times, n, k) {\n    // Write your solution here\n}",
+      "python": "def networkDelayTime(times: list[list[int]], n: int, k: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "times = [[1,2,1]], n = 2, k = 1",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Min Cost to Connect All Points",
+    "slug": "min-cost-to-connect-all-points",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Minimum Spanning Tree",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} infrastructure team is laying fiber between sensor sites in {{location}}, given as 2D coordinates in the array points. The cost of connecting two sites is their Manhattan distance |xi - xj| + |yi - yj|. As a {{roleTitle}} in {{domain}}, return the minimum total cost to connect all sites so that exactly one simple path exists between any two of them.",
+    "functionName": "minCostConnectPoints",
+    "parameters": [
+      {
+        "name": "points",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= points.length <= 1000",
+      "-1000000 <= xi, yi <= 1000000",
+      "All points are distinct"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 20,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "points": [
+            [
+              3,
+              12
+            ],
+            [
+              -2,
+              5
+            ],
+            [
+              -4,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 18,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "points": [
+            [
+              0,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "points": [
+            [
+              2,
+              -3
+            ],
+            [
+              -17,
+              -8
+            ],
+            [
+              13,
+              8
+            ],
+            [
+              -17,
+              -15
+            ]
+          ]
+        },
+        "expectedOutput": 53,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} points\n * @return {number}\n */\nfunction minCostConnectPoints(points) {\n    // Write your solution here\n}",
+      "python": "def minCostConnectPoints(points: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "points = [[0,0],[2,2],[3,10],[5,2],[7,0]]",
+        "output": "20",
+        "expectedOutput": "20",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "points = [[3,12],[-2,5],[-4,1]]",
+        "output": "18",
+        "expectedOutput": "18",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Redundant Connection",
+    "slug": "redundant-connection",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Union Find",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * α(N))",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} network topology was a tree of n nodes labeled 1 to n until one extra cable was added, creating a cycle. The links are given in the array edges. As a {{roleTitle}} in {{domain}}, return an edge that can be removed so the graph is a tree again. If several answers exist, return the one that occurs last in the input.",
+    "functionName": "findRedundantConnection",
+    "parameters": [
+      {
+        "name": "edges",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[]",
+    "constraints": [
+      "3 <= n == edges.length <= 1000",
+      "edges[i] = [a, b] with 1 <= a < b <= n",
+      "No repeated edges; the graph is connected"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": [
+          2,
+          3
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              1,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": [
+          1,
+          4
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          2,
+          4
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": [
+          1,
+          3
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "edges": [
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              2,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": [
+          2,
+          5
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} edges\n * @return {number[]}\n */\nfunction findRedundantConnection(edges) {\n    // Write your solution here\n}",
+      "python": "def findRedundantConnection(edges: list[list[int]]) -> list[int]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "edges = [[1,2],[1,3],[2,3]]",
+        "output": "[2,3]",
+        "expectedOutput": "[2,3]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "edges = [[1,2],[2,3],[3,4],[1,4],[1,5]]",
+        "output": "[1,4]",
+        "expectedOutput": "[1,4]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Number of Connected Components in an Undirected Graph",
+    "slug": "number-of-connected-components-in-an-undirected-graph",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Union Find",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N + E)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} cluster manager tracks n servers labeled 0 to n - 1 joined by undirected links listed in edges. As a {{roleTitle}} in {{domain}}, return the number of connected components, meaning groups of servers that can reach each other either directly or indirectly.",
+    "functionName": "countComponents",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "edges",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= n <= 2000",
+      "0 <= edges.length <= 5000",
+      "0 <= a, b < n, a != b",
+      "No repeated edges"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 1,
+          "edges": []
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 4,
+          "edges": []
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 6,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} n\n * @param {number[][]} edges\n * @return {number}\n */\nfunction countComponents(n, edges) {\n    // Write your solution here\n}",
+      "python": "def countComponents(n: int, edges: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "n = 5, edges = [[0,1],[1,2],[3,4]]",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "n = 5, edges = [[0,1],[1,2],[2,3],[3,4]]",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Shortest Path in Binary Matrix",
+    "slug": "shortest-path-in-binary-matrix",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N^2)"
+    },
+    "description": "At {{companyName}}'s {{location}} fulfillment center, the {{department}} robot navigator moves across an n x n grid where 0 is a clear cell and 1 is an obstacle. Robots may move to any of the 8 neighboring cells. As a {{roleTitle}} in {{domain}}, return the length (number of cells) of the shortest clear path from the top-left cell to the bottom-right cell, or -1 if none exists.",
+    "functionName": "shortestPathBinaryMatrix",
+    "parameters": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "n == grid.length == grid[i].length",
+      "1 <= n <= 100",
+      "grid[i][j] is 0 or 1"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": -1,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} grid\n * @return {number}\n */\nfunction shortestPathBinaryMatrix(grid) {\n    // Write your solution here\n}",
+      "python": "def shortestPathBinaryMatrix(grid: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "grid = [[0,1],[1,0]]",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "grid = [[0,0,0],[1,1,0],[1,1,0]]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Walls and Gates",
+    "slug": "walls-and-gates",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Multi-source BFS",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}'s {{location}} warehouse, the {{department}} layout planner models the floor as an m x n grid where -1 is a wall, 0 is an exit gate and 2147483647 (INF) is an empty room. As a {{roleTitle}} in {{domain}}, fill each empty room with the distance (in 4-directional steps) to its nearest gate. If a gate cannot be reached, leave the room as INF.",
+    "functionName": "wallsAndGates",
+    "parameters": [
+      {
+        "name": "rooms",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "constraints": [
+      "1 <= m, n <= 250",
+      "rooms[i][j] is -1, 0 or 2147483647"
+    ],
+    "ioNote": "INF = 2147483647. Return the resulting grid (it may be modified in place and returned).",
+    "testCases": [
+      {
+        "input": {
+          "rooms": [
+            [
+              2147483647,
+              -1,
+              0,
+              2147483647
+            ],
+            [
+              2147483647,
+              2147483647,
+              2147483647,
+              -1
+            ],
+            [
+              2147483647,
+              -1,
+              2147483647,
+              -1
+            ],
+            [
+              0,
+              -1,
+              2147483647,
+              2147483647
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            3,
+            -1,
+            0,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            -1
+          ],
+          [
+            1,
+            -1,
+            2,
+            -1
+          ],
+          [
+            0,
+            -1,
+            3,
+            4
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "rooms": [
+            [
+              -1
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            -1
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "rooms": [
+            [
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "rooms": [
+            [
+              2147483647
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            2147483647
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "rooms": [
+            [
+              0,
+              2147483647
+            ],
+            [
+              2147483647,
+              2147483647
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "rooms": [
+            [
+              2147483647,
+              2147483647,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            2,
+            1,
+            0
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} rooms\n * @return {number[][]}\n */\nfunction wallsAndGates(rooms) {\n    // Write your solution here\n}",
+      "python": "def wallsAndGates(rooms: list[list[int]]) -> list[list[int]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "rooms = [[2147483647,-1,0,2147483647],[2147483647,2147483647,2147483647,-1],[2147483647,-1,2147483647,-1],[0,-1,2147483647,2147483647]]",
+        "output": "[[3,-1,0,1],[2,2,1,-1],[1,-1,2,-1],[0,-1,3,4]]",
+        "expectedOutput": "[[3,-1,0,1],[2,2,1,-1],[1,-1,2,-1],[0,-1,3,4]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "rooms = [[-1]]",
+        "output": "[[-1]]",
+        "expectedOutput": "[[-1]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Path With Minimum Effort",
+    "slug": "path-with-minimum-effort",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Shortest Path",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N log(M * N))",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}, the {{department}} drone-delivery planner uses a rows x columns grid heights of terrain elevations for {{location}}. A drone starts at the top-left cell and must reach the bottom-right cell, moving 4-directionally. As a {{roleTitle}} in {{domain}}, find a route that minimizes the maximum absolute elevation difference between consecutive cells along the route, and return that value.",
+    "functionName": "minimumEffortPath",
+    "parameters": [
+      {
+        "name": "heights",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= rows, columns <= 100",
+      "1 <= heights[i][j] <= 1000000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              2
+            ],
+            [
+              3,
+              8,
+              2
+            ],
+            [
+              5,
+              3,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              3,
+              8,
+              4
+            ],
+            [
+              5,
+              3,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              2,
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              2,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              10
+            ],
+            [
+              10,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 9,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "heights": [
+            [
+              1,
+              2
+            ],
+            [
+              5,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} heights\n * @return {number}\n */\nfunction minimumEffortPath(heights) {\n    // Write your solution here\n}",
+      "python": "def minimumEffortPath(heights: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "heights = [[1,2,2],[3,8,2],[5,3,5]]",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "heights = [[1,2,3],[3,8,4],[5,3,5]]",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Critical Connections in a Network",
+    "slug": "critical-connections-in-a-network",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Tarjan's Bridges",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(V + E)",
+      "space": "O(V + E)"
+    },
+    "description": "At {{companyName}}, the {{department}} reliability team maintains n servers numbered 0 to n - 1 connected by undirected links in the array connections across {{location}}. A link is critical if removing it disconnects some servers from others. As a {{roleTitle}} in {{domain}}, return all critical connections in the network, in any order.",
+    "functionName": "criticalConnections",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "connections",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int[][]",
+    "constraints": [
+      "2 <= n <= 100000",
+      "n - 1 <= connections.length <= 100000",
+      "0 <= a, b < n, a != b",
+      "No repeated connections; the network is connected"
+    ],
+    "ioNote": "Compare as an unordered set of unordered pairs (each pair may be returned as [a, b] or [b, a]). expectedOutput lists each pair with a < b, sorted.",
+    "checker": "unordered",
+    "testCases": [
+      {
+        "input": {
+          "n": 4,
+          "connections": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            1,
+            3
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 2,
+          "connections": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            1
+          ]
+        ],
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 5,
+          "connections": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            1,
+            3
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 3,
+          "connections": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": [],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 6,
+          "connections": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 7,
+          "connections": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              6
+            ]
+          ]
+        },
+        "expectedOutput": [
+          [
+            1,
+            3
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} n\n * @param {number[][]} connections\n * @return {number[][]}\n */\nfunction criticalConnections(n, connections) {\n    // Write your solution here\n}",
+      "python": "def criticalConnections(n: int, connections: list[list[int]]) -> list[list[int]]:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "n = 4, connections = [[0,1],[1,2],[2,0],[1,3]]",
+        "output": "[[1,3]]",
+        "expectedOutput": "[[1,3]]",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "n = 2, connections = [[0,1]]",
+        "output": "[[0,1]]",
+        "expectedOutput": "[[0,1]]",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+    "slug": "find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Graphs",
+    "subtopic": "Floyd-Warshall",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^3)",
+      "space": "O(N^2)"
+    },
+    "description": "At {{companyName}}, the {{department}} logistics team has n hubs numbered 0 to n - 1 joined by weighted bidirectional lanes edges[i] = [from, to, weight] across {{location}}. As a {{roleTitle}} in {{domain}}, return the hub with the fewest other hubs reachable within a shortest-path distance of at most distanceThreshold. If several hubs tie, return the one with the greatest number.",
+    "functionName": "findTheCity",
+    "parameters": [
+      {
+        "name": "n",
+        "type": "int"
+      },
+      {
+        "name": "edges",
+        "type": "int[][]"
+      },
+      {
+        "name": "distanceThreshold",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "2 <= n <= 100",
+      "1 <= edges.length <= n * (n - 1) / 2",
+      "1 <= weight, distanceThreshold <= 10000",
+      "All pairs (from, to) are distinct"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "n": 4,
+          "edges": [
+            [
+              0,
+              1,
+              3
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              1,
+              3,
+              4
+            ],
+            [
+              2,
+              3,
+              1
+            ]
+          ],
+          "distanceThreshold": 4
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 5,
+          "edges": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              4,
+              8
+            ],
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              4,
+              2
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              3,
+              4,
+              1
+            ]
+          ],
+          "distanceThreshold": 2
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "n": 2,
+          "edges": [
+            [
+              0,
+              1,
+              5
+            ]
+          ],
+          "distanceThreshold": 4
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 3,
+          "edges": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ]
+          ],
+          "distanceThreshold": 1
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 4,
+          "edges": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              1,
+              2,
+              1
+            ],
+            [
+              2,
+              3,
+              1
+            ]
+          ],
+          "distanceThreshold": 2
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "n": 3,
+          "edges": [
+            [
+              0,
+              1,
+              10
+            ],
+            [
+              1,
+              2,
+              10
+            ],
+            [
+              0,
+              2,
+              5
+            ]
+          ],
+          "distanceThreshold": 10
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} n\n * @param {number[][]} edges\n * @param {number} distanceThreshold\n * @return {number}\n */\nfunction findTheCity(n, edges, distanceThreshold) {\n    // Write your solution here\n}",
+      "python": "def findTheCity(n: int, edges: list[list[int]], distanceThreshold: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "n = 4, edges = [[0,1,3],[1,2,1],[1,3,4],[2,3,1]], distanceThreshold = 4",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "n = 5, edges = [[0,1,2],[0,4,8],[1,2,3],[1,4,2],[2,3,1],[3,4,1]], distanceThreshold = 2",
+        "output": "0",
+        "expectedOutput": "0",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "House Robber",
+    "slug": "house-robber",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} batch scheduler in {{location}} can claim compute credits from a row of nodes, where nums[i] is the credit on node i. Claiming two adjacent nodes triggers an anti-abuse lock. As a {{roleTitle}} in {{domain}}, return the maximum total credit that can be claimed without choosing two adjacent nodes.",
+    "functionName": "rob",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 400"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            1
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            7,
+            9,
+            3,
+            1
+          ]
+        },
+        "expectedOutput": 12,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            5
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            1
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            100,
+            1,
+            1,
+            100
+          ]
+        },
+        "expectedOutput": 200,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            0,
+            0
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} nums\n * @return {number}\n */\nfunction rob(nums) {\n    // Write your solution here\n}",
+      "python": "def rob(nums: list[int]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "nums = [2,7,9,3,1]",
+        "output": "12",
+        "expectedOutput": "12",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "House Robber II",
+    "slug": "house-robber-ii",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "1D DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} credit allocator now manages nodes arranged in a ring, so the first and last nodes are adjacent. nums[i] is the credit on node i, and claiming two adjacent nodes triggers a lock. As a {{roleTitle}} in {{domain}}, return the maximum total credit that can be claimed without choosing two adjacent nodes.",
+    "functionName": "robCircular",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 100",
+      "0 <= nums[i] <= 1000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            2,
+            3,
+            2
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            1
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            200,
+            3,
+            140,
+            20,
+            10
+          ]
+        },
+        "expectedOutput": 340,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            5,
+            1,
+            1,
+            5,
+            1
+          ]
+        },
+        "expectedOutput": 10,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} nums\n * @return {number}\n */\nfunction robCircular(nums) {\n    // Write your solution here\n}",
+      "python": "def robCircular(nums: list[int]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "nums = [2,3,2]",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "nums = [1,2,3,1]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Unique Paths",
+    "slug": "unique-paths",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}'s {{location}} data hall, a maintenance robot starts at the top-left of an m x n rack grid and must reach the bottom-right, moving only right or down. As a {{roleTitle}} in {{domain}}, return the number of distinct paths the robot can take.",
+    "functionName": "uniquePaths",
+    "parameters": [
+      {
+        "name": "m",
+        "type": "int"
+      },
+      {
+        "name": "n",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= m, n <= 100",
+      "The answer fits in a 32-bit signed integer"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "m": 3,
+          "n": 7
+        },
+        "expectedOutput": 28,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "m": 3,
+          "n": 2
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "m": 1,
+          "n": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "m": 1,
+          "n": 10
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "m": 10,
+          "n": 10
+        },
+        "expectedOutput": 48620,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "m": 23,
+          "n": 12
+        },
+        "expectedOutput": 193536720,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} m\n * @param {number} n\n * @return {number}\n */\nfunction uniquePaths(m, n) {\n    // Write your solution here\n}",
+      "python": "def uniquePaths(m: int, n: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "m = 3, n = 7",
+        "output": "28",
+        "expectedOutput": "28",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "m = 3, n = 2",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Minimum Path Sum",
+    "slug": "minimum-path-sum",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} cost-routing service models transit fees as an m x n grid of non-negative costs. As a {{roleTitle}} in {{domain}}, find the path from the top-left to the bottom-right cell, moving only right or down, that minimizes the sum of the costs along it, and return that sum.",
+    "functionName": "minPathSum",
+    "parameters": [
+      {
+        "name": "grid",
+        "type": "int[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= m, n <= 200",
+      "0 <= grid[i][j] <= 200"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              3,
+              1
+            ],
+            [
+              1,
+              5,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 7,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              4,
+              5,
+              6
+            ]
+          ]
+        },
+        "expectedOutput": 12,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              5
+            ]
+          ]
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              1,
+              4,
+              8,
+              6
+            ],
+            [
+              4,
+              7,
+              3,
+              1
+            ],
+            [
+              8,
+              8,
+              2,
+              1
+            ],
+            [
+              8,
+              9,
+              2,
+              9
+            ]
+          ]
+        },
+        "expectedOutput": 26,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "grid": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              9,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[][]} grid\n * @return {number}\n */\nfunction minPathSum(grid) {\n    // Write your solution here\n}",
+      "python": "def minPathSum(grid: list[list[int]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "grid = [[1,3,1],[1,5,1],[4,2,1]]",
+        "output": "7",
+        "expectedOutput": "7",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "grid = [[1,2,3],[4,5,6]]",
+        "output": "12",
+        "expectedOutput": "12",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Partition Equal Subset Sum",
+    "slug": "partition-equal-subset-sum",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * sum)",
+      "space": "O(sum)"
+    },
+    "description": "At {{companyName}}, the {{department}} billing reconciler in {{location}} receives a list of invoice amounts nums. As a {{roleTitle}} in {{domain}}, determine whether the amounts can be split into two groups whose totals are exactly equal.",
+    "functionName": "canPartition",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "1 <= nums.length <= 200",
+      "1 <= nums[i] <= 100"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            5,
+            11,
+            5
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            1
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            5
+          ]
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            3,
+            3,
+            4,
+            5
+          ]
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} nums\n * @return {boolean}\n */\nfunction canPartition(nums) {\n    // Write your solution here\n}",
+      "python": "def canPartition(nums: list[int]) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,5,11,5]",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "nums = [1,2,3,5]",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "0/1 Knapsack",
+    "slug": "0-1-knapsack",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Knapsack",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * W)",
+      "space": "O(W)"
+    },
+    "description": "At {{companyName}}'s {{location}} depot, a freight carrier has a weight capacity W. Cargo item i has weight wt[i] and market value val[i], and each item can be loaded whole or not at all. As a {{roleTitle}} in {{domain}}, return the maximum total value that fits in the carrier.",
+    "functionName": "knapsack",
+    "parameters": [
+      {
+        "name": "W",
+        "type": "int"
+      },
+      {
+        "name": "wt",
+        "type": "int[]"
+      },
+      {
+        "name": "val",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= wt.length == val.length <= 1000",
+      "0 <= W <= 1000",
+      "1 <= wt[i], val[i] <= 1000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "W": 50,
+          "wt": [
+            10,
+            20,
+            30
+          ],
+          "val": [
+            60,
+            100,
+            120
+          ]
+        },
+        "expectedOutput": 220,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "W": 4,
+          "wt": [
+            4,
+            5,
+            1
+          ],
+          "val": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "W": 3,
+          "wt": [
+            4,
+            5,
+            6
+          ],
+          "val": [
+            1,
+            2,
+            3
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 10,
+          "wt": [
+            5,
+            4,
+            6,
+            3
+          ],
+          "val": [
+            10,
+            40,
+            30,
+            50
+          ]
+        },
+        "expectedOutput": 90,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 0,
+          "wt": [
+            1
+          ],
+          "val": [
+            10
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "W": 7,
+          "wt": [
+            1,
+            3,
+            4,
+            5
+          ],
+          "val": [
+            1,
+            4,
+            5,
+            7
+          ]
+        },
+        "expectedOutput": 9,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} W\n * @param {number[]} wt\n * @param {number[]} val\n * @return {number}\n */\nfunction knapsack(W, wt, val) {\n    // Write your solution here\n}",
+      "python": "def knapsack(W: int, wt: list[int], val: list[int]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "W = 50, wt = [10,20,30], val = [60,100,120]",
+        "output": "220",
+        "expectedOutput": "220",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "W = 4, wt = [4,5,1], val = [1,2,3]",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Longest Palindromic Subsequence",
+    "slug": "longest-palindromic-subsequence",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N^2)"
+    },
+    "description": "At {{companyName}}, the {{department}} data-integrity team scans event logs, represented as a string s, for symmetric patterns. As a {{roleTitle}} in {{domain}}, return the length of the longest palindromic subsequence of s. A subsequence keeps the relative order of the remaining characters after deleting zero or more characters.",
+    "functionName": "longestPalindromeSubseq",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= s.length <= 1000",
+      "s consists only of lowercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "bbbab"
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "cbbd"
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "a"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abcde"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "agbdba"
+        },
+        "expectedOutput": 5,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "racecar"
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s\n * @return {number}\n */\nfunction longestPalindromeSubseq(s) {\n    // Write your solution here\n}",
+      "python": "def longestPalindromeSubseq(s: str) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s = \"bbbab\"",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s = \"cbbd\"",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Decode Ways",
+    "slug": "decode-ways",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N)",
+      "space": "O(1)"
+    },
+    "description": "At {{companyName}}, the {{department}} legacy gateway encodes messages by mapping A to 1, B to 2, ..., Z to 26, and sends the digits as a string s. As a {{roleTitle}} in {{domain}}, return the number of distinct ways the digit string can be decoded back into letters. Return 0 if it cannot be decoded.",
+    "functionName": "numDecodings",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= s.length <= 100",
+      "s contains only digits and may contain leading zeros",
+      "The answer fits in a 32-bit integer"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "12"
+        },
+        "expectedOutput": 2,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "226"
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "06"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "0"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "10"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "11106"
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s\n * @return {number}\n */\nfunction numDecodings(s) {\n    // Write your solution here\n}",
+      "python": "def numDecodings(s: str) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s = \"12\"",
+        "output": "2",
+        "expectedOutput": "2",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s = \"226\"",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Maximal Square",
+    "slug": "maximal-square",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Grid DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}'s {{location}} data center, the {{department}} capacity map is an m x n matrix of '0' and '1' cells, where '1' marks a usable rack slot. As a {{roleTitle}} in {{domain}}, find the largest square made up only of '1' cells and return its area.",
+    "functionName": "maximalSquare",
+    "parameters": [
+      {
+        "name": "matrix",
+        "type": "char[][]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= m, n <= 300",
+      "matrix[i][j] is '0' or '1'"
+    ],
+    "ioNote": "matrix is an array of rows of single-character strings '0' or '1'. Return the area (side * side).",
+    "testCases": [
+      {
+        "input": {
+          "matrix": [
+            [
+              "1",
+              "0",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "1",
+              "0",
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1",
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "0",
+              "0",
+              "1",
+              "0"
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "0",
+              "1"
+            ],
+            [
+              "1",
+              "0"
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "0"
+            ]
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "matrix": [
+            [
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "1",
+              "1",
+              "1"
+            ],
+            [
+              "0",
+              "1",
+              "1"
+            ]
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {character[][]} matrix\n * @return {number}\n */\nfunction maximalSquare(matrix) {\n    // Write your solution here\n}",
+      "python": "def maximalSquare(matrix: list[list[str]]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "matrix = [[\"1\",\"0\",\"1\",\"0\",\"0\"],[\"1\",\"0\",\"1\",\"1\",\"1\"],[\"1\",\"1\",\"1\",\"1\",\"1\"],[\"1\",\"0\",\"0\",\"1\",\"0\"]]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "matrix = [[\"0\",\"1\"],[\"1\",\"0\"]]",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Target Sum",
+    "slug": "target-sum",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Subset Sum",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * sum)",
+      "space": "O(sum)"
+    },
+    "description": "At {{companyName}}, the {{department}} forecasting job receives an array nums of daily adjustments. For each value it must pick a '+' or '-' sign. As a {{roleTitle}} in {{domain}}, return the number of sign assignments whose resulting expression evaluates to target.",
+    "functionName": "findTargetSumWays",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      },
+      {
+        "name": "target",
+        "type": "int"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 20",
+      "0 <= nums[i] <= 1000",
+      "0 <= sum(nums) <= 1000",
+      "-1000 <= target <= 1000"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "target": 3
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 1
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1
+          ],
+          "target": 2
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            0,
+            0,
+            0
+          ],
+          "target": 0
+        },
+        "expectedOutput": 8,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            2,
+            2
+          ],
+          "target": 2
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "target": 3
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} nums\n * @param {number} target\n * @return {number}\n */\nfunction findTargetSumWays(nums, target) {\n    // Write your solution here\n}",
+      "python": "def findTargetSumWays(nums: list[int], target: int) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "nums = [1,1,1,1,1], target = 3",
+        "output": "5",
+        "expectedOutput": "5",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "nums = [1], target = 1",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Coin Change II",
+    "slug": "coin-change-ii",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Unbounded Knapsack",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(N * amount)",
+      "space": "O(amount)"
+    },
+    "description": "At {{companyName}}'s {{location}} payments hub, the {{department}} gateway must settle a payout amount using the denominations in coins, with an unlimited supply of each. As a {{roleTitle}} in {{domain}}, return the number of distinct combinations of coins that sum to amount, or 0 if none do.",
+    "functionName": "change",
+    "parameters": [
+      {
+        "name": "amount",
+        "type": "int"
+      },
+      {
+        "name": "coins",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= coins.length <= 300",
+      "1 <= coins[i] <= 5000",
+      "All coin values are unique",
+      "0 <= amount <= 5000",
+      "The answer fits in a 32-bit integer"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "amount": 5,
+          "coins": [
+            1,
+            2,
+            5
+          ]
+        },
+        "expectedOutput": 4,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "amount": 3,
+          "coins": [
+            2
+          ]
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "amount": 10,
+          "coins": [
+            10
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "amount": 0,
+          "coins": [
+            7
+          ]
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "amount": 500,
+          "coins": [
+            3,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "expectedOutput": 35502874,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "amount": 7,
+          "coins": [
+            2,
+            3,
+            5
+          ]
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number} amount\n * @param {number[]} coins\n * @return {number}\n */\nfunction change(amount, coins) {\n    // Write your solution here\n}",
+      "python": "def change(amount: int, coins: list[int]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "amount = 5, coins = [1,2,5]",
+        "output": "4",
+        "expectedOutput": "4",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "amount = 3, coins = [2]",
+        "output": "0",
+        "expectedOutput": "0",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Regular Expression Matching",
+    "slug": "regular-expression-matching",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(M * N)"
+    },
+    "description": "At {{companyName}}, the {{department}} log-filtering engine supports patterns with '.' (matches any single character) and '*' (matches zero or more of the preceding element). As a {{roleTitle}} in {{domain}}, implement matching between an input string s and a pattern p, and return whether the pattern matches the entire string.",
+    "functionName": "isMatch",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "p",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= s.length <= 20",
+      "1 <= p.length <= 20",
+      "s contains only lowercase English letters",
+      "p contains only lowercase letters, '.' and '*'",
+      "Every '*' is preceded by a valid character"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "aa",
+          "p": "a"
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "aa",
+          "p": "a*"
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "ab",
+          "p": ".*"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "aab",
+          "p": "c*a*b"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "mississippi",
+          "p": "mis*is*p*."
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "",
+          "p": "a*b*"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s\n * @param {string} p\n * @return {boolean}\n */\nfunction isMatch(s, p) {\n    // Write your solution here\n}",
+      "python": "def isMatch(s: str, p: str) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s = \"aa\", p = \"a\"",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s = \"aa\", p = \"a*\"",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Burst Balloons",
+    "slug": "burst-balloons",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval DP",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N^3)",
+      "space": "O(N^2)"
+    },
+    "description": "At {{companyName}}, the {{department}} ad-inventory optimizer in {{location}} holds n slots, each with a value nums[i]. Releasing slot i earns nums[i - 1] * nums[i] * nums[i + 1] points, where a neighbor outside the array counts as 1. As a {{roleTitle}} in {{domain}}, return the maximum points achievable by releasing all slots in the best possible order.",
+    "functionName": "maxCoins",
+    "parameters": [
+      {
+        "name": "nums",
+        "type": "int[]"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= nums.length <= 300",
+      "0 <= nums[i] <= 100"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "nums": [
+            3,
+            1,
+            5,
+            8
+          ]
+        },
+        "expectedOutput": 167,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            1,
+            5
+          ]
+        },
+        "expectedOutput": 10,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "nums": [
+            7
+          ]
+        },
+        "expectedOutput": 7,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            9,
+            76,
+            64,
+            21
+          ]
+        },
+        "expectedOutput": 116718,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            3,
+            1,
+            5
+          ]
+        },
+        "expectedOutput": 35,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "nums": [
+            2,
+            4,
+            3,
+            5
+          ]
+        },
+        "expectedOutput": 115,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {number[]} nums\n * @return {number}\n */\nfunction maxCoins(nums) {\n    // Write your solution here\n}",
+      "python": "def maxCoins(nums: list[int]) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "nums = [3,1,5,8]",
+        "output": "167",
+        "expectedOutput": "167",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "nums = [1,5]",
+        "output": "10",
+        "expectedOutput": "10",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Interleaving String",
+    "slug": "interleaving-string",
+    "difficulty": "Medium",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 30,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} stream merger weaves two ordered event feeds s1 and s2 into a single feed s3. As a {{roleTitle}} in {{domain}}, determine whether s3 can be formed by interleaving s1 and s2, meaning both are split into substrings that alternate while the order of characters within each feed is preserved.",
+    "functionName": "isInterleave",
+    "parameters": [
+      {
+        "name": "s1",
+        "type": "string"
+      },
+      {
+        "name": "s2",
+        "type": "string"
+      },
+      {
+        "name": "s3",
+        "type": "string"
+      }
+    ],
+    "returnType": "boolean",
+    "constraints": [
+      "0 <= s1.length, s2.length <= 100",
+      "0 <= s3.length <= 200",
+      "All strings consist of lowercase English letters"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s1": "aabcc",
+          "s2": "dbbca",
+          "s3": "aadbbcbcac"
+        },
+        "expectedOutput": true,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s1": "aabcc",
+          "s2": "dbbca",
+          "s3": "aadbbbaccc"
+        },
+        "expectedOutput": false,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s1": "",
+          "s2": "",
+          "s3": ""
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s1": "a",
+          "s2": "",
+          "s3": "a"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s1": "ab",
+          "s2": "cd",
+          "s3": "acbd"
+        },
+        "expectedOutput": true,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s1": "a",
+          "s2": "b",
+          "s3": "c"
+        },
+        "expectedOutput": false,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s1\n * @param {string} s2\n * @param {string} s3\n * @return {boolean}\n */\nfunction isInterleave(s1, s2, s3) {\n    // Write your solution here\n}",
+      "python": "def isInterleave(s1: str, s2: str, s3: str) -> bool:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbcbcac\"",
+        "output": "true",
+        "expectedOutput": "true",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s1 = \"aabcc\", s2 = \"dbbca\", s3 = \"aadbbbaccc\"",
+        "output": "false",
+        "expectedOutput": "false",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Distinct Subsequences",
+    "slug": "distinct-subsequences",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "String DP",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(M * N)",
+      "space": "O(N)"
+    },
+    "description": "At {{companyName}}, the {{department}} pattern-matching service in {{location}} counts how often a signature string t occurs inside a raw telemetry string s. As a {{roleTitle}} in {{domain}}, return the number of distinct subsequences of s that equal t.",
+    "functionName": "numDistinct",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      },
+      {
+        "name": "t",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= s.length, t.length <= 1000",
+      "s and t consist of English letters",
+      "The answer fits in a 32-bit signed integer"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "rabbbit",
+          "t": "rabbit"
+        },
+        "expectedOutput": 3,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "babgbag",
+          "t": "bag"
+        },
+        "expectedOutput": 5,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "a",
+          "t": "a"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "a",
+          "t": "b"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "aaa",
+          "t": "aa"
+        },
+        "expectedOutput": 3,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abc",
+          "t": "abcd"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s\n * @param {string} t\n * @return {number}\n */\nfunction numDistinct(s, t) {\n    // Write your solution here\n}",
+      "python": "def numDistinct(s: str, t: str) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s = \"rabbbit\", t = \"rabbit\"",
+        "output": "3",
+        "expectedOutput": "3",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s = \"babgbag\", t = \"bag\"",
+        "output": "5",
+        "expectedOutput": "5",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  },
+  {
+    "title": "Palindrome Partitioning II",
+    "slug": "palindrome-partitioning-ii",
+    "difficulty": "Hard",
+    "category": "DSA",
+    "roleApplicability": [
+      "Backend",
+      "Full Stack",
+      "Data Engineer"
+    ],
+    "topic": "Dynamic Programming",
+    "subtopic": "Interval / String DP",
+    "estimatedTimeMins": 45,
+    "expectedComplexity": {
+      "time": "O(N^2)",
+      "space": "O(N^2)"
+    },
+    "description": "At {{companyName}}, the {{department}} archival service splits a log string s into segments so that every segment is a palindrome, enabling symmetric compression across {{location}}. As a {{roleTitle}} in {{domain}}, return the minimum number of cuts needed to partition s so that every substring is a palindrome.",
+    "functionName": "minCut",
+    "parameters": [
+      {
+        "name": "s",
+        "type": "string"
+      }
+    ],
+    "returnType": "int",
+    "constraints": [
+      "1 <= s.length <= 2000",
+      "s consists of lowercase English letters only"
+    ],
+    "testCases": [
+      {
+        "input": {
+          "s": "aab"
+        },
+        "expectedOutput": 1,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "a"
+        },
+        "expectedOutput": 0,
+        "isHidden": false
+      },
+      {
+        "input": {
+          "s": "ab"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abccba"
+        },
+        "expectedOutput": 0,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "abcbm"
+        },
+        "expectedOutput": 2,
+        "isHidden": true
+      },
+      {
+        "input": {
+          "s": "cdd"
+        },
+        "expectedOutput": 1,
+        "isHidden": true
+      }
+    ],
+    "starterCode": {
+      "javascript": "/**\n * @param {string} s\n * @return {number}\n */\nfunction minCut(s) {\n    // Write your solution here\n}",
+      "python": "def minCut(s: str) -> int:\n    # Write your solution here\n    pass"
+    },
+    "examples": [
+      {
+        "input": "s = \"aab\"",
+        "output": "1",
+        "expectedOutput": "1",
+        "explanation": "Expected output for example 1"
+      },
+      {
+        "input": "s = \"a\"",
+        "output": "0",
+        "expectedOutput": "0",
+        "explanation": "Expected output for example 2"
+      }
+    ]
+  }
+]
