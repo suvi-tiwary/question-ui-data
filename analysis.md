@@ -85,6 +85,14 @@ Aptiview.ai/job-board
 * and growth plan (100 interview/month) for $1000 
 * Enterprise plan - cistomise 
 
+Hrfy.ai
+
+![Hrfy.ai pricing plans](file:///c:/Users/Panda/AppData/Roaming/Code/agentSessionData/b293bb35-9712-43a5-9419-261e736985a4/attachments/e62c6f28-8b63-4797-98c0-5a320f335762/Pasted%20Image.png)
+
+- Pricing is structured around tiered plans: Try It, Pay-Per-Job, Recruiter Subscription, Platinum, and Enterprise.
+- The UI highlights clear value props and recurring billing, with a strong focus on affordability and scalability for recruiters.
+- This is a useful reference for creating a pricing section with transparent plan comparison and CTA buttons.
+
 ***Conclusion***
 
 * Most of them have contact option for customize plan
