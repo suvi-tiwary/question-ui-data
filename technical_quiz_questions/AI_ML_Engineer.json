@@ -1,0 +1,561 @@
+{
+    "jobRole": "Python AI ML Engineer",
+    "assessmentTitle": "Python AI ML Engineer Technical Assessment",
+    "experienceLevels": [
+        "JUNIOR",
+        "MID",
+        "SENIOR"
+    ],
+    "assessmentConfig": {
+        "totalQuestions": 25,
+        "totalTimeMins": 35,
+        "difficultyDistribution": {
+            "JUNIOR": {
+                "EASY": 60,
+                "MEDIUM": 30,
+                "HARD": 10
+            },
+            "MID": {
+                "EASY": 20,
+                "MEDIUM": 60,
+                "HARD": 20
+            },
+            "SENIOR": {
+                "EASY": 10,
+                "MEDIUM": 50,
+                "HARD": 40
+            }
+        },
+        "questionTypeDistribution": {
+            "MCQ": 80,
+            "FILL_IN_THE_BLANK": 20
+        }
+    },
+    "questionBank": [
+        {
+            "questionId": "PAIML001",
+            "topic": "Python",
+            "subTopic": "OOP Concepts",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is an abstract class in Python?",
+            "options": [
+                "An abstract class is the name for any class from which you can instantiate an object.",
+                "Abstract classes must be redefined any time an object is instantiated from them.",
+                "An abstract class exists only so that other 'concrete' classes can inherit from the abstract class.",
+                "Abstract classes must inherit from concrete classes."
+            ],
+            "correctAnswer": [
+                "An abstract class exists only so that other 'concrete' classes can inherit from the abstract class."
+            ],
+            "explanation": "An abstract class exists only so that other concrete classes can inherit from it. It cannot be instantiated on its own."
+        },
+        {
+            "questionId": "PAIML002",
+            "topic": "Python",
+            "subTopic": "Built-in Functions",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What happens when you use the built-in function `any()` on a list?",
+            "options": [
+                "The `any()` function will randomly return any item from the list.",
+                "The `any()` function returns True if any item in the list evaluates to True. Otherwise, it returns False.",
+                "The `any()` function takes as arguments the list to check inside, and the item to check for.",
+                "The `any()` function returns a Boolean value that answers the question 'Are there any items in this list?'"
+            ],
+            "correctAnswer": [
+                "The `any()` function returns True if any item in the list evaluates to True. Otherwise, it returns False."
+            ],
+            "explanation": "The `any()` function iterates through the iterable and returns True if at least one element evaluates to True."
+        },
+        {
+            "questionId": "PAIML003",
+            "topic": "Python",
+            "subTopic": "Data Structures & Complexity",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the average runtime complexity of accessing a value in a Python dictionary by using its key?",
+            "options": [
+                "O(n), also called linear time.",
+                "O(log n), also called logarithmic time.",
+                "O(n^2), also called quadratic time.",
+                "O(1), also called constant time."
+            ],
+            "correctAnswer": [
+                "O(1), also called constant time."
+            ],
+            "explanation": "Python dictionaries are implemented as hash tables, allowing for O(1) average time complexity for lookups, insertions, and deletions."
+        },
+        {
+            "questionId": "PAIML004",
+            "topic": "Machine Learning",
+            "subTopic": "Model Evaluation",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is overfitting in machine learning?",
+            "options": [
+                "When the model is too simple",
+                "When the model performs well on training data but poorly on new data",
+                "When the data is corrupted",
+                "When the algorithm runs too slowly"
+            ],
+            "correctAnswer": [
+                "When the model performs well on training data but poorly on new data"
+            ],
+            "explanation": "Overfitting occurs when the model learns noise from the training data instead of general patterns, leading to poor generalization on unseen data."
+        },
+        {
+            "questionId": "PAIML005",
+            "topic": "Machine Learning",
+            "subTopic": "Deep Learning",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "Deep Learning is a specialized subset of machine learning that uses neural networks with multiple ______ layers to progressively extract higher-level features.",
+            "options": [],
+            "correctAnswer": [
+                "hidden",
+                "deep"
+            ],
+            "explanation": "Deep Learning relies on neural networks with multiple deep/hidden layers to learn complex representations from raw input."
+        },
+        {
+            "questionId": "PAIML006",
+            "topic": "Machine Learning",
+            "subTopic": "Unsupervised Learning",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Which statement about K-means clustering is true?",
+            "options": [
+                "In K-means clustering, the initial centroids are sometimes randomly selected.",
+                "K-means clustering is often used in supervised machine learning.",
+                "The number of clusters are always randomly selected.",
+                "To be accurate, you want your centroids outside of the cluster."
+            ],
+            "correctAnswer": [
+                "In K-means clustering, the initial centroids are sometimes randomly selected."
+            ],
+            "explanation": "K-means is an unsupervised algorithm where initial centroids are often randomly selected, which can impact the final cluster formation."
+        },
+        {
+            "questionId": "PAIML007",
+            "topic": "Machine Learning",
+            "subTopic": "Supervised Learning",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Why is naive Bayes called naive?",
+            "options": [
+                "It naively assumes that you will have no data.",
+                "It does not even try to create accurate predictions.",
+                "It naively assumes that the predictors are independent from one another.",
+                "It naively assumes that all the predictors depend on one another."
+            ],
+            "correctAnswer": [
+                "It naively assumes that the predictors are independent from one another."
+            ],
+            "explanation": "Naive Bayes is called 'naive' because it assumes that all features (predictors) are independent of each other, which is rarely true in real-world data."
+        },
+        {
+            "questionId": "PAIML008",
+            "topic": "Machine Learning",
+            "subTopic": "Model Optimization",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What is the main purpose of using regularization in machine learning models?",
+            "options": [
+                "To increase the complexity of the model",
+                "To reduce the variance of the model",
+                "To increase the bias of the model",
+                "To reduce the computational cost of the model"
+            ],
+            "correctAnswer": [
+                "To reduce the variance of the model"
+            ],
+            "explanation": "Regularization adds a penalty term to the loss function to prevent overfitting, encouraging simpler models and thereby reducing variance."
+        },
+        {
+            "questionId": "PAIML009",
+            "topic": "Python",
+            "subTopic": "Advanced Concepts",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which statement about Python's Global Interpreter Lock (GIL) is correct?",
+            "options": [
+                "GIL allows true parallelism for CPU-bound tasks",
+                "GIL prevents multiple native threads from executing Python bytecodes simultaneously",
+                "GIL only affects I/O operations",
+                "GIL can be disabled in standard CPython"
+            ],
+            "correctAnswer": [
+                "GIL prevents multiple native threads from executing Python bytecodes simultaneously"
+            ],
+            "explanation": "The GIL is a mutex that allows only one thread to hold the control of the Python interpreter, meaning CPU-bound threads cannot run in true parallel in standard CPython."
+        },
+        {
+            "questionId": "PAIML010",
+            "topic": "Machine Learning",
+            "subTopic": "Evaluation Metrics",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "For imbalanced classification problems, the ______ is the best metric as it balances precision and recall.",
+            "options": [],
+            "correctAnswer": [
+                "F1-Score",
+                "F1 score",
+                "f1-score"
+            ],
+            "explanation": "F1-Score is the harmonic mean of precision and recall, making it ideal for imbalanced datasets where accuracy can be misleading."
+        },
+        {
+            "questionId": "PAIML011",
+            "topic": "Python",
+            "subTopic": "Iterables & Generators",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What does a generator return in Python?",
+            "options": [
+                "None",
+                "An iterable object",
+                "A linked list data structure from a non-empty list",
+                "All the keys of the given dictionary"
+            ],
+            "correctAnswer": [
+                "An iterable object"
+            ],
+            "explanation": "A generator returns an iterable object that produces values on-demand using the `yield` keyword, saving memory compared to lists."
+        },
+        {
+            "questionId": "PAIML012",
+            "topic": "Machine Learning",
+            "subTopic": "Reinforcement Learning",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "You created a machine learning system that interacts with its environment and responds to errors and rewards. What type of machine learning system is it?",
+            "options": [
+                "supervised learning",
+                "semi-supervised learning",
+                "reinforcement learning",
+                "unsupervised learning"
+            ],
+            "correctAnswer": [
+                "reinforcement learning"
+            ],
+            "explanation": "Reinforcement learning is a type of machine learning where an agent learns to make decisions by interacting with an environment and receiving rewards or penalties."
+        },
+        {
+            "questionId": "PAIML013",
+            "topic": "Python",
+            "subTopic": "Functions & Memory",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the output of the following code?\n```python\ndef add_item(item, item_list=[]):\n    item_list.append(item)\n    return item_list\nprint(add_item(1))\nprint(add_item(2))\n```",
+            "options": [
+                "[1] \n [2]",
+                "[1] \n [1, 2]",
+                "[1, 2] \n [1, 2]",
+                "Error"
+            ],
+            "correctAnswer": [
+                "[1] \n [1, 2]"
+            ],
+            "explanation": "Default mutable arguments (like lists) are evaluated only once when the function is defined. Subsequent calls share the same default list, accumulating values."
+        },
+        {
+            "questionId": "PAIML014",
+            "topic": "Machine Learning",
+            "subTopic": "Optimization Algorithms",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the purpose of 'gradient descent' in training neural networks?",
+            "options": [
+                "To increase the loss function",
+                "To minimize the loss function",
+                "To normalize input data",
+                "To calculate feature importance"
+            ],
+            "correctAnswer": [
+                "To minimize the loss function"
+            ],
+            "explanation": "Gradient Descent minimizes the loss by updating model parameters in the opposite direction of the gradient of the loss function."
+        },
+        {
+            "questionId": "PAIML015",
+            "topic": "Python",
+            "subTopic": "Advanced Concepts",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Why would you use a decorator in Python?",
+            "options": [
+                "A decorator is similar to a class and should be used if you are doing functional programming instead of object-oriented programming.",
+                "A decorator is a visual indicator to someone reading your code that a portion of your code is critical.",
+                "You use the decorator to alter the functionality of a function without having to modify the function code.",
+                "An import statement is preceded by a decorator, python knows to import the most recent version of whatever package or library is being imported."
+            ],
+            "correctAnswer": [
+                "You use the decorator to alter the functionality of a function without having to modify the function code."
+            ],
+            "explanation": "Decorators allow us to wrap another function to extend the behavior of the wrapped function, without permanently modifying it."
+        },
+        {
+            "questionId": "PAIML016",
+            "topic": "Machine Learning",
+            "subTopic": "Supervised Learning",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which of the following is an example of supervised learning?",
+            "options": [
+                "K-Means Clustering",
+                "Linear Regression",
+                "Principal Component Analysis",
+                "DBSCAN"
+            ],
+            "correctAnswer": [
+                "Linear Regression"
+            ],
+            "explanation": "Linear regression is a supervised learning algorithm because it learns from labeled data to predict a continuous target variable."
+        },
+        {
+            "questionId": "PAIML017",
+            "topic": "Python",
+            "subTopic": "OOP Concepts",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "In Python, the ______ method acts as a constructor and is called automatically whenever a new object is created from a class.",
+            "options": [],
+            "correctAnswer": [
+                "__init__",
+                "__init__()"
+            ],
+            "explanation": "The `__init__` method initializes the initial state of a new object and is automatically called upon instantiation."
+        },
+        {
+            "questionId": "PAIML018",
+            "topic": "Machine Learning",
+            "subTopic": "Dimensionality Reduction",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Which algorithm is best suited for dimensionality reduction?",
+            "options": [
+                "KNN",
+                "Naive Bayes",
+                "PCA (Principal Component Analysis)",
+                "Random Forest"
+            ],
+            "correctAnswer": [
+                "PCA (Principal Component Analysis)"
+            ],
+            "explanation": "PCA transforms high-dimensional data into fewer dimensions while retaining the maximum possible variance."
+        },
+        {
+            "questionId": "PAIML019",
+            "topic": "Python",
+            "subTopic": "Data Structures",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the primary difference between lists and tuples in Python?",
+            "options": [
+                "Lists are immutable, tuples are mutable.",
+                "Lists are mutable, meaning you can change the data inside them. Tuples are immutable.",
+                "Lists can only hold integers, tuples can hold any data type.",
+                "There is no difference between lists and tuples."
+            ],
+            "correctAnswer": [
+                "Lists are mutable, meaning you can change the data inside them. Tuples are immutable."
+            ],
+            "explanation": "Lists are mutable (can be changed after creation), while tuples are immutable (cannot be changed after creation)."
+        },
+        {
+            "questionId": "PAIML020",
+            "topic": "Machine Learning",
+            "subTopic": "Deep Learning",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What problem commonly occurs in deep neural networks when gradients become exceedingly small during backpropagation?",
+            "options": [
+                "Exploding gradients",
+                "Vanishing gradients",
+                "Overfitting",
+                "Underfitting"
+            ],
+            "correctAnswer": [
+                "Vanishing gradients"
+            ],
+            "explanation": "Vanishing gradients occur when gradients become too small during backpropagation, preventing earlier layers from learning effectively."
+        },
+        {
+            "questionId": "PAIML021",
+            "topic": "Machine Learning",
+            "subTopic": "Model Evaluation",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "______ is a resampling procedure used to evaluate machine learning models on a limited data sample by partitioning the data into multiple folds.",
+            "options": [],
+            "correctAnswer": [
+                "Cross-validation",
+                "K-fold cross-validation",
+                "k-fold cross validation"
+            ],
+            "explanation": "Cross-validation uses multiple folds to reduce variance in performance estimates and provides a more reliable estimate of model performance."
+        },
+        {
+            "questionId": "PAIML022",
+            "topic": "Python",
+            "subTopic": "Functions",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which statement about Python's `*args` and `**kwargs` is correct?",
+            "options": [
+                "`*args` captures keyword arguments, `**kwargs` captures positional arguments",
+                "`*args` captures positional arguments, `**kwargs` captures keyword arguments",
+                "Both capture the same type of arguments",
+                "They can only be used together"
+            ],
+            "correctAnswer": [
+                "`*args` captures positional arguments, `**kwargs` captures keyword arguments"
+            ],
+            "explanation": "`*args` allows passing a variable number of non-keyword (positional) arguments, while `**kwargs` allows passing a variable number of keyword arguments."
+        },
+        {
+            "questionId": "PAIML023",
+            "topic": "Machine Learning",
+            "subTopic": "Model Evaluation",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What does a confusion matrix show?",
+            "options": [
+                "Model loss over time",
+                "True positives, false positives, true negatives, and false negatives",
+                "Feature correlations",
+                "Decision boundaries"
+            ],
+            "correctAnswer": [
+                "True positives, false positives, true negatives, and false negatives"
+            ],
+            "explanation": "A confusion matrix summarizes prediction outcomes for classification models, showing the counts of TP, FP, TN, and FN."
+        },
+        {
+            "questionId": "PAIML024",
+            "topic": "Python",
+            "subTopic": "Advanced Concepts",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which statement about Python's `__slots__` is correct?",
+            "options": [
+                "`__slots__` increases memory usage",
+                "`__slots__` restricts attribute creation and can reduce memory usage",
+                "`__slots__` is only for methods",
+                "`__slots__` enables multiple inheritance"
+            ],
+            "correctAnswer": [
+                "`__slots__` restricts attribute creation and can reduce memory usage"
+            ],
+            "explanation": "`__slots__` prevents the creation of a `__dict__` for each instance, restricting attribute creation to only those specified and saving memory."
+        },
+        {
+            "questionId": "PAIML025",
+            "topic": "Machine Learning",
+            "subTopic": "Neural Networks",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "The algorithm used to efficiently compute the gradient of the loss function with respect to the weights in a neural network is called ______.",
+            "options": [],
+            "correctAnswer": [
+                "backpropagation",
+                "back-propagation",
+                "back prop"
+            ],
+            "explanation": "Backpropagation is the fundamental algorithm for training neural networks, efficiently calculating gradients using the chain rule of calculus."
+        }
+    ]
+}
