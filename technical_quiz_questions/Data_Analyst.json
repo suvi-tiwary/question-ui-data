@@ -1,0 +1,646 @@
+{
+    "jobRole": "Data Analyst",
+    "assessmentTitle": "Data Analyst Technical Assessment",
+    "experienceLevels": [
+        "JUNIOR",
+        "MID",
+        "SENIOR"
+    ],
+    "assessmentConfig": {
+        "totalQuestions": 30,
+        "totalTimeMins": 40,
+        "difficultyDistribution": {
+            "JUNIOR": {
+                "EASY": 50,
+                "MEDIUM": 30,
+                "HARD": 20
+            },
+            "MID": {
+                "EASY": 20,
+                "MEDIUM": 50,
+                "HARD": 30
+            },
+            "SENIOR": {
+                "EASY": 10,
+                "MEDIUM": 30,
+                "HARD": 60
+            }
+        },
+        "questionTypeDistribution": {
+            "MCQ": 60,
+            "MULTI_SELECT": 10,
+            "FILL_IN_THE_BLANK": 20,
+            "TRUE_FALSE": 10
+        }
+    },
+    "questionBank": [
+        {
+            "questionId": "DA001",
+            "topic": "Excel",
+            "subTopic": "Formulas",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What does the Excel formula `=SUM(Sheet1:Sheet4!D18)` do?",
+            "options": [
+                "Adds data from cell D18 of Sheet1 and Sheet4 only",
+                "Adds all data in the range A1:D18 across all four sheets",
+                "Adds data from all D18 cells in Sheet1, Sheet2, Sheet3, and Sheet4",
+                "Creates a 3D link that prevents editing in those cells"
+            ],
+            "correctAnswer": [
+                "Adds data from all D18 cells in Sheet1, Sheet2, Sheet3, and Sheet4"
+            ],
+            "explanation": "This is a 3D reference formula. It sums the exact same cell (D18) across a continuous range of worksheets (Sheet1 through Sheet4)."
+        },
+        {
+            "questionId": "DA002",
+            "topic": "Excel",
+            "subTopic": "Formatting",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "Cell A20 displays an orange background when its value is 5, and green when it is 6. This is an example of _______ Formatting.",
+            "options": [],
+            "correctAnswer": [
+                "Conditional"
+            ],
+            "explanation": "Conditional Formatting applies visual formats to cells based on specific rules or formulas evaluating the cell's value."
+        },
+        {
+            "questionId": "DA003",
+            "topic": "MySQL",
+            "subTopic": "Queries",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "When you have a subquery inside of the main query, which query is executed first?",
+            "options": [
+                "The subquery is never executed",
+                "They are executed at the same time",
+                "The main query",
+                "The subquery"
+            ],
+            "correctAnswer": [
+                "The subquery"
+            ],
+            "explanation": "In a standard subquery, the inner subquery is executed first to produce a result set that the outer main query then uses."
+        },
+        {
+            "questionId": "DA004",
+            "topic": "MySQL",
+            "subTopic": "Data Types",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "If you were building a table schema to store student grades as a letter (A, B, C, D, or F), which column type would be the best choice?",
+            "options": [
+                "TEXT",
+                "VARCHAR",
+                "LONGTEXT",
+                "ENUM"
+            ],
+            "correctAnswer": [
+                "ENUM"
+            ],
+            "explanation": "ENUM is ideal for columns that have a strict, predefined set of possible string values, ensuring data integrity and saving storage space."
+        },
+        {
+            "questionId": "DA005",
+            "topic": "Power BI",
+            "subTopic": "Dashboards",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "You have just pinned a visualization to a new dashboard in Power BI. Before you can add another visualization to that same dashboard, what must you do?",
+            "options": [
+                "Save it",
+                "Name it",
+                "Refresh it",
+                "Publish it"
+            ],
+            "correctAnswer": [
+                "Name it"
+            ],
+            "explanation": "When pinning a visualization to a brand new dashboard, Power BI prompts you to name the dashboard. Once named, you can continue pinning other tiles."
+        },
+        {
+            "questionId": "DA006",
+            "topic": "Statistics",
+            "subTopic": "Outliers",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "When looking for outliers in a normally distributed dataset, Z-scores above what value are generally considered a good starting point for flagging anomalies?",
+            "options": [
+                "30",
+                "3",
+                "10",
+                "100"
+            ],
+            "correctAnswer": [
+                "3"
+            ],
+            "explanation": "In a standard normal distribution, ~99.7% of data falls within 3 standard deviations (Z-score of 3 or -3). Values beyond this are typically considered outliers."
+        },
+        {
+            "questionId": "DA007",
+            "topic": "Data Modeling",
+            "subTopic": "Normalization",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "You have a table of superheroes with columns: Name, Alias, Power1, Power2, Power3. Some heroes have more than 3 powers. How should you normalize this data?",
+            "options": [
+                "Extend the table to have Power4, Power5, etc.",
+                "Add a column to serve as a record identifier and make it the primary key",
+                "Create a lookup table for powers and a junction table mapping superhero IDs to power codes",
+                "Convert the table to have one 'power' column and duplicate the hero's name for each power"
+            ],
+            "correctAnswer": [
+                "Create a lookup table for powers and a junction table mapping superhero IDs to power codes"
+            ],
+            "explanation": "This is a classic many-to-many relationship. A junction (bridge) table is required to map multiple powers to multiple superheroes without violating First Normal Form."
+        },
+        {
+            "questionId": "DA008",
+            "topic": "MySQL",
+            "subTopic": "Joins",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "You need to generate a list of all cars, whether or not they had been sold. Which JOIN statement accomplishes that?",
+            "options": [
+                "INNER JOIN",
+                "RIGHT JOIN",
+                "LEFT JOIN",
+                "CROSS JOIN"
+            ],
+            "correctAnswer": [
+                "LEFT JOIN"
+            ],
+            "explanation": "A LEFT JOIN returns all records from the left table (cars), and the matched records from the right table (purchases), filling with NULL if there is no match."
+        },
+        {
+            "questionId": "DA009",
+            "topic": "Excel",
+            "subTopic": "Pivot Tables",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In a PivotTable, a continuous variable like 'weight' is shown in the Row field, creating a long list. How do you reduce this to a smaller set of weight categories?",
+            "options": [
+                "Use weight as a filter field as well as a row field",
+                "Use IF() to show weight by categories instead of by pounds",
+                "Right-click any row field value in the PivotTable and select Group",
+                "Click the Row Labels arrow and select Group"
+            ],
+            "correctAnswer": [
+                "Right-click any row field value in the PivotTable and select Group"
+            ],
+            "explanation": "Right-clicking a numeric row field in a PivotTable and selecting 'Group' allows you to bin continuous data into discrete categories (e.g., ranges)."
+        },
+        {
+            "questionId": "DA010",
+            "topic": "Power BI",
+            "subTopic": "DAX",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "The primary purpose of the DAX _______ function is to evaluate an expression in a modified filter context.",
+            "options": [],
+            "correctAnswer": [
+                "CALCULATE"
+            ],
+            "explanation": "CALCULATE is the most powerful DAX function. It evaluates an expression but allows you to add, remove, or override the existing filter context."
+        },
+        {
+            "questionId": "DA011",
+            "topic": "MySQL",
+            "subTopic": "Commands",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the difference between the DROP and TRUNCATE commands?",
+            "options": [
+                "They both refer to the same operation of deleting the table completely",
+                "TRUNCATE deletes the table completely, removing its definition. DROP clears the table",
+                "DROP deletes the table completely, removing its definition. TRUNCATE clears the table but does not delete the definition",
+                "TRUNCATE can be rolled back, but DROP cannot"
+            ],
+            "correctAnswer": [
+                "DROP deletes the table completely, removing its definition. TRUNCATE clears the table but does not delete the definition"
+            ],
+            "explanation": "DROP removes the table structure and data entirely. TRUNCATE removes all rows but keeps the table structure, columns, and indexes intact."
+        },
+        {
+            "questionId": "DA012",
+            "topic": "Power BI",
+            "subTopic": "Modeling",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "In Power BI, what is the most important difference between tables related in a star schema and in a snowflake schema?",
+            "options": [
+                "A snowflake schema cannot be modeled in Power BI",
+                "A snowflake schema is much less efficient for Power BI due to extra joins",
+                "A snowflake schema has more levels of lookup tables, which always improves performance",
+                "A star schema requires more storage space than a snowflake schema"
+            ],
+            "correctAnswer": [
+                "A snowflake schema is much less efficient for Power BI due to extra joins"
+            ],
+            "explanation": "Power BI's VertiPaq engine is highly optimized for star schemas. Snowflake schemas introduce unnecessary relationships and joins, degrading query performance."
+        },
+        {
+            "questionId": "DA013",
+            "topic": "Python",
+            "subTopic": "Pandas",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In Pandas, to apply a function to each row of a DataFrame, you should pass a value of what for the axis argument to the apply method?",
+            "options": [
+                "0",
+                "1",
+                "rows",
+                "columns"
+            ],
+            "correctAnswer": [
+                "1"
+            ],
+            "explanation": "In Pandas, `axis=0` refers to rows (index), and `axis=1` refers to columns. To apply a function across each row, you use `axis=1`."
+        },
+        {
+            "questionId": "DA014",
+            "topic": "Statistics",
+            "subTopic": "Hypothesis Testing",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In hypothesis testing, what constitutes a Type I error?",
+            "options": [
+                "Failing to reject a false null hypothesis (False Negative)",
+                "Rejecting a true null hypothesis (False Positive)",
+                "Accepting the alternative hypothesis when it is false",
+                "Calculating the wrong p-value"
+            ],
+            "correctAnswer": [
+                "Rejecting a true null hypothesis (False Positive)"
+            ],
+            "explanation": "A Type I error is a False Positive: you conclude there is an effect or difference when, in reality, there is none."
+        },
+        {
+            "questionId": "DA015",
+            "topic": "MySQL",
+            "subTopic": "Advanced Queries",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "In recent versions of MySQL, the _______ clause is used to define Common Table Expressions (CTEs) to break down complex queries.",
+            "options": [],
+            "correctAnswer": [
+                "WITH"
+            ],
+            "explanation": "The `WITH` clause defines CTEs, which act as named temporary result sets that improve readability and allow modular or recursive query design."
+        },
+        {
+            "questionId": "DA016",
+            "topic": "Power BI",
+            "subTopic": "DAX",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In DAX, a semi-additive measure accumulates values over some dimensions (like accounts or products), but typically does NOT accumulate over which dimension?",
+            "options": [
+                "calculations",
+                "time",
+                "magnitude",
+                "rate"
+            ],
+            "correctAnswer": [
+                "time"
+            ],
+            "explanation": "Semi-additive measures (like bank account balances) can be summed across different accounts, but summing them across time yields a meaningless number. You typically use the latest value for time."
+        },
+        {
+            "questionId": "DA017",
+            "topic": "Excel",
+            "subTopic": "Data Modeling",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which Excel add-in feature allows you to create a relational Data Model with multiple tables, define relationships, and write DAX measures directly inside Excel?",
+            "options": [
+                "Solver",
+                "Power Pivot",
+                "Goal Seek",
+                "Data Validation"
+            ],
+            "correctAnswer": [
+                "Power Pivot"
+            ],
+            "explanation": "Power Pivot extends Excel's capabilities, allowing users to import millions of rows, create relationships between tables, and use DAX for advanced calculations."
+        },
+        {
+            "questionId": "DA018",
+            "topic": "Data Modeling",
+            "subTopic": "Warehousing",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "When handling Slowly Changing Dimensions (SCD), which Type preserves the complete history of a dimension attribute by adding a new row with effective start and end dates?",
+            "options": [
+                "SCD Type 1",
+                "SCD Type 2",
+                "SCD Type 3",
+                "SCD Type 0"
+            ],
+            "correctAnswer": [
+                "SCD Type 2"
+            ],
+            "explanation": "SCD Type 2 tracks historical changes by creating a new record for the change and applying validity dates, preserving the full timeline of the entity."
+        },
+        {
+            "questionId": "DA019",
+            "topic": "Statistics",
+            "subTopic": "Correlation",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "You find a strong positive correlation between ice cream sales and shark attacks. What is the most statistically sound conclusion?",
+            "options": [
+                "Ice cream consumption causes shark attacks",
+                "Shark attacks cause people to buy ice cream for comfort",
+                "There is likely a confounding variable (e.g., summer weather) driving both metrics",
+                "The data is invalid and should be discarded"
+            ],
+            "correctAnswer": [
+                "There is likely a confounding variable (e.g., summer weather) driving both metrics"
+            ],
+            "explanation": "Correlation does not imply causation. A third, unmeasured variable (hot weather/summer) increases both beach attendance and ice cream sales."
+        },
+        {
+            "questionId": "DA020",
+            "topic": "Power BI",
+            "subTopic": "Security",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "You need to ensure that regional managers can only see sales data for their specific region when viewing a shared Power BI dashboard. Which feature should you implement?",
+            "options": [
+                "Data Masking",
+                "Row-Level Security (RLS)",
+                "Object-Level Security (OLS)",
+                "Workspace Permissions"
+            ],
+            "correctAnswer": [
+                "Row-Level Security (RLS)"
+            ],
+            "explanation": "Row-Level Security (RLS) restricts data access for given users. Filters are defined within roles using DAX, ensuring users only see rows relevant to their region."
+        },
+        {
+            "questionId": "DA021",
+            "topic": "MySQL",
+            "subTopic": "Execution",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In standard SQL, what is the correct logical execution order of the following clauses?",
+            "options": [
+                "SELECT -> FROM -> WHERE -> GROUP BY -> ORDER BY",
+                "FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY",
+                "FROM -> SELECT -> WHERE -> GROUP BY -> ORDER BY",
+                "WHERE -> FROM -> GROUP BY -> SELECT -> HAVING"
+            ],
+            "correctAnswer": [
+                "FROM -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY"
+            ],
+            "explanation": "The database engine processes data in this order: FROM (tables), WHERE (row filters), GROUP BY (aggregations), HAVING (aggregate filters), SELECT (columns), ORDER BY (sorting)."
+        },
+        {
+            "questionId": "DA022",
+            "topic": "Power BI",
+            "subTopic": "Performance",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "To optimize refresh times for a massive dataset in Power BI, you should configure _______ refresh, which partitions the data and only loads new or changed rows based on a date column.",
+            "options": [],
+            "correctAnswer": [
+                "incremental"
+            ],
+            "explanation": "Incremental refresh separates historical data from recent data, allowing Power BI to only query and load the latest partitions, drastically reducing refresh times."
+        },
+        {
+            "questionId": "DA023",
+            "topic": "Statistics",
+            "subTopic": "A/B Testing",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In A/B testing, if your calculated p-value is 0.03 and your significance level (alpha) is 0.05, what is the correct statistical conclusion?",
+            "options": [
+                "Fail to reject the null hypothesis; the results are due to chance",
+                "Reject the null hypothesis; there is a statistically significant difference",
+                "The test is invalid because the p-value is too low",
+                "Accept the alternative hypothesis with 100% certainty"
+            ],
+            "correctAnswer": [
+                "Reject the null hypothesis; there is a statistically significant difference"
+            ],
+            "explanation": "Since the p-value (0.03) is less than alpha (0.05), you reject the null hypothesis, concluding that the observed difference is statistically significant."
+        },
+        {
+            "questionId": "DA024",
+            "topic": "Power BI",
+            "subTopic": "Connectivity",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "TRUE_FALSE",
+            "question": "When using DirectQuery mode in Power BI, the data is imported and cached into the Power BI `.pbix` file's internal VertiPaq engine.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "correctAnswer": [
+                "False"
+            ],
+            "explanation": "False. DirectQuery leaves the data in the source system and queries it in real-time. Import mode is what caches data into the VertiPaq engine."
+        },
+        {
+            "questionId": "DA025",
+            "topic": "Data Modeling",
+            "subTopic": "Star Schema",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In a Star Schema data model, what does the central Fact table primarily contain?",
+            "options": [
+                "Descriptive attributes like Customer Name and Product Category",
+                "Hierarchical mappings for organizational structures",
+                "Quantitative measures/metrics and foreign keys to dimension tables",
+                "Slowly Changing Dimension (SCD) historical tracking"
+            ],
+            "correctAnswer": [
+                "Quantitative measures/metrics and foreign keys to dimension tables"
+            ],
+            "explanation": "Fact tables store the numerical metrics (facts) of a business process and the foreign keys that link to the surrounding Dimension tables."
+        },
+        {
+            "questionId": "DA026",
+            "topic": "Python",
+            "subTopic": "Data Cleaning",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MULTI_SELECT",
+            "question": "When dealing with missing data (NaN values) in a dataset, which of the following are valid imputation strategies? (Select all that apply)",
+            "options": [
+                "Mean/Median imputation for numerical columns",
+                "Mode imputation for categorical columns",
+                "Using K-Nearest Neighbors (KNN) to estimate missing values",
+                "Dropping rows with any missing values, regardless of dataset size"
+            ],
+            "correctAnswer": [
+                "Mean/Median imputation for numerical columns",
+                "Mode imputation for categorical columns",
+                "Using K-Nearest Neighbors (KNN) to estimate missing values"
+            ],
+            "explanation": "While dropping rows is a strategy, doing it 'regardless of dataset size' is dangerous and can introduce severe bias. Mean, Median, Mode, and KNN are standard imputation techniques."
+        },
+        {
+            "questionId": "DA027",
+            "topic": "Power BI",
+            "subTopic": "DAX",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "The iterator functions SUMX and AVERAGEX are used to perform calculations in what context?",
+            "options": [
+                "for Power BI mobile apps",
+                "in Power BI service rather than Power BI desktop",
+                "in the context of a record",
+                "for very large datasets only"
+            ],
+            "correctAnswer": [
+                "in the context of a record"
+            ],
+            "explanation": "Iterator functions like SUMX evaluate an expression row-by-row (in the context of a record or row) and then aggregate the results."
+        },
+        {
+            "questionId": "DA028",
+            "topic": "MySQL",
+            "subTopic": "Window Functions",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What is the primary difference between the `RANK()` and `ROW_NUMBER()` window functions in SQL?",
+            "options": [
+                "`ROW_NUMBER()` assigns unique sequential integers, while `RANK()` leaves gaps in the ranking sequence for tied values",
+                "`RANK()` is used for sorting strings, `ROW_NUMBER()` is for integers",
+                "They are exact synonyms and behave identically",
+                "`ROW_NUMBER()` requires a `PARTITION BY` clause, while `RANK()` does not"
+            ],
+            "correctAnswer": [
+                "`ROW_NUMBER()` assigns unique sequential integers, while `RANK()` leaves gaps in the ranking sequence for tied values"
+            ],
+            "explanation": "If two rows tie for 1st place, `ROW_NUMBER()` will arbitrarily assign 1 and 2. `RANK()` will assign 1 and 1, and the next row will be ranked 3 (leaving a gap)."
+        },
+        {
+            "questionId": "DA029",
+            "topic": "Excel",
+            "subTopic": "Data Model",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "TRUE_FALSE",
+            "question": "Power Pivot allows you to write DAX measures and create relationships between tables directly within Excel.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "correctAnswer": [
+                "True"
+            ],
+            "explanation": "True. Power Pivot extends Excel's data model capabilities, enabling relational modeling and DAX calculations natively inside the Excel environment."
+        },
+        {
+            "questionId": "DA030",
+            "topic": "Power BI",
+            "subTopic": "Optimization",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which Power BI Desktop tool, found under the View tab, records the time taken for each process required to render a report completely?",
+            "options": [
+                "Simulation",
+                "Performance Analyzer",
+                "Reporting Analytics",
+                "DAX Studio"
+            ],
+            "correctAnswer": [
+                "Performance Analyzer"
+            ],
+            "explanation": "Performance Analyzer records logs for every visual on the page, showing DAX query duration, visual display time, and other metrics to help optimize slow reports."
+        }
+    ]
+}

@@ -1,0 +1,670 @@
+[
+    {
+        "id": 1,
+        "category": "Linux",
+        "difficulty": "Junior",
+        "type": "MCQ",
+        "question": "To mount a drive by its ID, what command would you use first to retrieve the UUID or ID of the block devices?",
+        "options": [
+            {
+                "text": "df -h",
+                "is_correct": false
+            },
+            {
+                "text": "listid",
+                "is_correct": false
+            },
+            {
+                "text": "ls -l",
+                "is_correct": false
+            },
+            {
+                "text": "blkid",
+                "is_correct": true
+            }
+        ],
+        "explanation": "The `blkid` command is used to locate and print block device attributes, including the UUID, which is the safest way to mount drives in `/etc/fstab` to prevent boot issues if device names change."
+    },
+    {
+        "id": 2,
+        "category": "AWS",
+        "difficulty": "Junior",
+        "type": "MCQ",
+        "question": "You have a large amount of compliance data that must be archived and maintained for 10 years due to industry regulations. This data will be infrequently accessed. What is the most cost-effective AWS service?",
+        "options": [
+            {
+                "text": "Amazon EFS",
+                "is_correct": false
+            },
+            {
+                "text": "AWS Snowball",
+                "is_correct": false
+            },
+            {
+                "text": "Amazon EBS",
+                "is_correct": false
+            },
+            {
+                "text": "Amazon S3 Glacier",
+                "is_correct": true
+            }
+        ],
+        "explanation": "Amazon S3 Glacier is designed for long-term, infrequently accessed data archiving at a very low cost, making it ideal for 10-year compliance retention."
+    },
+    {
+        "id": 3,
+        "category": "Linux",
+        "difficulty": "Junior",
+        "type": "Fill-in-the-blank",
+        "question": "To resize an LVM volume group to include an additional physical volume, you would use the command _______.",
+        "options": [],
+        "correct_answer": "vgextend",
+        "explanation": "`vgextend` is the standard LVM command used to add one or more physical volumes to an existing volume group, expanding its total capacity."
+    },
+    {
+        "id": 4,
+        "category": "AWS Lambda",
+        "difficulty": "Junior",
+        "type": "MCQ",
+        "question": "What is the maximum execution timeout allowed for a single AWS Lambda function invocation?",
+        "options": [
+            {
+                "text": "5 minutes",
+                "is_correct": false
+            },
+            {
+                "text": "15 minutes",
+                "is_correct": true
+            },
+            {
+                "text": "60 minutes",
+                "is_correct": false
+            },
+            {
+                "text": "10 minutes",
+                "is_correct": false
+            }
+        ],
+        "explanation": "AWS Lambda has a hard limit of 15 minutes (900 seconds) for a single function execution. Tasks requiring more time should be broken down or moved to services like AWS Batch or ECS."
+    },
+    {
+        "id": 5,
+        "category": "DevOps",
+        "difficulty": "Junior",
+        "type": "Multi-MCQ",
+        "question": "Which of the following are core principles or tools associated with modern CI/CD pipelines? (Select all that apply)",
+        "options": [
+            {
+                "text": "Automating the build and test process on every code commit.",
+                "is_correct": true
+            },
+            {
+                "text": "Manually testing code in a staging environment before every merge.",
+                "is_correct": false
+            },
+            {
+                "text": "Using tools like AWS CodePipeline, Jenkins, or GitLab CI.",
+                "is_correct": true
+            },
+            {
+                "text": "Treating infrastructure configuration as code (IaC).",
+                "is_correct": true
+            }
+        ],
+        "explanation": "CI/CD relies on automation, IaC, and dedicated pipeline tools. Manual testing before every merge contradicts the 'Continuous' aspect of CI/CD."
+    },
+    {
+        "id": 6,
+        "category": "Linux",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "You need to capture and analyze network packets on a Linux server from the command line to troubleshoot a dropped connection issue. Which tool should you use?",
+        "options": [
+            {
+                "text": "wireshark",
+                "is_correct": false
+            },
+            {
+                "text": "ethtool",
+                "is_correct": false
+            },
+            {
+                "text": "netstat",
+                "is_correct": false
+            },
+            {
+                "text": "tcpdump",
+                "is_correct": true
+            }
+        ],
+        "explanation": "`tcpdump` is the standard command-line packet analyzer. Wireshark is primarily GUI-based, and netstat/ethtool do not capture packet payloads."
+    },
+    {
+        "id": 7,
+        "category": "AWS",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "You have a VPC with a public and a private subnet. A NAT Gateway is in the public subnet to allow private instances to access the internet for updates. What must the private subnet's routing table look like?",
+        "options": [
+            {
+                "text": "Dest: 10.0.0.0/16 -> Target: igw-xxx; Dest: 0.0.0.0/0 -> Target: local",
+                "is_correct": false
+            },
+            {
+                "text": "Dest: 10.0.0.0/16 -> Target: local; Dest: 0.0.0.0/0 -> Target: nat-xxx",
+                "is_correct": true
+            },
+            {
+                "text": "Dest: 0.0.0.0/0 -> Target: igw-xxx",
+                "is_correct": false
+            },
+            {
+                "text": "Dest: 10.0.0.0/24 -> Target: subnet-xxx; Dest: 0.0.0.0/0 -> Target: igw-xxx",
+                "is_correct": false
+            }
+        ],
+        "explanation": "The private subnet must route local VPC traffic to 'local' and all external internet-bound traffic (0.0.0.0/0) to the NAT Gateway (nat-xxx), not the Internet Gateway (igw)."
+    },
+    {
+        "id": 8,
+        "category": "AWS Lambda",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "Your Lambda function is experiencing performance bottlenecks due to CPU limitations. According to AWS architecture, how do you increase the CPU resources allocated to the Lambda?",
+        "options": [
+            {
+                "text": "Increase the configured timeout value.",
+                "is_correct": false
+            },
+            {
+                "text": "Increase the configured CPU value in the advanced settings.",
+                "is_correct": false
+            },
+            {
+                "text": "Increase the configured memory value.",
+                "is_correct": true
+            },
+            {
+                "text": "Increase the configured reserved concurrency value.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "AWS Lambda allocates CPU power proportionally to the amount of memory configured. Increasing memory directly increases CPU allocation."
+    },
+    {
+        "id": 9,
+        "category": "Linux",
+        "difficulty": "Mid",
+        "type": "Fill-in-the-blank",
+        "question": "Using a systemd-based distribution, you want to restrict the cron service from running either automatically on boot or manually by an administrator. You would run `systemctl _______ crond`.",
+        "options": [],
+        "correct_answer": "mask",
+        "explanation": "`systemctl mask` links the unit file to /dev/null, prohibiting all kinds of activation of the unit, including manual and automatic."
+    },
+    {
+        "id": 10,
+        "category": "AWS Lambda",
+        "difficulty": "Mid",
+        "type": "Multi-MCQ",
+        "question": "When implementing a Lambda polling architecture (where Lambda polls a service for data), which of the following AWS services act as event sources that Lambda reads data from? (Select all that apply)",
+        "options": [
+            {
+                "text": "Amazon Kinesis Data Streams",
+                "is_correct": true
+            },
+            {
+                "text": "Amazon DynamoDB Streams",
+                "is_correct": true
+            },
+            {
+                "text": "Amazon API Gateway",
+                "is_correct": false
+            },
+            {
+                "text": "Amazon SQS",
+                "is_correct": true
+            }
+        ],
+        "explanation": "Kinesis, DynamoDB Streams, and SQS use a polling architecture where Lambda manages the polling and invokes the function. API Gateway uses synchronous event-driven invocation."
+    },
+    {
+        "id": 11,
+        "category": "AWS",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "What is the best practice for creating a highly available PostgreSQL database in RDS that can sustain the loss of a single AWS region?",
+        "options": [
+            {
+                "text": "Rely on Multi-AZ support, as it automatically syncs to another region.",
+                "is_correct": false
+            },
+            {
+                "text": "PostgreSQL cannot be replicated across regions.",
+                "is_correct": false
+            },
+            {
+                "text": "Create Read Replicas in other AWS regions. Ensure read operations occur on an available Read Replica, and be prepared to promote a Read Replica to a standalone database if the master region goes down.",
+                "is_correct": true
+            },
+            {
+                "text": "Take hourly backups to S3 and restore them in a new region manually.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Multi-AZ is within the same region. Cross-region high availability requires Read Replicas in other regions, which can be promoted to standalone instances during a regional failure."
+    },
+    {
+        "id": 12,
+        "category": "Linux",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "You are managing an Apache web server on a system using SELinux. By default, it cannot read personal webpages in users' home directories. What SELinux boolean must you set to allow this?",
+        "options": [
+            {
+                "text": "apache_enable_homedirs",
+                "is_correct": false
+            },
+            {
+                "text": "httpd_enable_userdirs",
+                "is_correct": false
+            },
+            {
+                "text": "httpd_enable_homedirs",
+                "is_correct": true
+            },
+            {
+                "text": "httpd_enable_userhome_dirs",
+                "is_correct": false
+            }
+        ],
+        "explanation": "The `httpd_enable_homedirs` boolean specifically allows the Apache HTTP Server to read content from user home directories."
+    },
+    {
+        "id": 13,
+        "category": "DevOps",
+        "difficulty": "Mid",
+        "type": "Fill-in-the-blank",
+        "question": "In AWS, the native service that allows you to script and model your infrastructure as code, provisioning resources predictably using JSON or YAML, is called _______.",
+        "options": [],
+        "correct_answer": "CloudFormation",
+        "explanation": "AWS CloudFormation is the native IaC service that uses templates to model and provision AWS resources."
+    },
+    {
+        "id": 14,
+        "category": "Linux",
+        "difficulty": "Mid",
+        "type": "MCQ",
+        "question": "What command is used to determine the total amount of disk space used by a specific directory and its subdirectories?",
+        "options": [
+            {
+                "text": "find",
+                "is_correct": false
+            },
+            {
+                "text": "fdisk",
+                "is_correct": false
+            },
+            {
+                "text": "du",
+                "is_correct": true
+            },
+            {
+                "text": "df",
+                "is_correct": false
+            }
+        ],
+        "explanation": "`du` (disk usage) estimates file space usage. `df` shows free disk space on filesystems, not directory-specific usage."
+    },
+    {
+        "id": 15,
+        "category": "DevOps",
+        "difficulty": "Mid",
+        "type": "Multi-MCQ",
+        "question": "As a DevOps Engineer implementing DevSecOps, which of the following practices should be integrated directly into the CI/CD pipeline? (Select all that apply)",
+        "options": [
+            {
+                "text": "SAST (Static Application Security Testing) on source code.",
+                "is_correct": true
+            },
+            {
+                "text": "Container image scanning for CVEs before pushing to the registry.",
+                "is_correct": true
+            },
+            {
+                "text": "Manual penetration testing by the security team before every single release.",
+                "is_correct": false
+            },
+            {
+                "text": "Infrastructure as Code (IaC) scanning (e.g., Checkov, tfsec).",
+                "is_correct": true
+            }
+        ],
+        "explanation": "DevSecOps emphasizes automated, shift-left security. Manual pen-testing before every release is a bottleneck and not a CI/CD pipeline integration."
+    },
+    {
+        "id": 16,
+        "category": "AWS Lambda",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "A developer accidentally creates a recursive loop where an S3 upload triggers a Lambda, which processes the file and uploads it back to the same S3 bucket, triggering the Lambda again. Your AWS bill is skyrocketing. What is the fastest way to stop this without deleting the function?",
+        "options": [
+            {
+                "text": "Delete the S3 bucket.",
+                "is_correct": false
+            },
+            {
+                "text": "Set the Lambda function's reserved concurrency limit to 0 while you fix the code.",
+                "is_correct": true
+            },
+            {
+                "text": "Delete the Lambda function and recreate it.",
+                "is_correct": false
+            },
+            {
+                "text": "Turn off S3 event notifications via the AWS CLI.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Setting reserved concurrency to 0 immediately stops all invocations of the function, halting the recursive loop and billing, while preserving the function for debugging and fixing."
+    },
+    {
+        "id": 17,
+        "category": "AWS",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "Your application generates long-running financial reports, stores them in S3, and emails the user a download link. What is the most secure architectural best practice?",
+        "options": [
+            {
+                "text": "Make the S3 bucket public, use a randomized hash for the object name, and delete it after 7 days.",
+                "is_correct": false
+            },
+            {
+                "text": "Create a public S3 bucket and generate a pre-signed URL valid for 1 hour.",
+                "is_correct": false
+            },
+            {
+                "text": "Keep the S3 bucket private. The email link should direct the user to your web app to verify their session. The app then retrieves the object from S3 via the backend and streams it in the HTTP response, deleting it afterward.",
+                "is_correct": true
+            },
+            {
+                "text": "Set the S3 object ACL to public temporarily and use CloudFront to serve it.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Keeping the bucket private and routing access through an authenticated application layer ensures that only authorized users can access the sensitive report data."
+    },
+    {
+        "id": 18,
+        "category": "Linux",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "What issue might a user have when they mount a filesystem by partition path such as `/dev/sda1` in the `/etc/fstab` file?",
+        "options": [
+            {
+                "text": "The device order may change on boot, resulting in a system that will not boot properly.",
+                "is_correct": true
+            },
+            {
+                "text": "The user may run out of device letters.",
+                "is_correct": false
+            },
+            {
+                "text": "There are no issues with referring to partitions by their partition path.",
+                "is_correct": false
+            },
+            {
+                "text": "It is more difficult identifying mounted devices by partition path.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Device names like `/dev/sda1` can change depending on the order in which the kernel detects drives. Using UUIDs is the best practice to ensure consistent mounting."
+    },
+    {
+        "id": 19,
+        "category": "AWS",
+        "difficulty": "Senior",
+        "type": "Multi-MCQ",
+        "question": "You are migrating 14 on-premise web servers and 4 database servers to a brand new AWS account. What critical administrative consideration must you address *before* starting the migration? (Select all that apply)",
+        "options": [
+            {
+                "text": "New AWS accounts have default service quotas (e.g., limited to 20 On-Demand EC2 instances per region). You must submit a quota increase request.",
+                "is_correct": true
+            },
+            {
+                "text": "AWS does not allow separating billing for computing costs between departments.",
+                "is_correct": false
+            },
+            {
+                "text": "Software licensing costs are never included in AWS; you must buy new licenses.",
+                "is_correct": false
+            },
+            {
+                "text": "You can only transfer database data via AWS Snowball; S3 upload is disabled for new accounts.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "New AWS accounts have strict default service quotas (like the 20 EC2 instance limit). Failing to request a quota increase beforehand will halt the migration."
+    },
+    {
+        "id": 20,
+        "category": "Linux",
+        "difficulty": "Senior",
+        "type": "Fill-in-the-blank",
+        "question": "In a Bash shell script, the operator _______ means logical OR.",
+        "options": [],
+        "correct_answer": "||",
+        "explanation": "In Bash, `||` is the logical OR operator, while `&&` is the logical AND operator."
+    },
+    {
+        "id": 21,
+        "category": "AWS Lambda",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "A developer has created a Lambda function to scrub real-time data and send it to Kinesis. Some data showing up in Kinesis seems inaccurate. What is the AWS best practice to debug and trace the execution flow?",
+        "options": [
+            {
+                "text": "Look directly at the Lambda Logs in CloudWatch.",
+                "is_correct": false
+            },
+            {
+                "text": "Send the Lambda failures to a Dead Letter Queue.",
+                "is_correct": false
+            },
+            {
+                "text": "Use AWS X-Ray to step through the function and trace the execution.",
+                "is_correct": true
+            },
+            {
+                "text": "Use Kinesis to write a custom logging tool.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "AWS X-Ray provides detailed tracing capabilities, allowing developers to step through the function's execution and identify exactly where data manipulation or routing issues occur."
+    },
+    {
+        "id": 22,
+        "category": "Linux",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "In the Bash shell, what is the difference between piping into `|` and piping into `|&`?",
+        "options": [
+            {
+                "text": "Piping into `|` pipes both stdout and stderr. Piping into `|&` pipes only stderr.",
+                "is_correct": false
+            },
+            {
+                "text": "Piping into `|` pipes stdout. Piping into `|&` pipes stdout and stderr.",
+                "is_correct": true
+            },
+            {
+                "text": "Piping into `|` pipes both stdout and stderr. Piping into `|&` pipes only stdout.",
+                "is_correct": false
+            },
+            {
+                "text": "Piping into `|` pipes stdout. Piping into `|&` pipes all open file descriptors.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "The standard `|` operator only pipes standard output (stdout). The `|&` operator is a shorthand for `2>&1 |`, which pipes both standard output (stdout) and standard error (stderr)."
+    },
+    {
+        "id": 23,
+        "category": "AWS",
+        "difficulty": "Senior",
+        "type": "Fill-in-the-blank",
+        "question": "To restrict access to an S3 bucket so that it can only be accessed from a specific list of approved corporate IP addresses, you must create a bucket policy with a _______ block using `IpAddress` and `aws:SourceIp`.",
+        "options": [],
+        "correct_answer": "Condition",
+        "explanation": "The `Condition` block in an IAM or S3 bucket policy allows you to specify conditions (like source IP address) that must be met for the policy to take effect."
+    },
+    {
+        "id": 24,
+        "category": "DevOps",
+        "difficulty": "Senior",
+        "type": "Multi-MCQ",
+        "question": "When configuring the Kubernetes Horizontal Pod Autoscaler (HPA), which of the following metrics can be used to trigger scaling events? (Select all that apply)",
+        "options": [
+            {
+                "text": "CPU Utilization",
+                "is_correct": true
+            },
+            {
+                "text": "Memory Utilization",
+                "is_correct": true
+            },
+            {
+                "text": "Custom Metrics (e.g., requests per second via Prometheus adapter)",
+                "is_correct": true
+            },
+            {
+                "text": "Disk I/O latency (natively without custom metrics)",
+                "is_correct": false
+            }
+        ],
+        "explanation": "HPA natively supports CPU and Memory utilization. With the custom metrics API (like the Prometheus adapter), it can also scale based on application-specific metrics like request rate."
+    },
+    {
+        "id": 25,
+        "category": "Linux",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "Why is the `passwd` command able to modify the `/etc/shadow` file, even though it is owned by root and has restrictive permissions?",
+        "options": [
+            {
+                "text": "The kernel identifies it as one of the names of extended commands.",
+                "is_correct": false
+            },
+            {
+                "text": "It has the same name as the file it modifies.",
+                "is_correct": false
+            },
+            {
+                "text": "It has the SUID permission mode set and is owned by root.",
+                "is_correct": true
+            },
+            {
+                "text": "It is a system administration command that bypasses DAC.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "The SUID (Set Owner User ID) permission allows a user to execute a file with the permissions of the file's owner (in this case, root), enabling standard users to update their own passwords securely."
+    },
+    {
+        "id": 26,
+        "category": "AWS Lambda",
+        "difficulty": "Senior",
+        "type": "Fill-in-the-blank",
+        "question": "In AWS Lambda, the disk space allocated for temporary file storage during function execution is located in the _______ directory.",
+        "options": [],
+        "correct_answer": "/tmp",
+        "explanation": "AWS Lambda provides 512 MB of ephemeral disk space in the `/tmp` directory. This can be used to cache data and minimize cold start times."
+    },
+    {
+        "id": 27,
+        "category": "AWS",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "You have a Linux EC2 instance that is not responding, and you have lost the original key pair. What is the recommended way to regain access?",
+        "options": [
+            {
+                "text": "Stop the instance and create an AMI image. Launch the image using a new key pair.",
+                "is_correct": false
+            },
+            {
+                "text": "Contact AWS support. A support specialist can remotely restore access to your instance.",
+                "is_correct": false
+            },
+            {
+                "text": "Attach the EBS volume to a temporary instance launched with a new key pair, and overwrite `~/.ssh/authorized_keys` using the public key from the new instance.",
+                "is_correct": true
+            },
+            {
+                "text": "You cannot connect to this EC2 instance. The key pair is displayed only one time.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "By detaching the root EBS volume and attaching it to a recovery instance, you can mount the filesystem and manually inject a new public key into the `~/.ssh/authorized_keys` file."
+    },
+    {
+        "id": 28,
+        "category": "DevOps",
+        "difficulty": "Senior",
+        "type": "MCQ",
+        "question": "A major production outage occurred due to a bad configuration pushed via CI/CD. During the post-mortem, a junior engineer admits they pushed the change. As a Senior DevOps Engineer, how should you handle this?",
+        "options": [
+            {
+                "text": "Recommend the junior engineer be put on a performance improvement plan for breaking production.",
+                "is_correct": false
+            },
+            {
+                "text": "Disable the junior engineer's CI/CD deployment permissions immediately.",
+                "is_correct": false
+            },
+            {
+                "text": "Foster a blameless post-mortem culture. Focus on why the system allowed a bad config to be deployed and implement pipeline guardrails to prevent it from happening again.",
+                "is_correct": true
+            },
+            {
+                "text": "Tell the team to manually review all future CI/CD pipeline runs before they execute.",
+                "is_correct": false
+            }
+        ],
+        "explanation": "A blameless post-mortem focuses on systemic failures and process improvements (like adding automated testing or canary deployments) rather than punishing individuals, which fosters a healthier and more transparent engineering culture."
+    },
+    {
+        "id": 29,
+        "category": "AWS Lambda",
+        "difficulty": "Senior",
+        "type": "True/False",
+        "question": "AWS Lambda functions are stateless, meaning they do not inherently retain memory or state between separate invocations.",
+        "options": [
+            {
+                "text": "True",
+                "is_correct": true
+            },
+            {
+                "text": "False",
+                "is_correct": false
+            }
+        ],
+        "explanation": "Lambda is designed to be stateless. Any state that needs to be persisted across invocations must be stored in an external data store like DynamoDB, S3, or ElastiCache."
+    },
+    {
+        "id": 30,
+        "category": "Linux",
+        "difficulty": "Senior",
+        "type": "True/False",
+        "question": "In Bash, the `==` and `=~` operators perform the exact same type of string comparison inside `[[ ]]` conditional brackets.",
+        "options": [
+            {
+                "text": "True",
+                "is_correct": false
+            },
+            {
+                "text": "False",
+                "is_correct": true
+            }
+        ],
+        "explanation": "They are different. The `==` operator performs a string or glob pattern comparison, whereas the `=~` operator performs a regular expression (regex) comparison."
+    }
+]
