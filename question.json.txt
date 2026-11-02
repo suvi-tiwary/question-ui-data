@@ -14,7 +14,7 @@
     "estimatedTimeMins": 30,
     "expectedComplexity": {
       "time": "O(N)",
-      "space": "O(1)"
+      "space": "O(1)" 
     },
     "description": "At {{companyName}}, the {{department}} team logs net daily operational metrics in an array nums. Positive numbers represent net operational gains (such as latency improvements or cost savings), while negative numbers represent regressions. As a {{roleTitle}} working in {{domain}}, the team wants you to identify the single best consecutive run of days with the highest combined net score to analyze peak system performance across {{location}}.\n\nReturn the largest total net change achievable over any contiguous run of days.",
     "functionName": "maxSubArray",

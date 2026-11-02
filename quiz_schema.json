@@ -1,0 +1,99 @@
+{
+    "jobRole": "Software Developer",
+    "assessmentTitle": "Software Developer Technical Assessment",
+    "experienceLevels": [
+        "JUNIOR",
+        "MID",
+        "SENIOR"
+    ],
+    "assessmentConfig": {
+        "totalQuestions": 30,
+        "totalTimeMins": 40,
+        "difficultyDistribution": {
+            "JUNIOR": {
+                "EASY": 50,
+                "MEDIUM": 30,
+                "HARD": 20
+            },
+            "MID": {
+                "EASY": 20,
+                "MEDIUM": 50,
+                "HARD": 30
+            },
+            "SENIOR": {
+                "EASY": 10,
+                "MEDIUM": 30,
+                "HARD": 60
+            }
+        },
+        "questionTypeDistribution": {
+            "MCQ": 80,
+            "FILL_IN_THE_BLANK": 20
+        }
+    },
+    "questionBank": [
+        {
+            "questionId": "SD001",
+            "topic": "OOP",
+            "subTopic": "Inheritance",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which OOP concept allows a class to reuse properties and methods of another class?",
+            "options": [
+                "Encapsulation",
+                "Inheritance",
+                "Abstraction",
+                "Polymorphism"
+            ],
+            "correctAnswer": [
+                "Inheritance"
+            ],
+            "explanation": "Inheritance allows a class to acquire properties and methods from another class."
+        },
+        {
+            "questionId": "SD002",
+            "topic": "DBMS",
+            "subTopic": "Keys",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "A database key that uniquely identifies each record in a table is called a ______.",
+            "correctAnswer": [
+                "Primary Key",
+                "Primary key"
+            ],
+            "explanation": "A primary key uniquely identifies each record in a database table."
+        },
+        {
+            "questionId": "SD003",
+            "topic": "DSA",
+            "subTopic": "Time Complexity",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What is the average time complexity of searching in a balanced binary search tree?",
+            "options": [
+                "O(1)",
+                "O(log n)",
+                "O(n)",
+                "O(n log n)"
+            ],
+            "correctAnswer": [
+                "O(log n)"
+            ],
+            "explanation": "A balanced BST reduces the search space approximately by half at each level."
+        }
+    ]
+}
