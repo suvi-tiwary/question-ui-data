@@ -1,227 +1,1419 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0a0908">
-  <title>QuickRuit — Random Interview Questions</title>
+
+  <title>QuickRuit — Technical Quiz Questions</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
-  <script src="questionData.js"></script>
+  <script src="quizData.js"></script>
 </head>
+
 <body>
+
   <div class="ambient" aria-hidden="true"></div>
+
   <main>
+
+    <!-- SETUP SCREEN -->
     <section id="setupScreen" class="screen">
-      <p class="eyebrow">QUICKRUIT · INTERVIEW PRACTICE</p>
-      <h1>Find your next<br><span>question.</span></h1>
-      <p class="intro">Choose your role and experience level. We’ll pick a random question for you.</p>
+
+      <p class="eyebrow">QUICKRUIT · TECHNICAL QUIZ ASSESSMENT</p>
+
+      <h1>Find your next<br><span>quiz question.</span></h1>
+
+      <p class="intro">
+        Choose your post and experience level. We'll pick questions
+        from the technical question bank for you.
+      </p>
 
       <div class="setup-card">
-        <label for="roleSelect">Role</label>
+
+        <label for="roleSelect">Post / Role</label>
+
         <select id="roleSelect">
           <option value="Software Developer">Software Developer</option>
-          <option value="Backend Engineer">Backend Engineer</option>
-          <option value="Data Analyst">Data Analyst (SQL)</option>
+          <option value="Full Stack Engineer">Full Stack Engineer</option>
+          <option value="Python AI ML Engineer">Python AI ML Engineer</option>
+          <option value="DevOps Engineer">DevOps Engineer</option>
+          <option value="Data Analyst">Data Analyst</option>
+          <option value="Data Scientist">Data Scientist</option>
         </select>
 
         <label for="levelSelect">Experience level</label>
+
         <select id="levelSelect">
+          <option value="all">All Levels (Full Set)</option>
           <option value="junior">Junior</option>
+          <option value="mid">Mid-Level</option>
           <option value="senior">Senior</option>
         </select>
 
-        <button id="startButton" class="button primary" type="button" disabled>GET A RANDOM QUESTION</button>
-        <p id="questionCount" class="question-count" aria-live="polite">Loading questions…</p>
+        <button
+          id="startButton"
+          class="button primary"
+          type="button"
+          disabled>
+          START TECHNICAL QUIZ
+        </button>
+
+        <p id="questionCount" class="question-count" aria-live="polite">
+          Loading technical quiz banks...
+        </p>
+
       </div>
+
       <p id="bankStatus" class="status" role="status" aria-live="polite"></p>
+
     </section>
 
+
+    <!-- QUESTION SCREEN -->
     <section id="questionScreen" class="screen" hidden>
+
       <div class="question-top">
-        <button id="changeSelectionButton" class="button quiet" type="button">← CHANGE ROLE</button>
+
+        <button
+          id="changeSelectionButton"
+          class="button quiet"
+          type="button">
+          ← CHANGE SELECTION
+        </button>
+
         <p id="sessionLabel" class="session-label"></p>
+
       </div>
+
       <article class="question-card" aria-live="polite">
-        <p id="questionNumber" class="question-number"></p>
-        <p id="questionDescription" class="question-description"></p>
+
+        <div class="card-meta">
+          <p id="questionNumber" class="question-number">QUESTION 1</p>
+          <div id="badgesContainer" class="badges-row"></div>
+        </div>
+
+        <h2 id="questionText" class="question-text"></h2>
+
+        <!-- MCQ -->
+        <div id="mcqContainer" class="mcq-container">
+          <div id="optionsList" class="options-list"></div>
+        </div>
+
+        <!-- FILL IN THE BLANK -->
+        <div id="blankContainer" class="blank-container" hidden>
+
+          <div class="blank-input-group">
+
+            <input
+              type="text"
+              id="blankInput"
+              class="blank-input"
+              placeholder="Type your answer here..."
+              autocomplete="off">
+
+            <button
+              id="submitBlankButton"
+              class="button primary"
+              type="button">
+              CHECK ANSWER
+            </button>
+
+          </div>
+
+          <div id="blankFeedback" class="blank-feedback" hidden></div>
+
+        </div>
+
+        <!-- EXPLANATION -->
+        <div id="explanationBox" class="explanation-box" hidden>
+
+          <div class="explanation-header">
+            <span class="explanation-title">EXPLANATION</span>
+            <span id="explanationStatus" class="explanation-status"></span>
+          </div>
+
+          <p id="explanationText" class="explanation-text"></p>
+
+        </div>
+
+        <!-- REVEAL ANSWER -->
+        <div class="toggle-answer-row">
+
+          <button
+            id="revealAnswerButton"
+            class="button quiet"
+            type="button">
+            SHOW ANSWER &amp; EXPLANATION
+          </button>
+
+        </div>
+
       </article>
+
       <div class="question-actions">
-        <button id="nextQuestionButton" class="button primary" type="button">ANOTHER RANDOM QUESTION →</button>
+
+        <button
+          id="nextQuestionButton"
+          class="button primary"
+          type="button">
+          ANOTHER RANDOM QUESTION →
+        </button>
+
       </div>
+
     </section>
+
   </main>
 
+
   <script>
+
+    // ========================================
+    // DOM ELEMENTS
+    // ========================================
+
     const elements = {
+
       setup: document.getElementById('setupScreen'),
       question: document.getElementById('questionScreen'),
+
       role: document.getElementById('roleSelect'),
       level: document.getElementById('levelSelect'),
+
       start: document.getElementById('startButton'),
       count: document.getElementById('questionCount'),
       status: document.getElementById('bankStatus'),
+
       sessionLabel: document.getElementById('sessionLabel'),
       number: document.getElementById('questionNumber'),
-      description: document.getElementById('questionDescription')
+
+      badges: document.getElementById('badgesContainer'),
+      text: document.getElementById('questionText'),
+
+      mcqContainer: document.getElementById('mcqContainer'),
+      optionsList: document.getElementById('optionsList'),
+
+      blankContainer: document.getElementById('blankContainer'),
+      blankInput: document.getElementById('blankInput'),
+      submitBlank: document.getElementById('submitBlankButton'),
+      blankFeedback: document.getElementById('blankFeedback'),
+
+      explanationBox: document.getElementById('explanationBox'),
+      explanationStatus: document.getElementById('explanationStatus'),
+      explanationText: document.getElementById('explanationText'),
+
+      revealAnswer: document.getElementById('revealAnswerButton'),
+      next: document.getElementById('nextQuestionButton'),
+      change: document.getElementById('changeSelectionButton')
+
     };
 
-    const DIFFICULTIES_BY_LEVEL = {
-      junior: new Set(['Easy', 'Medium']),
-      senior: new Set(['Medium', 'Hard'])
-    };
-    const ROLE_COPY = {
-      'Software Developer': {
-        department: 'engineering',
-        domain: 'software development'
+
+    // ========================================
+    // QUESTION BANK FILES
+    // ========================================
+
+    const BANK_FILES = [
+
+      {
+        role: 'Software Developer',
+        file: './technical_quiz_questions/Software_Developer.json'
       },
-      'Backend Engineer': {
-        department: 'backend engineering',
-        domain: 'backend systems'
+
+      {
+        role: 'Full Stack Engineer',
+        file: './technical_quiz_questions/Full_Stack_Engineer.json'
       },
-      'Data Analyst': {
-        department: 'data analytics',
-        domain: 'data analytics and SQL'
+
+      {
+        role: 'Python AI ML Engineer',
+        file: './technical_quiz_questions/AI_ML_Engineer.json'
+      },
+
+      {
+        role: 'DevOps Engineer',
+        file: './technical_quiz_questions/Devops_Engineer.json'
+      },
+
+      {
+        role: 'Data Scientist',
+        file: './technical_quiz_questions/Data_Science.json'
+      },
+
+      {
+        role: 'Data Analyst',
+        file: './technical_quiz_questions/Data_Analyst.json'
       }
-    };
-    const DSA_QUESTIONS = Array.isArray(window.BUNDLED_QUESTIONS)
-      ? window.BUNDLED_QUESTIONS
-      : [];
 
-    let sqlQuestions = [];
-    let sqlLoadError = '';
+    ];
+
+
+    // ========================================
+    // QUIZ STATE
+    // ========================================
+
+    let quizBanks = [];
+
     let eligibleQuestions = [];
+
     let questionQueue = [];
-    let previousQuestionId = '';
-    let questionNumber = 0;
 
-    function shuffle(items) {
-      const shuffled = [...items];
-      for (let index = shuffled.length - 1; index > 0; index -= 1) {
-        const swapIndex = Math.floor(Math.random() * (index + 1));
-        [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
-      }
-      return shuffled;
-    }
+    let currentQuestion = null;
 
-    function getQuestions() {
-      const role = elements.role.value;
-      const level = elements.level.value;
-      let questions;
+    let questionIndex = 0;
 
-      if (role === 'Software Developer') {
-        questions = DSA_QUESTIONS;
-      } else if (role === 'Backend Engineer') {
-        questions = [
-          ...DSA_QUESTIONS.filter((question) => question.roleApplicability?.includes('Backend')),
-          ...sqlQuestions.filter((question) => question.roleApplicability?.includes('Backend'))
-        ];
-      } else {
-        questions = sqlQuestions.filter((question) => question.roleApplicability?.includes('Data Analyst'));
-      }
+    // Records every question shown in the current session.
+    let shownQuestionIds = new Set();
 
-      return questions.filter((question) =>
-        DIFFICULTIES_BY_LEVEL[level].has(question.difficulty)
-      );
-    }
+    // Identifies the active role + level combination.
+    let currentFilterKey = '';
 
-    function updateSetup() {
-      const count = getQuestions().length;
-      elements.start.disabled = count === 0;
-      elements.count.textContent = count
-        ? `${count} questions available for this selection`
-        : 'No questions are available for this selection.';
-    }
 
-    function showScreen(screen) {
-      elements.setup.hidden = screen !== elements.setup;
-      elements.question.hidden = screen !== elements.question;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    // ========================================
+    // NORMALIZE ROLE NAMES
+    // ========================================
 
-    function questionId(question) {
-      return question.slug || question.description;
-    }
+    function normalizeRole(roleName) {
 
-    function nextRandomQuestion() {
-      if (questionQueue.length === 0) {
-        questionQueue = shuffle(eligibleQuestions);
-        const lastIndex = questionQueue.length - 1;
-        if (questionQueue.length > 1 && questionId(questionQueue[lastIndex]) === previousQuestionId) {
-          [questionQueue[lastIndex], questionQueue[0]] = [questionQueue[0], questionQueue[lastIndex]];
-        }
-      }
+      const role = String(roleName || '')
+        .trim()
+        .toLowerCase()
+        .replace(/[_-]+/g, ' ')
+        .replace(/\s+/g, ' ');
 
-      const question = questionQueue.pop();
-      previousQuestionId = questionId(question);
-      questionNumber += 1;
+      const aliases = {
 
-      const role = elements.role.value;
-      const level = elements.level.value;
-      const copy = ROLE_COPY[role];
-      const replacements = {
-        companyName: 'the company',
-        department: copy.department,
-        roleTitle: `${level === 'junior' ? 'Junior' : 'Senior'} ${role}`,
-        domain: copy.domain,
-        location: 'the office'
+        'data science': 'data scientist',
+        'data scientist': 'data scientist',
+
+        'devops engineer': 'devops engineer',
+
+        'python ai ml engineer': 'python ai ml engineer',
+        'ai ml engineer': 'python ai ml engineer'
+
       };
 
-      elements.sessionLabel.textContent = `${role} · ${level === 'junior' ? 'Junior' : 'Senior'}`;
-      elements.number.textContent = `QUESTION ${questionNumber}`;
-      elements.description.textContent = question.description.replace(
-        /\{\{(companyName|department|roleTitle|domain|location)\}\}/g,
-        (_, key) => replacements[key]
-      );
+      return aliases[role] || role;
+
     }
 
-    async function loadQuestions() {
-      try {
-        const response = await fetch('./sql_questions.json');
-        if (!response.ok) {
-          throw new Error(`SQL question bank returned ${response.status}`);
-        }
-        const data = await response.json();
-        if (!Array.isArray(data)) {
-          throw new Error('SQL question bank format is invalid');
-        }
-        sqlQuestions = data;
-      } catch (error) {
-        console.error('Could not load the SQL question bank:', error);
-        sqlLoadError = 'The SQL question bank could not be loaded. Data Analyst questions need the hosted page or a local web server.';
+
+    // ========================================
+    // NORMALIZE EXPERIENCE LEVEL
+    // ========================================
+
+    function normalizeLevel(level) {
+
+      return String(level || 'all')
+        .trim()
+        .toUpperCase()
+        .replace(/[-_\s]+/g, '');
+
+    }
+
+
+    // ========================================
+    // SHUFFLE QUESTIONS
+    // FISHER-YATES SHUFFLE
+    // ========================================
+
+    function shuffle(items) {
+
+      const shuffled = [...items];
+
+      for (let i = shuffled.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [shuffled[i], shuffled[j]] =
+          [shuffled[j], shuffled[i]];
+
       }
 
-      elements.status.textContent = sqlLoadError;
-      updateSetup();
+      return shuffled;
+
     }
 
-    elements.role.addEventListener('change', updateSetup);
-    elements.level.addEventListener('change', updateSetup);
-    elements.start.addEventListener('click', () => {
-      eligibleQuestions = getQuestions();
-      if (eligibleQuestions.length === 0) {
-        updateSetup();
+
+    // ========================================
+    // NORMALIZE QUESTION TEXT
+    // USED TO DETECT DUPLICATES
+    // ========================================
+
+    function normalizeQuestionText(questionText) {
+
+      return String(questionText || '')
+        .replace(/<[^>]*>/g, ' ')
+        .normalize('NFKC')
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}]/gu, '');
+
+    }
+
+
+    // ========================================
+    // GET STABLE QUESTION ID
+    // ========================================
+
+    function getQuestionKey(question) {
+
+      if (
+        question.questionId !== undefined &&
+        question.questionId !== null &&
+        String(question.questionId).trim() !== ''
+      ) {
+
+        return `id:${String(question.questionId)
+          .trim()
+          .toLowerCase()}`;
+
+      }
+
+      return `text:${normalizeQuestionText(question.question)}`;
+
+    }
+
+
+    // ========================================
+    // DEDUPLICATE QUESTIONS
+    //
+    // Removes questions having:
+    // 1. Same questionId
+    // 2. Same normalized question text
+    // ========================================
+
+    function deduplicateQuestions(questions) {
+
+      const seenIds = new Set();
+
+      const seenTexts = new Set();
+
+      const uniqueQuestions = [];
+
+      questions.forEach((question) => {
+
+        if (!question || !question.question) return;
+
+        const id = String(question.questionId || '')
+          .trim()
+          .toLowerCase();
+
+        const text = normalizeQuestionText(question.question);
+
+        if (!text) return;
+
+        // Duplicate ID check.
+        if (id && seenIds.has(id)) {
+          return;
+        }
+
+        // Duplicate question text check.
+        if (seenTexts.has(text)) {
+          return;
+        }
+
+        if (id) {
+          seenIds.add(id);
+        }
+
+        seenTexts.add(text);
+
+        uniqueQuestions.push(question);
+
+      });
+
+      return uniqueQuestions;
+
+    }
+
+
+    // ========================================
+    // GET BANK FOR SELECTED ROLE
+    // ========================================
+
+    function getBankForRole(roleName) {
+
+      const normalizedRole = normalizeRole(roleName);
+
+      return quizBanks.find((bank) => {
+
+        return bank.jobRole &&
+          normalizeRole(bank.jobRole) === normalizedRole;
+
+      });
+
+    }
+
+
+    // ========================================
+    // GET EXPERIENCE LEVELS
+    // ========================================
+
+    function getQuestionLevels(question) {
+
+      const levels =
+        question.experienceLevel ??
+        question.experienceLevels ??
+        question.level ??
+        [];
+
+      if (Array.isArray(levels)) {
+
+        return levels.map(level =>
+          normalizeLevel(level)
+        );
+
+      }
+
+      if (typeof levels === 'string') {
+
+        return levels
+          .split(/[,|]/)
+          .map(level => normalizeLevel(level));
+
+      }
+
+      return [];
+
+    }
+
+
+    // ========================================
+    // GET QUESTIONS FOR SELECTED FILTER
+    // ========================================
+
+    function getQuestions() {
+
+      const role = elements.role.value;
+
+      const level = normalizeLevel(elements.level.value);
+
+      const bank = getBankForRole(role);
+
+      if (!bank || !Array.isArray(bank.questionBank)) {
+        return [];
+      }
+
+      const questions = bank.questionBank.filter(question => {
+
+        return question &&
+          typeof question.question === 'string' &&
+          question.question.trim().length > 0 &&
+          question.correctAnswer !== undefined &&
+          question.correctAnswer !== null;
+
+      });
+
+      let filteredQuestions;
+
+      if (level === 'ALL') {
+
+        filteredQuestions = questions;
+
+      } else {
+
+        filteredQuestions = questions.filter((question) => {
+
+          const levels = getQuestionLevels(question);
+
+          return levels.includes(level);
+
+        });
+
+      }
+
+      // Always remove duplicates AFTER applying the filter.
+      return deduplicateQuestions(filteredQuestions);
+
+    }
+
+
+    // ========================================
+    // UPDATE SETUP
+    // ========================================
+
+    function updateSetup() {
+
+      const role = elements.role.value;
+
+      const level = elements.level.value;
+
+      const bank = getBankForRole(role);
+
+      const questions = getQuestions();
+
+      const levelLabel =
+        elements.level.selectedOptions[0]?.textContent || level;
+
+      elements.start.disabled = questions.length === 0;
+
+      if (!bank) {
+
+        elements.count.textContent =
+          `Question bank not loaded for ${role}.`;
+
         return;
+
       }
 
+      if (questions.length > 0) {
+
+        elements.count.textContent =
+          `${questions.length} unique questions available for ${role} (${levelLabel})`;
+
+      } else {
+
+        elements.count.textContent =
+          `No questions found for ${role} (${levelLabel}). Check your JSON structure and experienceLevel values.`;
+
+      }
+
+    }
+
+
+    // ========================================
+    // RESET SESSION
+    // CALLED WHEN STARTING A NEW QUIZ
+    // ========================================
+
+    function resetQuestionSession() {
+
+      const role = elements.role.value;
+
+      const level = elements.level.value;
+
+      currentFilterKey =
+        `${normalizeRole(role)}::${normalizeLevel(level)}`;
+
+      // Clear old question history.
+      shownQuestionIds.clear();
+
+      // Create a new unique question list.
+      eligibleQuestions = getQuestions();
+
+      // Shuffle exactly once.
       questionQueue = shuffle(eligibleQuestions);
-      previousQuestionId = '';
-      questionNumber = 0;
-      nextRandomQuestion();
+
+      // Reset question counter.
+      questionIndex = 0;
+
+      currentQuestion = null;
+
+      // Restore buttons.
+      elements.next.disabled = false;
+
+      elements.next.textContent =
+        'ANOTHER RANDOM QUESTION →';
+
+      elements.revealAnswer.disabled = false;
+
+      console.log('New quiz session started:', currentFilterKey);
+
+      console.log('Unique eligible questions:', eligibleQuestions.length);
+
+      console.log('Question IDs:', eligibleQuestions.map(getQuestionKey));
+
+    }
+
+
+    // ========================================
+    // SCREEN SWITCHING
+    // ========================================
+
+    function showScreen(screen) {
+
+      elements.setup.hidden = screen !== elements.setup;
+
+      elements.question.hidden = screen !== elements.question;
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+
+    }
+
+
+    // ========================================
+    // ANSWER VALIDATION
+    // ========================================
+
+    function isAnswerCorrect(candidateAns, correctAnswers) {
+
+      if (!candidateAns || correctAnswers == null) {
+        return false;
+      }
+
+      const cleaned = String(candidateAns)
+        .trim()
+        .toLowerCase();
+
+      if (Array.isArray(correctAnswers)) {
+
+        return correctAnswers.some((answer) =>
+          String(answer).trim().toLowerCase() === cleaned
+        );
+
+      }
+
+      return String(correctAnswers)
+        .trim()
+        .toLowerCase() === cleaned;
+
+    }
+
+
+    // ========================================
+    // RENDER QUESTION
+    // ========================================
+
+    function renderQuestion(question) {
+
+      currentQuestion = question;
+
+      questionIndex++;
+
+      const role = elements.role.value;
+
+      const levelText =
+        elements.level.selectedOptions[0]?.textContent ||
+        elements.level.value;
+
+      elements.sessionLabel.textContent =
+        `${role} · ${levelText}`;
+
+      elements.number.textContent =
+        `QUESTION ${questionIndex} OF ${eligibleQuestions.length}`;
+
+
+      // QUESTION TYPE BADGE
+
+      elements.badges.replaceChildren();
+
+      const questionType =
+        String(question.questionType || 'MCQ').toUpperCase();
+
+      const isFillBlank =
+        questionType === 'FILL_IN_THE_BLANK' ||
+        questionType === 'FILL IN THE BLANK' ||
+        questionType === 'FILL_IN_BLANK';
+
+      const typeBadge = document.createElement('span');
+
+      typeBadge.className = 'badge type-badge';
+
+      typeBadge.textContent =
+        isFillBlank ? 'FILL IN BLANK' : 'MCQ';
+
+      elements.badges.appendChild(typeBadge);
+
+
+      // TOPIC BADGE
+
+      if (question.topic) {
+
+        const topicBadge = document.createElement('span');
+
+        topicBadge.className = 'badge topic-badge';
+
+        topicBadge.textContent = question.subTopic
+          ? `${question.topic} / ${question.subTopic}`
+          : question.topic;
+
+        elements.badges.appendChild(topicBadge);
+
+      }
+
+
+      // DIFFICULTY BADGE
+
+      if (question.difficulty) {
+
+        const diffBadge = document.createElement('span');
+
+        const diffLower =
+          String(question.difficulty).toLowerCase();
+
+        diffBadge.className = `badge diff-${diffLower}`;
+
+        diffBadge.textContent = question.difficulty;
+
+        elements.badges.appendChild(diffBadge);
+
+      }
+
+
+      // QUESTION TEXT
+
+      elements.text.textContent = question.question;
+
+
+      // RESET EXPLANATION
+
+      elements.explanationBox.hidden = true;
+
+      elements.explanationStatus.textContent = '';
+
+      elements.explanationStatus.className =
+        'explanation-status';
+
+      elements.explanationText.textContent =
+        question.explanation || 'No explanation provided.';
+
+
+      // RESET CONTAINERS
+
+      elements.mcqContainer.hidden = true;
+
+      elements.blankContainer.hidden = true;
+
+
+      // FILL IN THE BLANK
+
+      if (isFillBlank) {
+
+        elements.blankContainer.hidden = false;
+
+        elements.blankInput.value = '';
+
+        elements.blankInput.disabled = false;
+
+        elements.submitBlank.disabled = false;
+
+        elements.blankFeedback.hidden = true;
+
+        elements.blankFeedback.textContent = '';
+
+        elements.blankFeedback.className = 'blank-feedback';
+
+      } else {
+
+        // MCQ
+
+        elements.mcqContainer.hidden = false;
+
+        elements.optionsList.replaceChildren();
+
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
+
+        const options = Array.isArray(question.options)
+          ? question.options
+          : [];
+
+        options.forEach((optText, idx) => {
+
+          const btn = document.createElement('button');
+
+          btn.type = 'button';
+
+          btn.className = 'option-item';
+
+          btn.dataset.index = idx;
+
+          const prefix = document.createElement('span');
+
+          prefix.className = 'option-prefix';
+
+          prefix.textContent = letters[idx] || String(idx + 1);
+
+          const label = document.createElement('span');
+
+          label.className = 'option-label';
+
+          label.textContent = optText;
+
+          btn.append(prefix, label);
+
+          btn.addEventListener('click', () => {
+
+            handleOptionSelect(optText, btn);
+
+          });
+
+          elements.optionsList.appendChild(btn);
+
+        });
+
+      }
+
+    }
+
+
+    // ========================================
+    // MCQ ANSWER
+    // ========================================
+
+    function handleOptionSelect(chosenText, chosenBtn) {
+
+      if (!currentQuestion) return;
+
+      const allOptionButtons =
+        elements.optionsList.querySelectorAll('.option-item');
+
+      allOptionButtons.forEach((button) => {
+        button.disabled = true;
+      });
+
+      const correct = isAnswerCorrect(
+        chosenText,
+        currentQuestion.correctAnswer
+      );
+
+      if (correct) {
+
+        chosenBtn.classList.add('is-correct');
+
+        elements.explanationStatus.textContent =
+          '✓ Correct Answer';
+
+        elements.explanationStatus.className =
+          'explanation-status correct';
+
+      } else {
+
+        chosenBtn.classList.add('is-incorrect');
+
+        elements.explanationStatus.textContent = '✗ Incorrect';
+
+        elements.explanationStatus.className =
+          'explanation-status incorrect';
+
+        allOptionButtons.forEach((button) => {
+
+          const text =
+            button.querySelector('.option-label')?.textContent || '';
+
+          if (isAnswerCorrect(
+            text,
+            currentQuestion.correctAnswer
+          )) {
+
+            button.classList.add('is-correct');
+
+          }
+
+        });
+
+      }
+
+      elements.explanationBox.hidden = false;
+
+    }
+
+
+    // ========================================
+    // FILL IN THE BLANK ANSWER
+    // ========================================
+
+    function handleBlankSubmit() {
+
+      if (!currentQuestion) return;
+
+      const candidateAns = elements.blankInput.value.trim();
+
+      if (!candidateAns) return;
+
+      elements.blankInput.disabled = true;
+
+      elements.submitBlank.disabled = true;
+
+      const correct = isAnswerCorrect(
+        candidateAns,
+        currentQuestion.correctAnswer
+      );
+
+      const acceptableAnswers =
+        Array.isArray(currentQuestion.correctAnswer)
+          ? currentQuestion.correctAnswer.join(' or ')
+          : currentQuestion.correctAnswer;
+
+      elements.blankFeedback.hidden = false;
+
+      if (correct) {
+
+        elements.blankFeedback.className =
+          'blank-feedback is-correct';
+
+        elements.blankFeedback.textContent =
+          '✓ Correct Answer!';
+
+        elements.explanationStatus.textContent = '✓ Correct';
+
+        elements.explanationStatus.className =
+          'explanation-status correct';
+
+      } else {
+
+        elements.blankFeedback.className =
+          'blank-feedback is-incorrect';
+
+        elements.blankFeedback.textContent =
+          `✗ Incorrect. Correct Answer: ${acceptableAnswers}`;
+
+        elements.explanationStatus.textContent = '✗ Incorrect';
+
+        elements.explanationStatus.className =
+          'explanation-status incorrect';
+
+      }
+
+      elements.explanationBox.hidden = false;
+
+    }
+
+
+    // ========================================
+    // REVEAL ANSWER
+    // ========================================
+
+    function revealAnswer() {
+
+      if (!currentQuestion) return;
+
+      const questionType =
+        String(currentQuestion.questionType || 'MCQ').toUpperCase();
+
+      const isFillBlank =
+        questionType === 'FILL_IN_THE_BLANK' ||
+        questionType === 'FILL IN THE BLANK' ||
+        questionType === 'FILL_IN_BLANK';
+
+      if (isFillBlank) {
+
+        elements.blankInput.disabled = true;
+
+        elements.submitBlank.disabled = true;
+
+        const answer = Array.isArray(currentQuestion.correctAnswer)
+          ? currentQuestion.correctAnswer.join(' or ')
+          : currentQuestion.correctAnswer;
+
+        elements.blankFeedback.hidden = false;
+
+        elements.blankFeedback.className =
+          'blank-feedback is-correct';
+
+        elements.blankFeedback.textContent =
+          `Correct Answer: ${answer}`;
+
+      } else {
+
+        const allOptionButtons =
+          elements.optionsList.querySelectorAll('.option-item');
+
+        allOptionButtons.forEach((button) => {
+
+          button.disabled = true;
+
+          const text =
+            button.querySelector('.option-label')?.textContent || '';
+
+          if (isAnswerCorrect(
+            text,
+            currentQuestion.correctAnswer
+          )) {
+
+            button.classList.add('is-correct');
+
+          }
+
+        });
+
+      }
+
+      elements.explanationStatus.textContent = 'Answer Key';
+
+      elements.explanationStatus.className =
+        'explanation-status';
+
+      elements.explanationBox.hidden = false;
+
+    }
+
+
+    // ========================================
+    // QUIZ COMPLETION
+    // ========================================
+
+    function showCompletionMessage() {
+
+      currentQuestion = null;
+
+      elements.number.textContent =
+        `COMPLETED · ${questionIndex} OF ${eligibleQuestions.length}`;
+
+      elements.badges.replaceChildren();
+
+      elements.text.textContent =
+        `Congratulations! You've completed all ${eligibleQuestions.length} unique questions for this selection. No questions will be repeated in this session.`;
+
+      elements.mcqContainer.hidden = true;
+
+      elements.blankContainer.hidden = true;
+
+      elements.explanationBox.hidden = true;
+
+      elements.revealAnswer.disabled = true;
+
+      // Prevent another question from being requested.
+      elements.next.disabled = true;
+
+      elements.next.textContent =
+        'ALL QUESTIONS COMPLETED ✓';
+
+      console.log('Quiz completed:', currentFilterKey);
+
+      console.log('Questions shown:', shownQuestionIds.size);
+
+    }
+
+
+    // ========================================
+    // NEXT RANDOM QUESTION
+    //
+    // IMPORTANT:
+    // NO QUEUE REFILLING.
+    // NO REPEATED QUESTIONS.
+    // ========================================
+
+    function nextRandomQuestion() {
+
+      if (eligibleQuestions.length === 0) return;
+
+      // Take the next question from the shuffled queue.
+      while (questionQueue.length > 0) {
+
+        const question = questionQueue.pop();
+
+        const key = getQuestionKey(question);
+
+        // Defensive check: never display an already-shown question.
+        if (shownQuestionIds.has(key)) {
+          continue;
+        }
+
+        // Record question BEFORE displaying it.
+        shownQuestionIds.add(key);
+
+        console.log('Question displayed:', key);
+
+        console.log(
+          `Progress: ${shownQuestionIds.size}/${eligibleQuestions.length}`
+        );
+
+        renderQuestion(question);
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+
+        return;
+
+      }
+
+      // Queue is exhausted. Do NOT shuffle again.
+      showCompletionMessage();
+
+    }
+
+
+    // ========================================
+    // ROLE DROPDOWN
+    // ========================================
+
+    function syncRoleDropdown() {
+
+      updateSetup();
+
+    }
+
+
+    // ========================================
+    // LOAD ONE QUESTION BANK
+    // ========================================
+
+    async function loadBank(item) {
+
+      const response = await fetch(item.file, {
+        cache: 'no-cache'
+      });
+
+      if (!response.ok) {
+
+        throw new Error(
+          `${item.role}: HTTP ${response.status} while loading ${item.file}`
+        );
+
+      }
+
+      const bank = await response.json();
+
+      if (
+        !bank ||
+        !bank.jobRole ||
+        !Array.isArray(bank.questionBank)
+      ) {
+
+        throw new Error(
+          `${item.role}: Invalid JSON schema`
+        );
+
+      }
+
+      if (
+        normalizeRole(bank.jobRole) !==
+        normalizeRole(item.role)
+      ) {
+
+        throw new Error(
+          `${item.role}: jobRole mismatch. Found "${bank.jobRole}" in JSON.`
+        );
+
+      }
+
+      return bank;
+
+    }
+
+
+    // ========================================
+    // INITIALIZE ALL QUESTION BANKS
+    // ========================================
+
+    async function initQuestions() {
+
+      elements.start.disabled = true;
+
+      elements.count.textContent =
+        'Loading technical quiz banks...';
+
+      elements.status.textContent = '';
+
+
+      // LOAD BUNDLED BANKS FIRST
+
+      const bundledBanks =
+        Array.isArray(window.BUNDLED_QUIZ_BANKS)
+          ? window.BUNDLED_QUIZ_BANKS.filter((bank) =>
+              bank &&
+              bank.jobRole &&
+              Array.isArray(bank.questionBank)
+            )
+          : [];
+
+
+      // FETCH ALL BANK FILES INDEPENDENTLY
+
+      const results = await Promise.allSettled(
+        BANK_FILES.map((item) => loadBank(item))
+      );
+
+
+      const fetchedBanks = results
+
+        .filter((result) => result.status === 'fulfilled')
+
+        .map((result) => result.value);
+
+
+      // MERGE BANKS BY ROLE
+      // FETCHED BANK REPLACES BUNDLED BANK FOR SAME ROLE.
+      // THEY ARE NOT CONCATENATED.
+
+      const bankMap = new Map();
+
+      bundledBanks.forEach((bank) => {
+
+        bankMap.set(
+          normalizeRole(bank.jobRole),
+          bank
+        );
+
+      });
+
+      fetchedBanks.forEach((bank) => {
+
+        bankMap.set(
+          normalizeRole(bank.jobRole),
+          bank
+        );
+
+      });
+
+      quizBanks = [...bankMap.values()];
+
+
+      // UPDATE UI
+
+      syncRoleDropdown();
+
+
+      // CHECK FAILED FILES
+
+      const failedResults = results.filter(
+        (result) => result.status === 'rejected'
+      );
+
+      if (failedResults.length > 0) {
+
+        const failedMessages = failedResults.map(
+          (result) => result.reason.message
+        );
+
+        console.warn(
+          'Question bank loading errors:',
+          failedMessages
+        );
+
+        elements.status.textContent =
+          `${fetchedBanks.length} file(s) loaded. ${failedResults.length} file(s) failed. Open browser console (F12) for details.`;
+
+      } else {
+
+        elements.status.textContent =
+          `Successfully loaded ${fetchedBanks.length} technical quiz banks.`;
+
+      }
+
+      updateSetup();
+
+    }
+
+
+    // ========================================
+    // FILTER CHANGE
+    // ========================================
+
+    function handleFilterChange() {
+
+      // Invalidate the previous session.
+      currentFilterKey = '';
+
+      questionQueue = [];
+
+      shownQuestionIds.clear();
+
+      eligibleQuestions = [];
+
+      currentQuestion = null;
+
+      updateSetup();
+
+    }
+
+
+    // ========================================
+    // EVENT LISTENERS
+    // ========================================
+
+    elements.role.addEventListener(
+      'change',
+      handleFilterChange
+    );
+
+    elements.level.addEventListener(
+      'change',
+      handleFilterChange
+    );
+
+
+    // START A COMPLETELY FRESH SESSION
+
+    elements.start.addEventListener('click', () => {
+
+      resetQuestionSession();
+
+      if (eligibleQuestions.length === 0) {
+
+        updateSetup();
+
+        return;
+
+      }
+
+      elements.revealAnswer.disabled = false;
+
       showScreen(elements.question);
-    });
-    document.getElementById('nextQuestionButton').addEventListener('click', nextRandomQuestion);
-    document.getElementById('changeSelectionButton').addEventListener('click', () => {
-      showScreen(elements.setup);
+
+      nextRandomQuestion();
+
     });
 
-    if (DSA_QUESTIONS.length === 0) {
-      elements.status.textContent = 'The coding question bank could not be loaded.';
-    } else {
-      loadQuestions();
-    }
+
+    // NEXT QUESTION
+
+    elements.next.addEventListener(
+      'click',
+      nextRandomQuestion
+    );
+
+
+    // CHANGE ROLE OR LEVEL
+
+    elements.change.addEventListener('click', () => {
+
+      showScreen(elements.setup);
+
+      updateSetup();
+
+    });
+
+
+    // REVEAL ANSWER
+
+    elements.revealAnswer.addEventListener(
+      'click',
+      revealAnswer
+    );
+
+
+    // SUBMIT FILL IN THE BLANK
+
+    elements.submitBlank.addEventListener(
+      'click',
+      handleBlankSubmit
+    );
+
+
+    elements.blankInput.addEventListener('keydown', (event) => {
+
+      if (event.key === 'Enter') {
+        handleBlankSubmit();
+      }
+
+    });
+
+
+    // ========================================
+    // START APPLICATION
+    // ========================================
+
+    elements.role.value = 'Software Developer';
+
+    initQuestions().catch((error) => {
+
+      console.error('Quiz initialization failed:', error);
+
+      elements.status.textContent =
+        'Unable to initialize quiz. Check your JSON files and browser console.';
+
+      updateSetup();
+
+    });
+
   </script>
+
 </body>
+
 </html>

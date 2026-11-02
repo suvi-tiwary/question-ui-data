@@ -1199,3 +1199,673 @@ window.BUNDLED_QUIZ_BANKS = [
         }
     ]
 },
+{
+    "jobRole": "Software Developer",
+    "assessmentTitle": "Software Developer Technical Assessment",
+    "experienceLevels": [
+        "JUNIOR",
+        "MID",
+        "SENIOR"
+    ],
+    "assessmentConfig": {
+        "totalQuestions": 30,
+        "totalTimeMins": 45,
+        "difficultyDistribution": {
+            "JUNIOR": {
+                "EASY": 50,
+                "MEDIUM": 30,
+                "HARD": 20
+            },
+            "MID": {
+                "EASY": 20,
+                "MEDIUM": 50,
+                "HARD": 30
+            },
+            "SENIOR": {
+                "EASY": 10,
+                "MEDIUM": 30,
+                "HARD": 60
+            }
+        },
+        "questionTypeDistribution": {
+            "MCQ": 80,
+            "FILL_IN_THE_BLANK": 20
+        }
+    },
+    "questionBank": [
+        {
+            "questionId": "SD001",
+            "topic": "DSA",
+            "subTopic": "Hashing",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which data structure is optimally used to find if a specific element exists in an array in O(1) average time complexity?",
+            "options": [
+                "Linked List",
+                "Hash Table",
+                "Binary Search Tree",
+                "Stack"
+            ],
+            "correctAnswer": [
+                "Hash Table"
+            ],
+            "explanation": "A Hash Table uses a hash function to map keys to indices, allowing for O(1) average time complexity for lookups, insertions, and deletions."
+        },
+        {
+            "questionId": "SD002",
+            "topic": "DSA",
+            "subTopic": "Linked List",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the most efficient algorithmic approach to detect a cycle in a singly linked list?",
+            "options": [
+                "Using a Stack",
+                "Floyd's Cycle-Finding (Fast and Slow Pointers)",
+                "Binary Search",
+                "Merge Sort"
+            ],
+            "correctAnswer": [
+                "Floyd's Cycle-Finding (Fast and Slow Pointers)"
+            ],
+            "explanation": "Floyd's algorithm uses two pointers moving at different speeds. If there is a cycle, the fast pointer will eventually meet the slow pointer inside the loop."
+        },
+        {
+            "questionId": "SD003",
+            "topic": "DSA",
+            "subTopic": "Stack",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which data structure is best suited for checking if a string of brackets (e.g., '({[]})') is properly balanced?",
+            "options": [
+                "Queue",
+                "Stack",
+                "Tree",
+                "Graph"
+            ],
+            "correctAnswer": [
+                "Stack"
+            ],
+            "explanation": "A Stack follows the Last-In-First-Out (LIFO) principle, making it perfect for matching the most recently opened bracket with the current closing bracket."
+        },
+        {
+            "questionId": "SD004",
+            "topic": "DSA",
+            "subTopic": "Trees",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Which tree traversal algorithm is typically used to find the shortest path in an unweighted graph or tree?",
+            "options": [
+                "Depth-First Search (DFS)",
+                "Breadth-First Search (BFS)",
+                "Post-order Traversal",
+                "In-order Traversal"
+            ],
+            "correctAnswer": [
+                "Breadth-First Search (BFS)"
+            ],
+            "explanation": "BFS explores all neighbor nodes at the present depth prior to moving on to the nodes at the next depth level, guaranteeing the shortest path in unweighted graphs."
+        },
+        {
+            "questionId": "SD005",
+            "topic": "DSA",
+            "subTopic": "Sorting",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the worst-case time complexity of QuickSort, and what causes it?",
+            "options": [
+                "O(n log n) due to recursive calls",
+                "O(n^2) when the pivot selection is poor (e.g., already sorted array)",
+                "O(n) because it uses partitioning",
+                "O(log n) due to divide and conquer"
+            ],
+            "correctAnswer": [
+                "O(n^2) when the pivot selection is poor (e.g., already sorted array)"
+            ],
+            "explanation": "QuickSort degrades to O(n^2) if the pivot consistently divides the array into highly unbalanced partitions, such as when the array is already sorted and the last element is chosen as the pivot."
+        },
+        {
+            "questionId": "SD006",
+            "topic": "DSA",
+            "subTopic": "Hashing",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "When two different keys hash to the same index in a Hash Table, this is called a collision. Which technique resolves this by finding another empty slot within the same array?",
+            "options": [
+                "Separate Chaining",
+                "Open Addressing (Linear Probing)",
+                "Balancing",
+                "Rehashing to a new table"
+            ],
+            "correctAnswer": [
+                "Open Addressing (Linear Probing)"
+            ],
+            "explanation": "Open Addressing resolves collisions by probing (searching) for the next available empty slot within the same underlying array, whereas Chaining uses linked lists."
+        },
+        {
+            "questionId": "SD007",
+            "topic": "DSA",
+            "subTopic": "Dynamic Programming",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What are the two main conditions required to apply Dynamic Programming to a problem?",
+            "options": [
+                "Sorting and Searching",
+                "Overlapping Subproblems and Optimal Substructure",
+                "Divide and Conquer",
+                "Greedy Choice Property"
+            ],
+            "correctAnswer": [
+                "Overlapping Subproblems and Optimal Substructure"
+            ],
+            "explanation": "Dynamic Programming is used when a problem can be broken down into overlapping subproblems (solved once and memoized) and has an optimal substructure (optimal solution contains optimal solutions to subproblems)."
+        },
+        {
+            "questionId": "SD008",
+            "topic": "DSA",
+            "subTopic": "Trees",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Why do we use self-balancing Binary Search Trees (like AVL or Red-Black Trees) instead of standard BSTs?",
+            "options": [
+                "To reduce space complexity to O(1)",
+                "To guarantee O(log n) time complexity for search, insert, and delete by preventing the tree from becoming a skewed linked list",
+                "To allow duplicate keys in the tree",
+                "To simplify the implementation of the tree"
+            ],
+            "correctAnswer": [
+                "To guarantee O(log n) time complexity for search, insert, and delete by preventing the tree from becoming a skewed linked list"
+            ],
+            "explanation": "A standard BST can degrade to O(n) if inserted with sorted data. Self-balancing trees perform rotations to maintain a height of O(log n), ensuring consistent performance."
+        },
+        {
+            "questionId": "SD009",
+            "topic": "DSA",
+            "subTopic": "Graphs",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which shortest-path algorithm must be used if a graph contains edges with negative weights?",
+            "options": [
+                "Dijkstra's Algorithm",
+                "Bellman-Ford Algorithm",
+                "Prim's Algorithm",
+                "Kruskal's Algorithm"
+            ],
+            "correctAnswer": [
+                "Bellman-Ford Algorithm"
+            ],
+            "explanation": "Dijkstra's algorithm fails with negative edge weights because it assumes paths can only get longer. Bellman-Ford relaxes all edges V-1 times, correctly handling negative weights (and detecting negative cycles)."
+        },
+        {
+            "questionId": "SD010",
+            "topic": "DSA",
+            "subTopic": "Complexity",
+            "experienceLevel": [
+                "JUNIOR",
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "The time complexity of accessing an element in an array by its index is O(___).",
+            "options": [],
+            "correctAnswer": [
+                "1",
+                "O(1)"
+            ],
+            "explanation": "Arrays are stored in contiguous memory locations. Using the base address and index, the exact memory address can be calculated in constant time, O(1)."
+        },
+        {
+            "questionId": "SD011",
+            "topic": "OOP",
+            "subTopic": "Encapsulation",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is encapsulation in Object-Oriented Programming?",
+            "options": [
+                "Defining classes by focusing on what is important for a purpose",
+                "Hiding the data and implementation details within a class",
+                "Making all methods private",
+                "Using words to define classes"
+            ],
+            "correctAnswer": [
+                "Hiding the data and implementation details within a class"
+            ],
+            "explanation": "Encapsulation bundles the data (attributes) and methods that operate on the data into a single unit (class), and restricts direct access to some of the object's components."
+        },
+        {
+            "questionId": "SD012",
+            "topic": "OOP",
+            "subTopic": "Inheritance",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What does an 'IS-A' relationship imply in OOP?",
+            "options": [
+                "It implies encapsulation.",
+                "A superclass object has an IS-A relationship with its subclass.",
+                "It implies a virtual method.",
+                "A subclass object has an IS-A relationship with its superclass or interface."
+            ],
+            "correctAnswer": [
+                "A subclass object has an IS-A relationship with its superclass or interface."
+            ],
+            "explanation": "Inheritance establishes an IS-A relationship. For example, a 'Car' IS-A 'Vehicle'. The subclass inherits the properties and behaviors of the superclass."
+        },
+        {
+            "questionId": "SD013",
+            "topic": "OOP",
+            "subTopic": "Polymorphism",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is an example of dynamic binding (runtime polymorphism)?",
+            "options": [
+                "any method",
+                "method overloading",
+                "method overriding",
+                "compiling"
+            ],
+            "correctAnswer": [
+                "method overriding"
+            ],
+            "explanation": "Dynamic binding occurs at runtime. Method overriding (where a subclass provides a specific implementation of a method already defined in its superclass) is resolved at runtime based on the actual object type."
+        },
+        {
+            "questionId": "SD014",
+            "topic": "OOP",
+            "subTopic": "Abstraction",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the primary difference between an abstract class and an interface?",
+            "options": [
+                "Interfaces can contain code or data. Abstract classes do not.",
+                "Abstract classes can contain code or data. Interfaces traditionally do not contain code. A class can inherit from only one abstract class but can implement multiple interfaces.",
+                "Abstract classes do not have constructors.",
+                "There is no difference."
+            ],
+            "correctAnswer": [
+                "Abstract classes can contain code or data. Interfaces traditionally do not contain code. A class can inherit from only one abstract class but can implement multiple interfaces."
+            ],
+            "explanation": "While modern languages blur this line, traditionally, abstract classes hold state and partial implementations (single inheritance), whereas interfaces define contracts (methods without bodies) that a class can implement multiple of."
+        },
+        {
+            "questionId": "SD015",
+            "topic": "OOP",
+            "subTopic": "SOLID Principles",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "The open/closed principle states that classes should be open for _ but closed for _.",
+            "options": [
+                "refactoring; duplication",
+                "modification; duplication",
+                "extension; modification",
+                "reuse; encapsulation"
+            ],
+            "correctAnswer": [
+                "extension; modification"
+            ],
+            "explanation": "The Open/Closed Principle (the 'O' in SOLID) dictates that software entities should be open for extension (adding new behavior) but closed for modification (changing existing code)."
+        },
+        {
+            "questionId": "SD016",
+            "topic": "OOP",
+            "subTopic": "Composition",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In the context of OOP, what is composition?",
+            "options": [
+                "Passing an operation to another object",
+                "A part/whole relationship where an object is composed of one or more other objects, and if the whole dies, the parts die.",
+                "Binding class/name association at execution time",
+                "Collecting classes for a domain"
+            ],
+            "correctAnswer": [
+                "A part/whole relationship where an object is composed of one or more other objects, and if the whole dies, the parts die."
+            ],
+            "explanation": "Composition is a strong 'HAS-A' relationship. The lifecycle of the contained objects is strictly managed by the parent object (e.g., a House and its Rooms)."
+        },
+        {
+            "questionId": "SD017",
+            "topic": "OOP",
+            "subTopic": "Design Patterns",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Which of the following are the five Creational Design patterns defined by the Gang of Four?",
+            "options": [
+                "Observer, State, Strategy, Template Method, and Visitor.",
+                "Composite, Visitor, State, Prototype, and Singleton.",
+                "Composite, Builder, Factory Method, Prototype, and Singleton.",
+                "Abstract Factory, Builder, Factory Method, Prototype, and Singleton."
+            ],
+            "correctAnswer": [
+                "Abstract Factory, Builder, Factory Method, Prototype, and Singleton."
+            ],
+            "explanation": "The GoF Creational patterns focus on object creation mechanisms. Abstract Factory, Builder, Factory Method, Prototype, and Singleton are the exact five creational patterns."
+        },
+        {
+            "questionId": "SD018",
+            "topic": "DBMS",
+            "subTopic": "SQL Basics",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the difference between DROP and TRUNCATE in SQL?",
+            "options": [
+                "They both delete the table completely.",
+                "They both clear the table but keep its definition.",
+                "TRUNCATE deletes the table completely. DROP clears the table.",
+                "DROP deletes the table completely, removing its definition. TRUNCATE clears the table but does not delete the definition."
+            ],
+            "correctAnswer": [
+                "DROP deletes the table completely, removing its definition. TRUNCATE clears the table but does not delete the definition."
+            ],
+            "explanation": "DROP removes the entire table structure and its data from the database. TRUNCATE removes all rows from a table but leaves the table structure (columns, constraints, indexes) intact."
+        },
+        {
+            "questionId": "SD019",
+            "topic": "DBMS",
+            "subTopic": "NoSQL Basics",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What does a MongoDB collection consist of?",
+            "options": [
+                "data",
+                "documents",
+                "fields",
+                "rows"
+            ],
+            "correctAnswer": [
+                "documents"
+            ],
+            "explanation": "In MongoDB, a collection is a grouping of MongoDB documents. A document is a record in a MongoDB collection, essentially equivalent to a row in a relational database."
+        },
+        {
+            "questionId": "SD020",
+            "topic": "DBMS",
+            "subTopic": "Relational Keys",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In a one-to-many database structure (e.g., an Employee table and an Employment History table), what is the EmployeeID in the Employment History table an example of?",
+            "options": [
+                "primary key",
+                "secondary key",
+                "foreign key",
+                "alternate key"
+            ],
+            "correctAnswer": [
+                "foreign key"
+            ],
+            "explanation": "A foreign key is a field in one table that uniquely identifies a row of another table (or the same table). It establishes the link between the two tables."
+        },
+        {
+            "questionId": "SD021",
+            "topic": "DBMS",
+            "subTopic": "NoSQL Architecture",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In a MongoDB Replica Set, if the primary database fails, when does failover begin?",
+            "options": [
+                "once the primary has been down for 10 minutes",
+                "once the primary reboots",
+                "immediately",
+                "after the administrator reboots the primary"
+            ],
+            "correctAnswer": [
+                "immediately"
+            ],
+            "explanation": "MongoDB replica sets are designed for high availability. If the primary node fails, the secondary nodes will immediately hold an election to promote a new primary."
+        },
+        {
+            "questionId": "SD022",
+            "topic": "DBMS",
+            "subTopic": "SQL Joins",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "The left and right joins are also known as what type of join?",
+            "options": [
+                "Inner Join",
+                "Natural Join",
+                "Outer Join",
+                "Cartesian Join"
+            ],
+            "correctAnswer": [
+                "Outer Join"
+            ],
+            "explanation": "LEFT JOIN and RIGHT JOIN are types of Outer Joins. They return all records from one table and the matched records from the other table, filling in NULLs where there is no match."
+        },
+        {
+            "questionId": "SD023",
+            "topic": "DBMS",
+            "subTopic": "Transactions",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "Inside a database transaction, several operations need to be performed. What would you do if an exception happens during that transaction to ensure data integrity?",
+            "options": [
+                "UNDO",
+                "UNCOMMIT",
+                "ROLLBACK",
+                "REVERSE"
+            ],
+            "correctAnswer": [
+                "ROLLBACK"
+            ],
+            "explanation": "If an error occurs during a transaction, a ROLLBACK command is issued to undo all changes made by the transaction since it began, maintaining the ACID properties of the database."
+        },
+        {
+            "questionId": "SD024",
+            "topic": "Version Control",
+            "subTopic": "Git Basics",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "How can you create a new branch and switch to it immediately in Git?",
+            "options": [
+                "git branch <branch-name>",
+                "git switch <branch-name>",
+                "git checkout -b <branch-name>",
+                "git merge <branch-name>"
+            ],
+            "correctAnswer": [
+                "git checkout -b <branch-name>"
+            ],
+            "explanation": "The `-b` flag tells Git to create a new branch. Combined with `checkout` (or `switch -c` in newer Git versions), it creates the branch and immediately moves your working directory to it."
+        },
+        {
+            "questionId": "SD025",
+            "topic": "Version Control",
+            "subTopic": "Git Concepts",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the staging area (or index) in Git?",
+            "options": [
+                "an area that stores commits prior to them being pushed",
+                "an area containing stash entries",
+                "an area where changes from a remote repo are stored",
+                "an area that stores information about changes that will be included in the next commit"
+            ],
+            "correctAnswer": [
+                "an area that stores information about changes that will be included in the next commit"
+            ],
+            "explanation": "The staging area is a file contained in the Git directory that stores information about what will go into the next commit. It is the middle step between modifying files and committing them."
+        },
+        {
+            "questionId": "SD026",
+            "topic": "Version Control",
+            "subTopic": "Git Workflows",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the main issue with using `git rebase` when working with multiple developers on a shared branch?",
+            "options": [
+                "Rebase affects only your repository and creates a diff in the master branch.",
+                "Rebase creates a temporary copy of the master branch.",
+                "Rebase moves the HEAD of the remote master branch.",
+                "Rebase rewrites commit history, which can cause severe conflicts for other developers who have already pulled the original commits."
+            ],
+            "correctAnswer": [
+                "Rebase rewrites commit history, which can cause severe conflicts for other developers who have already pulled the original commits."
+            ],
+            "explanation": "Rebase rewrites the project history by creating new commits. If done on a public/shared branch, it will desynchronize your local history from the remote, causing massive merge conflicts for the team."
+        },
+        {
+            "questionId": "SD027",
+            "topic": "Version Control",
+            "subTopic": "Git Debugging",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "You find a bug in your project, but can't locate where it was introduced in the commit history. How would you diagnose this problem efficiently?",
+            "options": [
+                "Manually backtrack through your commit history.",
+                "Use git search -diff.",
+                "Run a git rebase.",
+                "Use git bisect to compare the buggy commit to an early commit that works as expected."
+            ],
+            "correctAnswer": [
+                "Use git bisect to compare the buggy commit to an early commit that works as expected."
+            ],
+            "explanation": "`git bisect` performs a binary search through the commit history. You mark a good commit and a bad commit, and Git automatically checks out the middle commit for you to test, rapidly isolating the exact commit that introduced the bug."
+        },
+        {
+            "questionId": "SD028",
+            "topic": "System Concepts",
+            "subTopic": "Memory Management",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "In general software development, what is the primary difference between Stack and Heap memory?",
+            "options": [
+                "Stack is used for dynamic memory allocation, Heap is for static.",
+                "Stack memory is allocated in blocks, Heap memory is stored in a continuous memory block.",
+                "Stack is used for static memory allocation (local variables) and is fast but limited; Heap is used for dynamic memory allocation (objects) and is larger but slower.",
+                "There is no difference, they are just different names for the same memory space."
+            ],
+            "correctAnswer": [
+                "Stack is used for static memory allocation (local variables) and is fast but limited; Heap is used for dynamic memory allocation (objects) and is larger but slower."
+            ],
+            "explanation": "The Stack is used for static memory allocation (like local variables and function calls) and is highly structured and fast. The Heap is used for dynamic memory allocation (like objects created at runtime) and requires manual or garbage-collected management."
+        },
+        {
+            "questionId": "SD029",
+            "topic": "System Concepts",
+            "subTopic": "Concurrency",
+            "experienceLevel": [
+                "MID",
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is a race condition in software development?",
+            "options": [
+                "A condition where the program runs faster than expected",
+                "A condition where multiple threads access shared data concurrently, and the outcome depends on the timing of their execution",
+                "A condition where two threads compete for CPU time",
+                "A condition where a loop executes too quickly"
+            ],
+            "correctAnswer": [
+                "A condition where multiple threads access shared data concurrently, and the outcome depends on the timing of their execution"
+            ],
+            "explanation": "A race condition occurs when two or more threads can access shared data and they try to change it at the same time. Because the thread scheduling algorithm can swap between threads at any time, the final result is unpredictable."
+        },
+        {
+            "questionId": "SD030",
+            "topic": "System Concepts",
+            "subTopic": "Resource Management",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What does the acronym RAII stand for in the context of system architecture and resource management?",
+            "options": [
+                "Random Access Iterator Interface",
+                "Resource Acquisition Is Initialization",
+                "Recursive Algorithm Implementation Interface",
+                "Runtime Allocation and Initialization"
+            ],
+            "correctAnswer": [
+                "Resource Acquisition Is Initialization"
+            ],
+            "explanation": "RAII is a programming idiom where resource acquisition (like opening a file or allocating memory) is tied to object lifetime (initialization). When the object goes out of scope, its destructor automatically releases the resource, preventing memory/resource leaks."
+        }
+    ]
+}
+];

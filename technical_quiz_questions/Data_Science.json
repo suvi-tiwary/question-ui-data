@@ -1,0 +1,645 @@
+{
+    "jobRole": "Data Scientist",
+    "assessmentTitle": "Data Scientist Technical Assessment",
+    "experienceLevels": [
+        "JUNIOR",
+        "MID",
+        "SENIOR"
+    ],
+    "assessmentConfig": {
+        "totalQuestions": 30,
+        "totalTimeMins": 40,
+        "difficultyDistribution": {
+            "JUNIOR": {
+                "EASY": 50,
+                "MEDIUM": 30,
+                "HARD": 20
+            },
+            "MID": {
+                "EASY": 20,
+                "MEDIUM": 50,
+                "HARD": 30
+            },
+            "SENIOR": {
+                "EASY": 10,
+                "MEDIUM": 30,
+                "HARD": 60
+            }
+        },
+        "questionTypeDistribution": {
+            "MCQ": 60,
+            "MULTI_SELECT": 10,
+            "FILL_IN_THE_BLANK": 20,
+            "TRUE_FALSE": 10
+        }
+    },
+    "questionBank": [
+        {
+            "questionId": "DS001",
+            "topic": "Python",
+            "subTopic": "Data Structures",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the primary difference between lists and tuples in Python?",
+            "options": [
+                "Lists are immutable, tuples are mutable",
+                "Lists are mutable, meaning you can change the data inside them. Tuples are immutable",
+                "Lists can only hold integers, tuples can hold any data type",
+                "There is no difference; they are interchangeable"
+            ],
+            "correctAnswer": [
+                "Lists are mutable, meaning you can change the data inside them. Tuples are immutable"
+            ],
+            "explanation": "Lists are mutable (can be changed after creation), while tuples are immutable (cannot be changed), making tuples safer for fixed data."
+        },
+        {
+            "questionId": "DS002",
+            "topic": "Python",
+            "subTopic": "OOP",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Given a defined class `class Game: pass`, what is the correct syntax for instantiating a new object of this class?",
+            "options": [
+                "`my_game = class.Game()`",
+                "`my_game = class(Game)`",
+                "`my_game = Game()`",
+                "`my_game = Game.create()`"
+            ],
+            "correctAnswer": [
+                "`my_game = Game()`"
+            ],
+            "explanation": "In Python, you instantiate a class by calling it directly as if it were a function, using its name followed by parentheses."
+        },
+        {
+            "questionId": "DS003",
+            "topic": "Python",
+            "subTopic": "Generators",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "In Python, generators produce values on-demand and save memory by using the _______ keyword instead of `return`.",
+            "options": [],
+            "correctAnswer": [
+                "yield"
+            ],
+            "explanation": "The `yield` keyword turns a function into a generator, allowing it to produce a sequence of values over time lazily rather than computing them all at once."
+        },
+        {
+            "questionId": "DS004",
+            "topic": "Machine Learning",
+            "subTopic": "Evaluation",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "A machine learning model achieves 99% accuracy on the training data but only 55% accuracy on the unseen test data. This model is suffering from:",
+            "options": [
+                "High Bias (Underfitting)",
+                "High Variance (Overfitting)",
+                "Concept Drift",
+                "Data Leakage"
+            ],
+            "correctAnswer": [
+                "High Variance (Overfitting)"
+            ],
+            "explanation": "High variance (overfitting) occurs when a model memorizes the training data (including noise) but fails to generalize to new, unseen data."
+        },
+        {
+            "questionId": "DS005",
+            "topic": "Machine Learning",
+            "subTopic": "Algorithms",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the fundamental difference between Random Forest and Gradient Boosting algorithms?",
+            "options": [
+                "Random Forest uses Bagging (parallel independent trees), while Gradient Boosting uses Boosting (sequential trees correcting previous errors)",
+                "Random Forest is for regression, Gradient Boosting is for classification",
+                "Random Forest uses linear splits, Gradient Boosting uses non-linear splits",
+                "There is no difference; they are different names for the same algorithm"
+            ],
+            "correctAnswer": [
+                "Random Forest uses Bagging (parallel independent trees), while Gradient Boosting uses Boosting (sequential trees correcting previous errors)"
+            ],
+            "explanation": "Random Forest builds multiple deep trees independently and averages them (Bagging). Gradient Boosting builds shallow trees sequentially, fitting the residuals of the previous ensemble."
+        },
+        {
+            "questionId": "DS006",
+            "topic": "Statistics",
+            "subTopic": "Probability",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "Which theorem allows you to update the probability of a hypothesis as more evidence or data becomes available?",
+            "options": [
+                "Central Limit Theorem",
+                "Bayes' Theorem",
+                "Law of Large Numbers",
+                "Chebyshev's Inequality"
+            ],
+            "correctAnswer": [
+                "Bayes' Theorem"
+            ],
+            "explanation": "Bayes' Theorem calculates the posterior probability by combining the prior probability with the likelihood of the observed evidence."
+        },
+        {
+            "questionId": "DS007",
+            "topic": "Python",
+            "subTopic": "Functional Programming",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Why would you use a decorator in Python?",
+            "options": [
+                "To force a function to accept an argument at runtime",
+                "To visually indicate that a portion of code is critical",
+                "To alter the functionality of a function without having to modify the function's code",
+                "To import the most recent version of a package"
+            ],
+            "correctAnswer": [
+                "To alter the functionality of a function without having to modify the function's code"
+            ],
+            "explanation": "Decorators (using the `@` syntax) are higher-order functions that wrap other functions to add functionality (like logging or caching) before or after execution."
+        },
+        {
+            "questionId": "DS008",
+            "topic": "Machine Learning",
+            "subTopic": "Dimensionality Reduction",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "When applying Principal Component Analysis (PCA) for dimensionality reduction, what is the mathematical objective?",
+            "options": [
+                "To maximize the distance between different classes",
+                "To find orthogonal axes that maximize the variance of the projected data",
+                "To minimize the reconstruction error using neural networks",
+                "To select the top N most important original features based on p-values"
+            ],
+            "correctAnswer": [
+                "To find orthogonal axes that maximize the variance of the projected data"
+            ],
+            "explanation": "PCA is an unsupervised technique that projects data onto new orthogonal axes (principal components) ordered by the amount of variance they explain."
+        },
+        {
+            "questionId": "DS009",
+            "topic": "Python",
+            "subTopic": "Functions",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Which statement about Python's `*args` and `**kwargs` is correct?",
+            "options": [
+                "`*args` captures keyword arguments, `**kwargs` captures positional arguments",
+                "`*args` captures positional arguments, `**kwargs` captures keyword arguments",
+                "Both capture the same type of arguments",
+                "They can only be used together"
+            ],
+            "correctAnswer": [
+                "`*args` captures positional arguments, `**kwargs` captures keyword arguments"
+            ],
+            "explanation": "`*args` allows a function to accept any number of positional arguments as a tuple, while `**kwargs` accepts any number of keyword arguments as a dictionary."
+        },
+        {
+            "questionId": "DS010",
+            "topic": "Machine Learning",
+            "subTopic": "Evaluation Metrics",
+            "experienceLevel": [
+                "JUNIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "In a highly imbalanced dataset (e.g., 99.9% negative class), Accuracy is a poor metric. Data scientists typically use the _______ Score or ROC-AUC instead.",
+            "options": [],
+            "correctAnswer": [
+                "F1"
+            ],
+            "explanation": "The F1-Score (the harmonic mean of Precision and Recall) is robust to class imbalance, unlike Accuracy which can be misleadingly high by just predicting the majority class."
+        },
+        {
+            "questionId": "DS011",
+            "topic": "Deep Learning",
+            "subTopic": "Optimization",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What causes the 'Vanishing Gradient' problem in deep neural networks, and how is it typically mitigated?",
+            "options": [
+                "Caused by large learning rates; mitigated by using Adam optimizer",
+                "Caused by derivatives of Sigmoid/Tanh activation functions being < 1 during backpropagation; mitigated by using ReLU or Residual Connections",
+                "Caused by too much training data; mitigated by using Dropout",
+                "Caused by L2 regularization; mitigated by removing the penalty"
+            ],
+            "correctAnswer": [
+                "Caused by derivatives of Sigmoid/Tanh activation functions being < 1 during backpropagation; mitigated by using ReLU or Residual Connections"
+            ],
+            "explanation": "When using Sigmoid, gradients become extremely small as they multiply through many layers. ReLU (gradient = 1 for positive inputs) and skip connections solve this."
+        },
+        {
+            "questionId": "DS012",
+            "topic": "NLP",
+            "subTopic": "Vectorization",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "In Natural Language Processing, what problem does the TF-IDF vectorization technique solve compared to simple Count Vectorization?",
+            "options": [
+                "It translates text into different languages",
+                "It penalizes words that appear very frequently across all documents, highlighting unique, important words",
+                "It captures the semantic meaning and context of words using neural networks",
+                "It automatically corrects spelling errors in the corpus"
+            ],
+            "correctAnswer": [
+                "It penalizes words that appear very frequently across all documents, highlighting unique, important words"
+            ],
+            "explanation": "TF-IDF down-weights common stop words that appear everywhere and up-weights rare words that are highly specific to a particular document."
+        },
+        {
+            "questionId": "DS013",
+            "topic": "Machine Learning",
+            "subTopic": "Regularization",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the key difference between L1 (Lasso) and L2 (Ridge) regularization?",
+            "options": [
+                "L1 shrinks coefficients to exactly zero (performing feature selection), while L2 shrinks them close to zero but not exactly zero",
+                "L1 is used for classification, L2 is used for regression",
+                "L2 creates sparse models, L1 creates dense models",
+                "L1 penalizes the absolute weights, L2 penalizes the number of features"
+            ],
+            "correctAnswer": [
+                "L1 shrinks coefficients to exactly zero (performing feature selection), while L2 shrinks them close to zero but not exactly zero"
+            ],
+            "explanation": "The geometry of the L1 penalty forces the cost function to intersect the axes, resulting in exact zero weights and automatic feature selection."
+        },
+        {
+            "questionId": "DS014",
+            "topic": "Python",
+            "subTopic": "Concurrency",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Which statement about Python's Global Interpreter Lock (GIL) is correct?",
+            "options": [
+                "GIL allows true parallelism for CPU-bound tasks",
+                "GIL prevents multiple native threads from executing Python bytecodes simultaneously",
+                "GIL only affects I/O operations",
+                "GIL can be disabled in standard Python 3"
+            ],
+            "correctAnswer": [
+                "GIL prevents multiple native threads from executing Python bytecodes simultaneously"
+            ],
+            "explanation": "The GIL ensures that only one thread executes Python bytecode at a time, which simplifies memory management but limits true multi-threading for CPU-bound tasks."
+        },
+        {
+            "questionId": "DS015",
+            "topic": "Statistics",
+            "subTopic": "Experimental Design",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "When calculating the required sample size for an A/B test, the smallest effect size that you care to detect is called the Minimum Detectable _______.",
+            "options": [],
+            "correctAnswer": [
+                "Effect"
+            ],
+            "explanation": "The Minimum Detectable Effect (MDE) is a crucial parameter in power analysis; a smaller MDE requires a larger sample size to achieve statistical significance."
+        },
+        {
+            "questionId": "DS016",
+            "topic": "Deep Learning",
+            "subTopic": "Regularization",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "What is the primary purpose of the 'Dropout' technique in Neural Networks?",
+            "options": [
+                "To increase the learning rate dynamically",
+                "To prevent overfitting by randomly ignoring neurons during training",
+                "To reduce the dimensionality of the input data",
+                "To speed up the forward pass during inference"
+            ],
+            "correctAnswer": [
+                "To prevent overfitting by randomly ignoring neurons during training"
+            ],
+            "explanation": "Dropout randomly 'drops' (ignores) neurons during training, preventing them from co-adapting and forcing the network to learn more robust features."
+        },
+        {
+            "questionId": "DS017",
+            "topic": "MLOps",
+            "subTopic": "Monitoring",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "A credit scoring model performed well in 2022 but its accuracy has steadily declined in 2024, even though the data pipeline is functioning correctly and the input features have the same distributions. What is the most likely cause?",
+            "options": [
+                "Data Drift",
+                "Concept Drift",
+                "Label Leakage",
+                "Vanishing Gradient"
+            ],
+            "correctAnswer": [
+                "Concept Drift"
+            ],
+            "explanation": "Concept drift occurs when the underlying relationship between the features and the target variable changes over time (e.g., economic shifts changing what defines a 'good' credit risk)."
+        },
+        {
+            "questionId": "DS018",
+            "topic": "Python",
+            "subTopic": "OOP",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In Python Object-Oriented Programming, what is the difference between `__new__` and `__init__`?",
+            "options": [
+                "`__new__` initializes the object, `__init__` allocates memory",
+                "`__new__` allocates memory and returns the instance, `__init__` initializes the instance attributes",
+                "They are identical; one is for Python 2, the other for Python 3",
+                "`__init__` is called for classes, `__new__` is called for functions"
+            ],
+            "correctAnswer": [
+                "`__new__` allocates memory and returns the instance, `__init__` initializes the instance attributes"
+            ],
+            "explanation": "`__new__` is the first step of instance creation (allocation), while `__init__` is the second step (initialization of the allocated object)."
+        },
+        {
+            "questionId": "DS019",
+            "topic": "Machine Learning",
+            "subTopic": "Clustering",
+            "experienceLevel": [
+                "MID"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In K-Means clustering, what does the 'Elbow Method' help you determine?",
+            "options": [
+                "The optimal learning rate for gradient descent",
+                "The optimal number of clusters (k) by plotting WCSS against k",
+                "The presence of outliers in the dataset",
+                "The maximum depth of a decision tree"
+            ],
+            "correctAnswer": [
+                "The optimal number of clusters (k) by plotting WCSS against k"
+            ],
+            "explanation": "The Elbow Method plots the Within-Cluster Sum of Squares (WCSS) for different values of k. The 'elbow' point indicates where adding more clusters yields diminishing returns."
+        },
+        {
+            "questionId": "DS020",
+            "topic": "Generative AI",
+            "subTopic": "Transformers",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "EASY",
+            "questionType": "MCQ",
+            "question": "What is the core mechanism of the Transformer architecture that allows it to weigh the importance of different words in a sequence regardless of their distance?",
+            "options": [
+                "Convolutional Filters",
+                "Self-Attention",
+                "Recurrent Loops",
+                "Max Pooling"
+            ],
+            "correctAnswer": [
+                "Self-Attention"
+            ],
+            "explanation": "Self-Attention allows the model to attend to all positions in the input sequence simultaneously, computing relationships between all pairs of words."
+        },
+        {
+            "questionId": "DS021",
+            "topic": "NLP",
+            "subTopic": "Transformers",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "Since the Transformer architecture processes tokens in parallel and lacks inherent sequential processing, what technique is used to inject information about the relative or absolute position of tokens?",
+            "options": [
+                "Token Embedding",
+                "Positional Encoding",
+                "Layer Normalization",
+                "Softmax Activation"
+            ],
+            "correctAnswer": [
+                "Positional Encoding"
+            ],
+            "explanation": "Positional Encodings (often using sine/cosine functions or learned embeddings) are added to the input embeddings to give the model a sense of word order."
+        },
+        {
+            "questionId": "DS022",
+            "topic": "Deep Learning",
+            "subTopic": "Optimization",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "MCQ",
+            "question": "The Adam optimizer is highly popular because it combines the benefits of which two other extension of stochastic gradient descent?",
+            "options": [
+                "SGD and Nesterov Accelerated Gradient",
+                "Momentum and RMSProp",
+                "Adagrad and AdaDelta",
+                "Batch Normalization and Dropout"
+            ],
+            "correctAnswer": [
+                "Momentum and RMSProp"
+            ],
+            "explanation": "Adam keeps an exponentially decaying average of past gradients (Momentum) and an exponentially decaying average of past squared gradients (RMSProp)."
+        },
+        {
+            "questionId": "DS023",
+            "topic": "Generative AI",
+            "subTopic": "LLM Architecture",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "MEDIUM",
+            "questionType": "FILL_IN_THE_BLANK",
+            "question": "To overcome the context window limitations of LLMs and reduce hallucinations on proprietary data, architects use a technique known as _______-Augmented Generation (RAG).",
+            "options": [],
+            "correctAnswer": [
+                "Retrieval"
+            ],
+            "explanation": "RAG retrieves relevant documents from an external knowledge base (like a vector database) and injects them into the LLM's prompt context before generation."
+        },
+        {
+            "questionId": "DS024",
+            "topic": "MLOps",
+            "subTopic": "Architecture",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In enterprise MLOps architecture, what centralized repository ensures consistency between training and inference pipelines by providing a single source of truth for feature engineering logic?",
+            "options": [
+                "Model Registry",
+                "Feature Store",
+                "Artifact Repository",
+                "Metadata Store"
+            ],
+            "correctAnswer": [
+                "Feature Store"
+            ],
+            "explanation": "A Feature Store ensures that the exact same feature transformations and values used in training are available in real-time or batch for inference."
+        },
+        {
+            "questionId": "DS025",
+            "topic": "Python",
+            "subTopic": "Advanced OOP",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MULTI_SELECT",
+            "question": "To create a custom context manager in Python using a class (for use with the `with` statement), which dunder methods must you implement? (Select all that apply)",
+            "options": [
+                "__init__",
+                "__enter__",
+                "__exit__",
+                "__del__"
+            ],
+            "correctAnswer": [
+                "__enter__",
+                "__exit__"
+            ],
+            "explanation": "The context management protocol requires a class to define `__enter__` (setup) and `__exit__` (teardown) methods to handle resource allocation and cleanup."
+        },
+        {
+            "questionId": "DS026",
+            "topic": "Statistics",
+            "subTopic": "Hypothesis Testing",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In a medical test for a rare disease, a 'False Negative' means the test says the patient is healthy, but they actually have the disease. In statistical hypothesis testing, this is known as a:",
+            "options": [
+                "Type I Error",
+                "Type II Error",
+                "Power Failure",
+                "Alpha Risk"
+            ],
+            "correctAnswer": [
+                "Type II Error"
+            ],
+            "explanation": "A Type II Error (False Negative) occurs when you fail to reject a false null hypothesis. (Type I is a False Positive)."
+        },
+        {
+            "questionId": "DS027",
+            "topic": "Deep Learning",
+            "subTopic": "CNNs",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "In Convolutional Neural Networks (CNNs), what is the primary purpose of using a 1x1 convolution filter?",
+            "options": [
+                "To detect large spatial edges in the image",
+                "To reduce the dimensionality (number of channels) and increase non-linearity across channels",
+                "To pool the spatial dimensions of the feature map",
+                "To normalize the pixel values across the batch"
+            ],
+            "correctAnswer": [
+                "To reduce the dimensionality (number of channels) and increase non-linearity across channels"
+            ],
+            "explanation": "1x1 convolutions (Network in Network) are used to compress the number of channels (dimensionality reduction) and add cross-channel interaction before expensive 3x3 convolutions."
+        },
+        {
+            "questionId": "DS028",
+            "topic": "Generative AI",
+            "subTopic": "Fine-Tuning",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "MCQ",
+            "question": "What is the core mechanism of LoRA (Low-Rank Adaptation) when fine-tuning Large Language Models?",
+            "options": [
+                "It updates all parameters of the model using a smaller learning rate",
+                "It freezes pre-trained weights and injects trainable rank decomposition matrices into each layer of the architecture",
+                "It removes the bottom layers of the transformer and replaces them with a new classification head",
+                "It uses reinforcement learning from human feedback (RLHF) to align the model"
+            ],
+            "correctAnswer": [
+                "It freezes pre-trained weights and injects trainable rank decomposition matrices into each layer of the architecture"
+            ],
+            "explanation": "LoRA drastically reduces the number of trainable parameters by learning low-rank updates to the weight matrices, making fine-tuning massive LLMs highly memory-efficient."
+        },
+        {
+            "questionId": "DS029",
+            "topic": "Machine Learning",
+            "subTopic": "Algorithms",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "TRUE_FALSE",
+            "question": "K-Nearest Neighbors (KNN) is considered a parametric machine learning algorithm because it assumes the data follows a normal distribution.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "correctAnswer": [
+                "False"
+            ],
+            "explanation": "False. KNN is a *non-parametric* algorithm. It makes no underlying assumptions about the distribution of the data, and the number of 'parameters' grows with the training data size."
+        },
+        {
+            "questionId": "DS030",
+            "topic": "Python",
+            "subTopic": "Memory Management",
+            "experienceLevel": [
+                "SENIOR"
+            ],
+            "difficulty": "HARD",
+            "questionType": "TRUE_FALSE",
+            "question": "When processing a massive 50GB log file line-by-line in Python, a List Comprehension is more memory-efficient than a Generator expression because it evaluates lazily.",
+            "options": [
+                "True",
+                "False"
+            ],
+            "correctAnswer": [
+                "False"
+            ],
+            "explanation": "False. List comprehensions load the entire dataset into RAM at once. Generators evaluate lazily (yielding one item at a time), making them highly memory-efficient for large streams."
+        }
+    ]
+}
