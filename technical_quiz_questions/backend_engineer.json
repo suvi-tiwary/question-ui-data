@@ -1,0 +1,559 @@
+{
+  "jobRole": "Backend Engineer",
+  "assessmentTitle": "Backend Engineer Technical Assessment",
+  "experienceLevels": [
+    "JUNIOR",
+    "MID",
+    "SENIOR"
+  ],
+  "assessmentConfig": {
+    "totalQuestions": 25,
+    "totalTimeMins": 35,
+    "difficultyDistribution": {
+      "JUNIOR": {
+        "EASY": 60,
+        "MEDIUM": 30,
+        "HARD": 10
+      },
+      "MID": {
+        "EASY": 20,
+        "MEDIUM": 60,
+        "HARD": 20
+      },
+      "SENIOR": {
+        "EASY": 10,
+        "MEDIUM": 50,
+        "HARD": 40
+      }
+    },
+    "questionTypeDistribution": {
+      "MCQ": 80,
+      "FILL_IN_THE_BLANK": 20
+    }
+  },
+  "questionBank": [
+    {
+      "questionId": "BE001",
+      "topic": "Databases",
+      "subTopic": "Indexes",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "What is the primary trade-off of adding an index to a database table?",
+      "options": [
+        "It increases both read and write speed.",
+        "It increases read speed but decreases write speed.",
+        "It decreases read speed but increases write speed.",
+        "It has no impact on performance, only on storage."
+      ],
+      "correctAnswer": [
+        "It increases read speed but decreases write speed."
+      ],
+      "explanation": "Indexes act like a sorted lookup structure, dramatically speeding up read queries. However, every INSERT, UPDATE, or DELETE must also update the index, which trades write speed for read speed."
+    },
+    {
+      "questionId": "BE002",
+      "topic": "Databases",
+      "subTopic": "N+1 Query",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "What is the 'N+1 query' problem in backend development?",
+      "options": [
+        "Executing N queries to insert data and 1 to verify.",
+        "Executing 1 query to fetch a list of records and N additional queries to fetch related data for each record.",
+        "A database lock that occurs after N concurrent transactions.",
+        "A network timeout that happens after N seconds of inactivity."
+      ],
+      "correctAnswer": [
+        "Executing 1 query to fetch a list of records and N additional queries to fetch related data for each record."
+      ],
+      "explanation": "The N+1 problem occurs when an application fetches a list of items (1 query) and then loops through them to fetch related data for each item (N queries), causing excessive database round trips. It is typically solved with JOINs or batch loading."
+    },
+    {
+      "questionId": "BE003",
+      "topic": "Databases",
+      "subTopic": "ACID Properties",
+      "experienceLevel": [
+        "JUNIOR"
+      ],
+      "difficulty": "EASY",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "In database transactions, the 'A' in ACID stands for ______, meaning the transaction is all or nothing.",
+      "options": [],
+      "correctAnswer": [
+        "Atomic",
+        "Atomicity"
+      ],
+      "explanation": "Atomicity ensures that a series of database operations either all succeed or all fail, preventing partial updates that could leave the database in an inconsistent state."
+    },
+    {
+      "questionId": "BE004",
+      "topic": "HTTP",
+      "subTopic": "Status Codes",
+      "experienceLevel": [
+        "JUNIOR"
+      ],
+      "difficulty": "EASY",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "The HTTP status code ______ indicates that a request has been accepted for processing, but the processing is not yet complete (e.g., queued for background work).",
+      "options": [],
+      "correctAnswer": [
+        "202",
+        "202 Accepted"
+      ],
+      "explanation": "The 202 Accepted status code is intentionally non-committal, indicating that the request has been received and accepted for processing, but the processing may not be complete by the time the response is generated."
+    },
+    {
+      "questionId": "BE005",
+      "topic": "APIs",
+      "subTopic": "REST Design",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Which HTTP method is considered idempotent and is typically used to update an existing resource or create it if it doesn't exist at a specific URI?",
+      "options": [
+        "POST",
+        "GET",
+        "PUT",
+        "PATCH"
+      ],
+      "correctAnswer": [
+        "PUT"
+      ],
+      "explanation": "PUT is idempotent, meaning making the same request multiple times will have the same effect as making it once. It is used to replace a resource at a known URI."
+    },
+    {
+      "questionId": "BE006",
+      "topic": "Security",
+      "subTopic": "Authentication",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Which of the following is the industry best practice for storing user passwords in a database?",
+      "options": [
+        "Plain text",
+        "Reversible encryption (e.g., AES)",
+        "Hashing with a strong, salted algorithm (e.g., bcrypt, Argon2)",
+        "Base64 encoding"
+      ],
+      "correctAnswer": [
+        "Hashing with a strong, salted algorithm (e.g., bcrypt, Argon2)"
+      ],
+      "explanation": "Passwords should never be stored in plain text or reversibly. Salting and hashing with a computationally expensive algorithm protects against brute-force and rainbow table attacks."
+    },
+    {
+      "questionId": "BE007",
+      "topic": "Performance",
+      "subTopic": "Latency Metrics",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "In backend performance monitoring, what does the 'p99' (99th percentile) latency metric represent?",
+      "options": [
+        "The average response time of all requests.",
+        "The maximum response time ever recorded.",
+        "The response time below which 99% of all requests fall.",
+        "The response time of the fastest 1% of requests."
+      ],
+      "correctAnswer": [
+        "The response time below which 99% of all requests fall."
+      ],
+      "explanation": "The p99 latency shows the worst-case experience for the vast majority of users, filtering out extreme outliers while still highlighting performance issues that averages might hide."
+    },
+    {
+      "questionId": "BE008",
+      "topic": "Caching",
+      "subTopic": "Purpose",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "What is the primary purpose of implementing caching in a backend system?",
+      "options": [
+        "To permanently store all user data.",
+        "To reduce database load and decrease latency for frequently accessed data.",
+        "To replace the need for a load balancer.",
+        "To ensure data is never lost during a server crash."
+      ],
+      "correctAnswer": [
+        "To reduce database load and decrease latency for frequently accessed data."
+      ],
+      "explanation": "Caching stores copies of frequently requested data in a faster storage layer (like Redis or memory), reducing the need to compute or fetch the data from the primary database repeatedly."
+    },
+    {
+      "questionId": "BE009",
+      "topic": "Databases",
+      "subTopic": "Foreign Keys",
+      "experienceLevel": [
+        "JUNIOR"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Why is it a best practice to manually add an index on foreign key columns in PostgreSQL?",
+      "options": [
+        "PostgreSQL automatically indexes all foreign keys by default.",
+        "It prevents the foreign key constraint from being violated.",
+        "It significantly speeds up JOIN operations and cascading deletes.",
+        "It reduces the storage size of the table."
+      ],
+      "correctAnswer": [
+        "It significantly speeds up JOIN operations and cascading deletes."
+      ],
+      "explanation": "Unlike some other databases, PostgreSQL does not automatically create indexes on foreign key columns. Adding them manually is crucial for optimizing JOINs and maintaining referential integrity performance."
+    },
+    {
+      "questionId": "BE010",
+      "topic": "Databases",
+      "subTopic": "Race Conditions",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "How can you best prevent a 'lost update' race condition when two concurrent transactions try to deduct funds from the same wallet?",
+      "options": [
+        "Read the balance, calculate the new balance in application code, and update it.",
+        "Use an atomic update (e.g., `UPDATE wallets SET balance = balance - 60 WHERE id = 1`).",
+        "Disable database indexing during the transaction.",
+        "Store the balance in a NoSQL document store."
+      ],
+      "correctAnswer": [
+        "Use an atomic update (e.g., `UPDATE wallets SET balance = balance - 60 WHERE id = 1`)."
+      ],
+      "explanation": "An atomic update delegates the read-modify-write cycle to the database as a single indivisible step, preventing concurrent transactions from overwriting each other's changes."
+    },
+    {
+      "questionId": "BE011",
+      "topic": "Databases",
+      "subTopic": "Connection Pooling",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "Why can having too many database connections (e.g., 400 connections across 20 app instances) crash a PostgreSQL production system?",
+      "options": [
+        "PostgreSQL connections are threads and consume no memory.",
+        "PostgreSQL connections are separate processes, and each consumes significant memory (5-10MB), leading to resource exhaustion.",
+        "PostgreSQL automatically shuts down when connection limits are reached to save data.",
+        "PostgreSQL requires exactly 1000 connections to function properly."
+      ],
+      "correctAnswer": [
+        "PostgreSQL connections are separate processes, and each consumes significant memory (5-10MB), leading to resource exhaustion."
+      ],
+      "explanation": "Because Postgres uses a process-per-connection model, a high number of connections multiplies memory usage and context-switching overhead. A connection pooler like PgBouncer is required to multiplex app connections."
+    },
+    {
+      "questionId": "BE012",
+      "topic": "System Design",
+      "subTopic": "Scaling",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "According to backend scaling best practices, what is the recommended order of operations when a database becomes a bottleneck?",
+      "options": [
+        "Shard the database, then add indexes.",
+        "Add indexes, fix N+1 queries, cache hot reads, then consider read replicas or partitioning.",
+        "Immediately migrate from SQL to a NoSQL database.",
+        "Increase the number of application servers before optimizing queries."
+      ],
+      "correctAnswer": [
+        "Add indexes, fix N+1 queries, cache hot reads, then consider read replicas or partitioning."
+      ],
+      "explanation": "Scaling should follow a cost-effective order: optimize the existing setup first (indexes, query fixes), then add caching, then scale reads (replicas), and only shard as a last resort due to its high complexity."
+    },
+    {
+      "questionId": "BE013",
+      "topic": "System Design",
+      "subTopic": "Rate Limiting",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "Which algorithm is commonly used for rate limiting to allow short, natural bursts of traffic while enforcing a steady average rate?",
+      "options": [
+        "Round Robin",
+        "Token Bucket",
+        "Least Recently Used (LRU)",
+        "Consistent Hashing"
+      ],
+      "correctAnswer": [
+        "Token Bucket"
+      ],
+      "explanation": "The Token Bucket algorithm allows requests to consume 'tokens' from a bucket that refills at a steady rate. This permits controlled bursts up to the bucket's capacity while maintaining a long-term average limit."
+    },
+    {
+      "questionId": "BE014",
+      "topic": "Databases",
+      "subTopic": "Query Optimization",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "When analyzing a database query with `EXPLAIN (ANALYZE, BUFFERS)`, what does a 'Seq Scan' on a large table typically indicate?",
+      "options": [
+        "The query is using an index efficiently.",
+        "The query is reading the entire table sequentially because there is no usable index.",
+        "The query is executing in parallel across multiple CPU cores.",
+        "The query result is already cached in memory."
+      ],
+      "correctAnswer": [
+        "The query is reading the entire table sequentially because there is no usable index."
+      ],
+      "explanation": "A Sequential (Seq) Scan means the database is checking every row in the table to find matches. On large tables, this is a major performance red flag that usually requires adding an appropriate index."
+    },
+    {
+      "questionId": "BE015",
+      "topic": "APIs",
+      "subTopic": "Reliability",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "To prevent double-charging a user when a network request is retried, an API should implement ______ keys to ensure the operation is processed only once.",
+      "options": [],
+      "correctAnswer": [
+        "idempotency",
+        "idempotency key"
+      ],
+      "explanation": "Idempotency keys allow the server to recognize duplicate requests (e.g., from client-side retries) and return the cached result of the original successful operation instead of executing it again."
+    },
+    {
+      "questionId": "BE016",
+      "topic": "Caching & Queues",
+      "subTopic": "Message Queues",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What is the primary architectural purpose of using a message queue in a backend system?",
+      "options": [
+        "To replace the primary relational database entirely.",
+        "To decouple services and perform slow, non-critical work asynchronously.",
+        "To increase the latency of synchronous API responses.",
+        "To store permanent, immutable user data."
+      ],
+      "correctAnswer": [
+        "To decouple services and perform slow, non-critical work asynchronously."
+      ],
+      "explanation": "Message queues (like RabbitMQ or Kafka) allow a system to acknowledge a request immediately while pushing the actual heavy lifting (e.g., sending emails, generating reports) to background workers."
+    },
+    {
+      "questionId": "BE017",
+      "topic": "Reliability",
+      "subTopic": "Timeouts",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "Why is it critical to implement strict timeouts when a backend service makes a call to an external dependency?",
+      "options": [
+        "To ensure the external service processes the request faster.",
+        "To prevent one slow dependency from exhausting all available threads/connections and taking down the entire service.",
+        "To automatically retry the request indefinitely until it succeeds.",
+        "To bypass the external service and return a default value immediately."
+      ],
+      "correctAnswer": [
+        "To prevent one slow dependency from exhausting all available threads/connections and taking down the entire service."
+      ],
+      "explanation": "Without timeouts, a hanging external dependency can cause thread/connection pools to fill up, leading to a cascading failure that brings down the entire application (a lack of isolation)."
+    },
+    {
+      "questionId": "BE018",
+      "topic": "Databases",
+      "subTopic": "Replication",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "When a user updates their profile and immediately views it, they might see stale data if the read is routed to a ______ that is slightly behind the primary database.",
+      "options": [],
+      "correctAnswer": [
+        "read replica",
+        "replica",
+        "replicas"
+      ],
+      "explanation": "Read replicas replicate data asynchronously from the primary. A short replication lag can cause 'read-your-writes' consistency issues, which can be mitigated by routing the user's immediate reads to the primary."
+    },
+    {
+      "questionId": "BE019",
+      "topic": "DevOps",
+      "subTopic": "Deployment",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What is the primary goal of a 'zero-downtime deployment' strategy?",
+      "options": [
+        "To deploy code without writing any automated tests.",
+        "To ensure the application remains available to users while new versions are being rolled out.",
+        "To delete the old database schema before deploying the new application code.",
+        "To restrict deployments to weekends only."
+      ],
+      "correctAnswer": [
+        "To ensure the application remains available to users while new versions are being rolled out."
+      ],
+      "explanation": "Zero-downtime deployments (e.g., blue-green or rolling deployments) ensure that traffic is seamlessly shifted to new instances without interrupting active user sessions."
+    },
+    {
+      "questionId": "BE020",
+      "topic": "Databases",
+      "subTopic": "Query Optimization",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "When analyzing slow queries using `pg_stat_statements`, why is it recommended to sort by `total_exec_time` rather than `mean_exec_time`?",
+      "options": [
+        "Mean time is not supported in PostgreSQL.",
+        "A query with a low average time but extremely high call volume can consume more total database CPU than a rare, slow query.",
+        "Total time is easier to calculate mathematically.",
+        "Mean time only applies to SELECT queries, not UPDATE queries."
+      ],
+      "correctAnswer": [
+        "A query with a low average time but extremely high call volume can consume more total database CPU than a rare, slow query."
+      ],
+      "explanation": "Sorting by total time exposes the queries that are actually consuming the most database resources overall. A 40ms query called 200,000 times an hour is a bigger problem than a 2-second query run once a day."
+    },
+    {
+      "questionId": "BE021",
+      "topic": "Databases",
+      "subTopic": "Isolation Levels",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "Which database isolation level provides the strongest guarantee by preventing dirty reads, non-repeatable reads, and phantoms, but may require the application to handle transaction retries?",
+      "options": [
+        "Read uncommitted",
+        "Read committed",
+        "Repeatable read",
+        "Serializable"
+      ],
+      "correctAnswer": [
+        "Serializable"
+      ],
+      "explanation": "Serializable isolation ensures transactions behave as if they were executed one after another. To maintain this, the database may abort transactions with serialization failures, requiring the application to catch and retry them."
+    },
+    {
+      "questionId": "BE022",
+      "topic": "System Design",
+      "subTopic": "Distributed Hashing",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "In distributed systems, ______ is used to distribute data across nodes such that adding or removing a server only remaps a small fraction (1/N) of the keys, avoiding massive cache misses.",
+      "options": [],
+      "correctAnswer": [
+        "consistent hashing",
+        "consistent hash"
+      ],
+      "explanation": "Unlike modulo-based hashing (`hash % N`), which remaps almost all keys when the number of nodes changes, consistent hashing places nodes and keys on a ring, minimizing data movement during scaling."
+    },
+    {
+      "questionId": "BE023",
+      "topic": "Databases",
+      "subTopic": "Composite Indexes",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "Given a composite index `CREATE INDEX ON orders (tenant_id, created_at DESC)`, which query will NOT efficiently use this index?",
+      "options": [
+        "`WHERE tenant_id = 5`",
+        "`WHERE tenant_id = 5 ORDER BY created_at DESC`",
+        "`WHERE created_at > '2023-01-01'`",
+        "`WHERE tenant_id = 5 AND created_at > '2023-01-01'`"
+      ],
+      "correctAnswer": [
+        "`WHERE created_at > '2023-01-01'`"
+      ],
+      "explanation": "Due to the leftmost-prefix rule, a composite index can only be used if the query filters by the first column(s) in the index definition. A query filtering only by `created_at` cannot traverse the tree efficiently."
+    },
+    {
+      "questionId": "BE024",
+      "topic": "System Design",
+      "subTopic": "News Feed Design",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "In designing a social media news feed, what is the 'celebrity problem' and how is it typically solved?",
+      "options": [
+        "Celebrities get too many likes, solved by aggressive rate limiting.",
+        "Write amplification occurs when a celebrity posts; solved by a hybrid approach (fan-out on write for normal users, fan-out on read for celebrities).",
+        "Celebrities consume too much storage, solved by aggressive data compression.",
+        "Celebrities cause cache misses, solved by switching to consistent hashing."
+      ],
+      "correctAnswer": [
+        "Write amplification occurs when a celebrity posts; solved by a hybrid approach (fan-out on write for normal users, fan-out on read for celebrities)."
+      ],
+      "explanation": "Fan-out on write fails for users with millions of followers (write amplification). A hybrid approach pushes posts to normal users' feeds at write time, but pulls celebrity posts into the feed at read time, caching the result."
+    },
+    {
+      "questionId": "BE025",
+      "topic": "Reliability",
+      "subTopic": "Circuit Breaker",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "What is the primary purpose of the 'Circuit Breaker' pattern in distributed systems?",
+      "options": [
+        "To physically shut down the server when CPU temperature exceeds safe limits.",
+        "To prevent an application from repeatedly trying to execute an operation that is likely to fail, allowing the failing system time to recover.",
+        "To break large database queries into smaller, paginated chunks.",
+        "To encrypt data in transit between microservices."
+      ],
+      "correctAnswer": [
+        "To prevent an application from repeatedly trying to execute an operation that is likely to fail, allowing the failing system time to recover."
+      ],
+      "explanation": "A circuit breaker monitors for failures. Once a threshold is reached, it 'trips' and immediately fails fast without attempting the operation, preventing cascading failures and giving the downstream service time to heal."
+    }
+  ]
+}

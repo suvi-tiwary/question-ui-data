@@ -1,0 +1,293 @@
+
+{
+  "assessmentType": "APTITUDE",
+  "title": "IT Company Aptitude Assessment",
+  "generationContext": {
+    "jobRole": "ALL_TECHNICAL_ROLES",
+    "experienceLevel": ["JUNIOR", "MID", "SENIOR"]
+  },
+  "configuration": {
+    "totalQuestions": 15,
+    "durationMinutes": 20,
+    "totalMarks": 75,
+    "marksPerQuestion": 5,
+    "passingScore": 60,
+    "difficultyDistribution": {
+      "EASY": 40,
+      "MEDIUM": 40,
+      "HARD": 20
+    }
+  },
+  "questions": [
+    {
+      "questionId": "APT001",
+      "category": "QUANTITATIVE",
+      "topic": "Percentages",
+      "difficulty": "EASY",
+      "questionType": "MCQ_SINGLE",
+      "question": "A number is increased by 20% and then decreased by 20%. What is the net percentage change?",
+      "options": [
+        {"id": "A", "text": "No change"},
+        {"id": "B", "text": "4% decrease"},
+        {"id": "C", "text": "4% increase"},
+        {"id": "D", "text": "2% decrease"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Assume 100. After 20% increase it becomes 120. After 20% decrease it becomes 96. Net decrease = 4%."
+    },
+    {
+      "questionId": "APT002",
+      "category": "QUANTITATIVE",
+      "topic": "Profit and Loss",
+      "difficulty": "EASY",
+      "questionType": "MCQ_SINGLE",
+      "question": "A product is purchased for Rs. 800 and sold for Rs. 1000. What is the profit percentage?",
+      "options": [
+        {"id": "A", "text": "20%"},
+        {"id": "B", "text": "25%"},
+        {"id": "C", "text": "30%"},
+        {"id": "D", "text": "15%"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Profit = 1000 - 800 = 200. Profit percentage = (200/800) x 100 = 25%."
+    },
+    {
+      "questionId": "APT003",
+      "category": "QUANTITATIVE",
+      "topic": "Time and Work",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_SINGLE",
+      "question": "A can complete a task in 12 days and B can complete it in 18 days. How many days will they take working together?",
+      "options": [
+        {"id": "A", "text": "6 days"},
+        {"id": "B", "text": "7.2 days"},
+        {"id": "C", "text": "8 days"},
+        {"id": "D", "text": "9 days"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Combined work per day = 1/12 + 1/18 = 5/36. Total time = 36/5 = 7.2 days."
+    },
+    {
+      "questionId": "APT004",
+      "category": "QUANTITATIVE",
+      "topic": "Probability",
+      "difficulty": "HARD",
+      "questionType": "MCQ_SINGLE",
+      "question": "Two fair dice are rolled simultaneously. What is the probability that their sum is 8?",
+      "options": [
+        {"id": "A", "text": "5/36"},
+        {"id": "B", "text": "1/6"},
+        {"id": "C", "text": "7/36"},
+        {"id": "D", "text": "1/9"}
+      ],
+      "correctAnswers": ["A"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Favourable outcomes are (2,6), (3,5), (4,4), (5,3), (6,2). Probability = 5/36."
+    },
+    {
+      "questionId": "APT005",
+      "category": "LOGICAL_REASONING",
+      "topic": "Number Series",
+      "difficulty": "EASY",
+      "questionType": "MCQ_MULTIPLE",
+      "question": "Select ALL the numbers that correctly continue the pattern: 2, 4, 8, 16, 32, __, __.",
+      "options": [
+        {"id": "A", "text": "48"},
+        {"id": "B", "text": "64"},
+        {"id": "C", "text": "128"},
+        {"id": "D", "text": "96"}
+      ],
+      "correctAnswers": ["B", "C"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Each number is multiplied by 2. The next two numbers are 64 and 128."
+    },
+    {
+      "questionId": "APT006",
+      "category": "LOGICAL_REASONING",
+      "topic": "Coding Decoding",
+      "difficulty": "EASY",
+      "questionType": "MCQ_SINGLE",
+      "question": "If CAT is coded as DBU by shifting every letter one position forward, how will DOG be coded?",
+      "options": [
+        {"id": "A", "text": "EPH"},
+        {"id": "B", "text": "EOG"},
+        {"id": "C", "text": "FPH"},
+        {"id": "D", "text": "DPH"}
+      ],
+      "correctAnswers": ["A"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "D becomes E, O becomes P and G becomes H. Therefore DOG becomes EPH."
+    },
+    {
+      "questionId": "APT007",
+      "category": "LOGICAL_REASONING",
+      "topic": "Blood Relations",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_SINGLE",
+      "question": "A is the brother of B. B is the daughter of C. How is A related to C?",
+      "options": [
+        {"id": "A", "text": "Father"},
+        {"id": "B", "text": "Son"},
+        {"id": "C", "text": "Brother"},
+        {"id": "D", "text": "Uncle"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "B is C's daughter and A is B's brother. Therefore A is C's son."
+    },
+    {
+      "questionId": "APT008",
+      "category": "LOGICAL_REASONING",
+      "topic": "Syllogisms",
+      "difficulty": "HARD",
+      "questionType": "MCQ_SINGLE",
+      "question": "Statements: All engineers are graduates. Some graduates are managers. Conclusions: I. All engineers are graduates. II. Some engineers are managers. Which conclusion follows?",
+      "options": [
+        {"id": "A", "text": "Only conclusion I"},
+        {"id": "B", "text": "Only conclusion II"},
+        {"id": "C", "text": "Both I and II"},
+        {"id": "D", "text": "Neither I nor II"}
+      ],
+      "correctAnswers": ["A"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Conclusion I directly follows. There is no guaranteed overlap between engineers and managers, so conclusion II does not necessarily follow."
+    },
+    {
+      "questionId": "APT009",
+      "category": "VERBAL_ABILITY",
+      "topic": "Grammar",
+      "difficulty": "EASY",
+      "questionType": "MCQ_SINGLE",
+      "question": "Choose the grammatically correct sentence.",
+      "options": [
+        {"id": "A", "text": "She don't like coding."},
+        {"id": "B", "text": "She doesn't likes coding."},
+        {"id": "C", "text": "She doesn't like coding."},
+        {"id": "D", "text": "She not like coding."}
+      ],
+      "correctAnswers": ["C"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Doesn't is followed by the base form of the verb, like."
+    },
+    {
+      "questionId": "APT010",
+      "category": "VERBAL_ABILITY",
+      "topic": "Vocabulary",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_MULTIPLE",
+      "question": "Select ALL the words that are synonyms of 'Abundant'.",
+      "options": [
+        {"id": "A", "text": "Plentiful"},
+        {"id": "B", "text": "Scarce"},
+        {"id": "C", "text": "Ample"},
+        {"id": "D", "text": "Insufficient"}
+      ],
+      "correctAnswers": ["A", "C"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Abundant means available in large quantities. Plentiful and ample are synonyms."
+    },
+    {
+      "questionId": "APT011",
+      "category": "VERBAL_ABILITY",
+      "topic": "Sentence Correction",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_SINGLE",
+      "question": "Identify the correct replacement for the underlined phrase: 'Neither of the two candidates are suitable for the position.'",
+      "options": [
+        {"id": "A", "text": "Neither of the two candidates is suitable for the position."},
+        {"id": "B", "text": "Neither of the two candidates were suitable for the position."},
+        {"id": "C", "text": "Neither of the two candidates have suitable for the position."},
+        {"id": "D", "text": "No correction required."}
+      ],
+      "correctAnswers": ["A"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Neither is treated as singular in standard formal grammar, so it takes is."
+    },
+    {
+      "questionId": "APT012",
+      "category": "DATA_INTERPRETATION",
+      "topic": "Table Analysis",
+      "difficulty": "EASY",
+      "questionType": "MCQ_SINGLE",
+      "question": "A company hired the following employees: IT = 120, HR = 40, Sales = 80, Finance = 60. What percentage of total employees work in IT?",
+      "options": [
+        {"id": "A", "text": "30%"},
+        {"id": "B", "text": "40%"},
+        {"id": "C", "text": "45%"},
+        {"id": "D", "text": "50%"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Total = 120 + 40 + 80 + 60 = 300. IT percentage = 120/300 x 100 = 40%."
+    },
+    {
+      "questionId": "APT013",
+      "category": "DATA_INTERPRETATION",
+      "topic": "Average Analysis",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_SINGLE",
+      "question": "A developer completes 5 tasks in 4, 6, 8, 10 and 12 hours respectively. What is the average completion time?",
+      "options": [
+        {"id": "A", "text": "7 hours"},
+        {"id": "B", "text": "8 hours"},
+        {"id": "C", "text": "9 hours"},
+        {"id": "D", "text": "10 hours"}
+      ],
+      "correctAnswers": ["B"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Average = (4 + 6 + 8 + 10 + 12)/5 = 8 hours."
+    },
+    {
+      "questionId": "APT014",
+      "category": "DATA_INTERPRETATION",
+      "topic": "Data Comparison",
+      "difficulty": "HARD",
+      "questionType": "MCQ_MULTIPLE",
+      "question": "A company has the following quarterly revenues (in lakhs): Q1 = 100, Q2 = 120, Q3 = 150, Q4 = 130. Select ALL true statements.",
+      "options": [
+        {"id": "A", "text": "Q3 revenue is 50% higher than Q1."},
+        {"id": "B", "text": "Q4 revenue is lower than Q3."},
+        {"id": "C", "text": "Average quarterly revenue is 125 lakhs."},
+        {"id": "D", "text": "Q2 revenue is 30% higher than Q1."}
+      ],
+      "correctAnswers": ["A", "B", "C"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Q3 increase over Q1 = 50%. Q4 is lower than Q3. Average = 500/4 = 125. Q2 increase over Q1 is 20%, not 30%."
+    },
+    {
+      "questionId": "APT015",
+      "category": "DATA_INTERPRETATION",
+      "topic": "Percentage Change",
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ_SINGLE",
+      "question": "A software company had 200 employees last year and 260 this year. What is the percentage increase in employees?",
+      "options": [
+        {"id": "A", "text": "20%"},
+        {"id": "B", "text": "25%"},
+        {"id": "C", "text": "30%"},
+        {"id": "D", "text": "35%"}
+      ],
+      "correctAnswers": ["C"],
+      "marks": 5,
+      "negativeMarks": 0,
+      "explanation": "Increase = 260 - 200 = 60. Percentage increase = (60/200) x 100 = 30%."
+    }
+  ]
+}

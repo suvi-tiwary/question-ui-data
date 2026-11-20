@@ -1,0 +1,557 @@
+{
+  "jobRole": "Frontend Engineer",
+  "assessmentTitle": "Frontend Engineer Technical Assessment",
+  "experienceLevels": [
+    "JUNIOR",
+    "MID",
+    "SENIOR"
+  ],
+  "assessmentConfig": {
+    "totalQuestions": 25,
+    "totalTimeMins": 35,
+    "difficultyDistribution": {
+      "JUNIOR": {
+        "EASY": 60,
+        "MEDIUM": 30,
+        "HARD": 10
+      },
+      "MID": {
+        "EASY": 20,
+        "MEDIUM": 60,
+        "HARD": 20
+      },
+      "SENIOR": {
+        "EASY": 10,
+        "MEDIUM": 50,
+        "HARD": 40
+      }
+    },
+    "questionTypeDistribution": {
+      "MCQ": 80,
+      "FILL_IN_THE_BLANK": 20
+    }
+  },
+  "questionBank": [
+    {
+      "questionId": "FE001",
+      "topic": "JavaScript",
+      "subTopic": "Closures",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "What is a closure in JavaScript?",
+      "options": [
+        "A function that has no access to outer variables",
+        "A function bundled together with references to its surrounding state (lexical environment)",
+        "A method to close the browser window",
+        "A way to terminate a loop early"
+      ],
+      "correctAnswer": [
+        "A function bundled together with references to its surrounding state (lexical environment)"
+      ],
+      "explanation": "A closure gives you access to an outer function's scope from an inner function, even after the outer function has returned."
+    },
+    {
+      "questionId": "FE002",
+      "topic": "JavaScript",
+      "subTopic": "Event Loop",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "In the JavaScript event loop, which of the following is processed first?",
+      "options": [
+        "Macrotasks (e.g., setTimeout)",
+        "Microtasks (e.g., Promise.resolve)",
+        "Rendering updates",
+        "I/O operations"
+      ],
+      "correctAnswer": [
+        "Microtasks (e.g., Promise.resolve)"
+      ],
+      "explanation": "The microtask queue is always emptied before the event loop proceeds to the next macrotask or rendering phase."
+    },
+    {
+      "questionId": "FE003",
+      "topic": "React",
+      "subTopic": "Hooks",
+      "experienceLevel": [
+        "JUNIOR"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Which React hook is used to perform side effects in functional components?",
+      "options": [
+        "useState",
+        "useEffect",
+        "useContext",
+        "useReducer"
+      ],
+      "correctAnswer": [
+        "useEffect"
+      ],
+      "explanation": "useEffect is designed to handle side effects such as data fetching, subscriptions, or manually changing the DOM in functional components."
+    },
+    {
+      "questionId": "FE004",
+      "topic": "CSS",
+      "subTopic": "Flexbox",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Which CSS property is used to align flex items along the main axis?",
+      "options": [
+        "align-items",
+        "justify-content",
+        "flex-direction",
+        "align-content"
+      ],
+      "correctAnswer": [
+        "justify-content"
+      ],
+      "explanation": "justify-content defines how the browser distributes space between and around content items along the main axis of a flex container."
+    },
+    {
+      "questionId": "FE005",
+      "topic": "JavaScript",
+      "subTopic": "Prototypes",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What is the purpose of the `prototype` property in JavaScript?",
+      "options": [
+        "To create private variables in a class",
+        "To add methods and properties to all instances of a constructor function",
+        "To prevent an object from being modified",
+        "To define the inheritance chain for CSS classes"
+      ],
+      "correctAnswer": [
+        "To add methods and properties to all instances of a constructor function"
+      ],
+      "explanation": "The prototype property allows you to add new properties and methods to objects created by a constructor function, enabling prototypal inheritance."
+    },
+    {
+      "questionId": "FE006",
+      "topic": "React",
+      "subTopic": "Virtual DOM",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "How does React's Virtual DOM improve performance?",
+      "options": [
+        "It directly manipulates the real DOM faster",
+        "It batches updates and only re-renders the changed parts of the real DOM",
+        "It prevents any re-rendering of components",
+        "It compiles JavaScript to WebAssembly"
+      ],
+      "correctAnswer": [
+        "It batches updates and only re-renders the changed parts of the real DOM"
+      ],
+      "explanation": "React creates a lightweight copy of the real DOM, compares it with the previous version (diffing), and applies only the necessary changes to the real DOM (reconciliation)."
+    },
+    {
+      "questionId": "FE007",
+      "topic": "CSS",
+      "subTopic": "Specificity",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "In CSS, an ID selector (e.g., #header) has a higher ______ than a class selector (e.g., .header), meaning its styles will override the class styles.",
+      "options": [],
+      "correctAnswer": [
+        "specificity",
+        "specificity score"
+      ],
+      "explanation": "CSS specificity determines which style rules are applied when multiple rules target the same element. ID selectors have a higher specificity value than class selectors."
+    },
+    {
+      "questionId": "FE008",
+      "topic": "TypeScript",
+      "subTopic": "Generics",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What is the primary benefit of using generics in TypeScript?",
+      "options": [
+        "They allow functions and classes to work with any data type while preserving type safety",
+        "They automatically convert JavaScript to TypeScript",
+        "They reduce the bundle size of the compiled code",
+        "They prevent the use of null and undefined values"
+      ],
+      "correctAnswer": [
+        "They allow functions and classes to work with any data type while preserving type safety"
+      ],
+      "explanation": "Generics provide a way to create reusable components that can work over a variety of types rather than a single one, maintaining type checking."
+    },
+    {
+      "questionId": "FE009",
+      "topic": "JavaScript",
+      "subTopic": "Promises & Async",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What will be the output of the following code?\n```javascript\nconsole.log(1);\nsetTimeout(() => console.log(2), 0);\nPromise.resolve().then(() => console.log(3));\nconsole.log(4);\n```",
+      "options": [
+        "1, 2, 3, 4",
+        "1, 4, 2, 3",
+        "1, 4, 3, 2",
+        "1, 3, 4, 2"
+      ],
+      "correctAnswer": [
+        "1, 4, 3, 2"
+      ],
+      "explanation": "Synchronous code (1, 4) runs first. Then microtasks (Promise) run (3). Finally, macrotasks (setTimeout) run (2)."
+    },
+    {
+      "questionId": "FE010",
+      "topic": "React",
+      "subTopic": "Performance",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "When should you use `React.memo`?",
+      "options": [
+        "To memoize the result of a function call inside a component",
+        "To prevent a functional component from re-rendering if its props have not changed",
+        "To manage global state in a React application",
+        "To replace the `useEffect` hook for side effects"
+      ],
+      "correctAnswer": [
+        "To prevent a functional component from re-rendering if its props have not changed"
+      ],
+      "explanation": "`React.memo` is a higher-order component that memorizes the rendered output and skips re-rendering if the props remain shallowly equal."
+    },
+    {
+      "questionId": "FE011",
+      "topic": "Web Security",
+      "subTopic": "XSS Prevention",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "Which HTTP header is primarily used to prevent Cross-Site Scripting (XSS) attacks by specifying valid sources of executable scripts?",
+      "options": [
+        "Strict-Transport-Security",
+        "Content-Security-Policy (CSP)",
+        "X-Frame-Options",
+        "Access-Control-Allow-Origin"
+      ],
+      "correctAnswer": [
+        "Content-Security-Policy (CSP)"
+      ],
+      "explanation": "CSP helps detect and mitigate certain types of attacks, including XSS, by declaring which dynamic resources are allowed to load."
+    },
+    {
+      "questionId": "FE012",
+      "topic": "Web Accessibility",
+      "subTopic": "ARIA & Screen Readers",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "The ______ attribute in an `<img>` tag is used to provide a text alternative for the image, which is essential for screen reader users.",
+      "options": [],
+      "correctAnswer": [
+        "alt"
+      ],
+      "explanation": "The `alt` attribute provides alternative text for images, which is crucial for screen readers to describe non-text content to visually impaired users."
+    },
+    {
+      "questionId": "FE013",
+      "topic": "JavaScript",
+      "subTopic": "Execution Context",
+      "experienceLevel": [
+        "JUNIOR"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "In a regular (non-arrow) function, what does the `this` keyword refer to when the function is called as a method of an object?",
+      "options": [
+        "The global object (window)",
+        "The object that the method is called on",
+        "The function itself",
+        "undefined"
+      ],
+      "correctAnswer": [
+        "The object that the method is called on"
+      ],
+      "explanation": "When a function is called as a method of an object, `this` is implicitly bound to the object the method is called on."
+    },
+    {
+      "questionId": "FE014",
+      "topic": "CSS",
+      "subTopic": "Grid",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "Which CSS property is used to define the number of columns in a CSS Grid layout?",
+      "options": [
+        "grid-template-rows",
+        "grid-template-columns",
+        "grid-gap",
+        "display: grid"
+      ],
+      "correctAnswer": [
+        "grid-template-columns"
+      ],
+      "explanation": "`grid-template-columns` defines the line names and track sizing functions of the grid columns."
+    },
+    {
+      "questionId": "FE015",
+      "topic": "React",
+      "subTopic": "State Management",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "Which of the following is a common use case for the Context API in React?",
+      "options": [
+        "Replacing all local component state",
+        "Sharing global data like theme or user authentication status across the component tree",
+        "Fetching data from an external API",
+        "Optimizing component re-renders automatically"
+      ],
+      "correctAnswer": [
+        "Sharing global data like theme or user authentication status across the component tree"
+      ],
+      "explanation": "The Context API is designed to share data that can be considered 'global' for a tree of React components, avoiding prop drilling."
+    },
+    {
+      "questionId": "FE016",
+      "topic": "Web Performance",
+      "subTopic": "Core Web Vitals",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "Which Core Web Vital metric specifically measures the visual stability of a page by quantifying how much visible content shifts unexpectedly?",
+      "options": [
+        "Largest Contentful Paint (LCP)",
+        "Interaction to Next Paint (INP)",
+        "Cumulative Layout Shift (CLS)",
+        "Time to First Byte (TTFB)"
+      ],
+      "correctAnswer": [
+        "Cumulative Layout Shift (CLS)"
+      ],
+      "explanation": "CLS measures the sum total of all individual layout shift scores for every unexpected layout shift that occurs during the entire lifespan of the page."
+    },
+    {
+      "questionId": "FE017",
+      "topic": "JavaScript",
+      "subTopic": "DOM Events",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "What is event delegation in JavaScript?",
+      "options": [
+        "Assigning multiple event listeners to the same element",
+        "Attaching a single event listener to a parent element to manage events for all its present and future child elements",
+        "Preventing an event from bubbling up the DOM tree",
+        "Triggering an event programmatically"
+      ],
+      "correctAnswer": [
+        "Attaching a single event listener to a parent element to manage events for all its present and future child elements"
+      ],
+      "explanation": "Event delegation leverages event bubbling to handle events at a higher level in the DOM than the element on which the event originated, improving performance and memory usage."
+    },
+    {
+      "questionId": "FE018",
+      "topic": "React",
+      "subTopic": "Concurrent Features",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "What is the primary purpose of `useTransition` in React 18?",
+      "options": [
+        "To animate transitions between different routes",
+        "To mark state updates as non-urgent, allowing React to interrupt them for more urgent updates",
+        "To transition a class component to a functional component",
+        "To manage CSS transitions automatically"
+      ],
+      "correctAnswer": [
+        "To mark state updates as non-urgent, allowing React to interrupt them for more urgent updates"
+      ],
+      "explanation": "`useTransition` allows you to mark certain state updates as transitions, which React can interrupt to keep the UI responsive to urgent interactions like typing."
+    },
+    {
+      "questionId": "FE019",
+      "topic": "TypeScript",
+      "subTopic": "Utility Types",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "Which TypeScript utility type constructs a type by picking the specified keys from another type?",
+      "options": [
+        "Partial<T>",
+        "Omit<T, K>",
+        "Pick<T, K>",
+        "Record<K, T>"
+      ],
+      "correctAnswer": [
+        "Pick<T, K>"
+      ],
+      "explanation": "`Pick<T, K>` creates a new type by selecting a set of properties `K` from an existing type `T`."
+    },
+    {
+      "questionId": "FE020",
+      "topic": "Frontend Architecture",
+      "subTopic": "System Design",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "In frontend system design, the ______ pattern allows an application to be composed of multiple smaller, independently deployable frontend applications.",
+      "options": [],
+      "correctAnswer": [
+        "micro-frontend",
+        "micro frontends"
+      ],
+      "explanation": "Micro-frontends extend the microservices architecture to the frontend, breaking down a monolithic frontend into smaller, manageable, and independently deployable pieces."
+    },
+    {
+      "questionId": "FE021",
+      "topic": "JavaScript",
+      "subTopic": "Hoisting",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "MCQ",
+      "question": "What is the output of the following code?\n```javascript\nconsole.log(myVar);\nvar myVar = 5;\n```",
+      "options": [
+        "5",
+        "undefined",
+        "ReferenceError",
+        "null"
+      ],
+      "correctAnswer": [
+        "undefined"
+      ],
+      "explanation": "Variable declarations using `var` are hoisted to the top of their scope and initialized with `undefined`, while the assignment remains in its place."
+    },
+    {
+      "questionId": "FE022",
+      "topic": "CSS",
+      "subTopic": "Box Model",
+      "experienceLevel": [
+        "JUNIOR",
+        "MID"
+      ],
+      "difficulty": "EASY",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "In the CSS box model, the ______ property is used to create space between the content of an element and its border.",
+      "options": [],
+      "correctAnswer": [
+        "padding"
+      ],
+      "explanation": "Padding is the space between an element's content and its border, whereas margin is the space outside the border."
+    },
+    {
+      "questionId": "FE023",
+      "topic": "React",
+      "subTopic": "Server Components",
+      "experienceLevel": [
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "MCQ",
+      "question": "What is a key characteristic of React Server Components (RSC)?",
+      "options": [
+        "They can use useState and useEffect hooks",
+        "They are rendered on the server and their output is sent to the client, reducing bundle size",
+        "They replace the need for a backend API entirely",
+        "They can directly access the browser's window object"
+      ],
+      "correctAnswer": [
+        "They are rendered on the server and their output is sent to the client, reducing bundle size"
+      ],
+      "explanation": "React Server Components render exclusively on the server, meaning their dependencies are not included in the client-side JavaScript bundle, improving load performance."
+    },
+    {
+      "questionId": "FE024",
+      "topic": "Web Testing",
+      "subTopic": "React Testing Library",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "MEDIUM",
+      "questionType": "MCQ",
+      "question": "In React Testing Library, what is the recommended way to query elements to ensure tests resemble how users interact with the app?",
+      "options": [
+        "Querying by component instance",
+        "Querying by data-test-id attributes exclusively",
+        "Querying by accessible roles and text content",
+        "Querying by CSS class names"
+      ],
+      "correctAnswer": [
+        "Querying by accessible roles and text content"
+      ],
+      "explanation": "React Testing Library encourages querying by roles, labels, and text content to ensure tests verify the actual user experience and accessibility."
+    },
+    {
+      "questionId": "FE025",
+      "topic": "JavaScript",
+      "subTopic": "Performance Optimization",
+      "experienceLevel": [
+        "MID",
+        "SENIOR"
+      ],
+      "difficulty": "HARD",
+      "questionType": "FILL_IN_THE_BLANK",
+      "question": "The ______ technique is used to ensure that a function is not called again until a certain amount of time has passed without it being called, commonly used in search input handlers.",
+      "options": [],
+      "correctAnswer": [
+        "debounce",
+        "debouncing"
+      ],
+      "explanation": "Debouncing ensures that a function is only executed after a specified delay has elapsed since the last time it was invoked, preventing excessive function calls."
+    }
+  ]
+}
